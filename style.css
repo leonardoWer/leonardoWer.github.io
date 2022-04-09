@@ -1,0 +1,21 @@
+div{
+    font-size: 30px;
+}
+span{
+    color:dimgray
+}
+
+p{
+    font-family: Arial,"Bahnshrift",Bahnshrift, sans-serif;
+    font-style: normal;
+    text-align: justify;
+    text-decoration: none;
+    text-transform: none;
+    white-space: normal;
+}
+
+.example-block{
+    margin: 10px;
+    padding: 20px,40px,5px,10px;
+    box-sizing: border-box;
+}
