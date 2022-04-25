@@ -1,0 +1,35 @@
+div{
+    font-size: 30px;
+}
+span{
+    color:dimgray
+}
+
+body{
+    text-align: center;
+    font-size: 40px
+}
+    
+p{
+    font-family: Arial,"Bahnshrift",Bahnshrift, sans-serif;
+    font-style: normal;
+    text-align: justify;
+    text-decoration: none;
+    text-transform: none;
+    white-space: normal;
+    background-color: blueviolet;
+    width:1400px
+    
+}
+
+header{
+    height: 230px;
+    margin: 10px;
+    padding: 20px,40px,5px,10px;
+    box-sizing: border-box;
+    background-color: purple;
+    background-image: url("../img/%D0%A4%D0%BE%D0%BD.png");
+    background-position: center;
+    background-size: 132%;125%
+        
+}
