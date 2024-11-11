@@ -136,21 +136,24 @@
                     <h2>Мои контакты</h2>
                     <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, laborum.</p>
                     <ul>
-                        <li>Телеграм</li>
-                        <li>ВК</li>
-                        <li>Почта</li>
+                        <li>Телеграм<a>@leonardo_Wer</a></li>
+                        <li>ВК<a href="https://vk.com/leonardo_Wer" target="_blank">Левахин Лев</a></li>
+                        <li>Почта<a>leonardoWer16@gmail.com</a></li>
                     </ul>
                     <div class="request">
                         <h2>Оставить заявку</h2>
-                        <label>
-                            <input type="text" name="text_input" value="" placeholder="Имя">
-                        </label>
-                        <label>
-                            <input type="text" name="text_input" value="" placeholder="Ваша почта">
-                        </label> <br>
-
-                        <label for=""></label><textarea name="namel" id="" cols="30" rows="10" placeholder="Сообщение"></textarea> <br>
-                        <input type="reset" value="Отправить">
+                        <form id="request_form" action="">
+                            <label>
+                                <input type="text" value="" placeholder="Имя">
+                            </label>
+                            <label>
+                                <input type="email" value="" placeholder="Ваша почта">
+                            </label>
+                            <label for="">
+                                <textarea name="description" id="" cols="30" rows="10" placeholder="Дополнительная информация"></textarea>
+                            </label>
+                            <input type="submit" value="Отправить">
+                        </form>
                     </div>
                 </div>
             </footer>

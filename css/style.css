@@ -335,16 +335,25 @@ nav {
 }
 
 .contacts ul {
-    color: #002e7c;
+    color: #13123c;
     font-size: 25px;
+    font-weight: 700;
     margin-top: 0.8%;
     margin-left: 30%;
     float: left;
 }
 
 .contacts ul li {
-    text-align: center;
+    text-align: left;
     line-height: 50px;
+}
+
+.contacts ul li a{
+    line-height: 50px;
+    font-size: 20px;
+    padding-left: 20px;
+    color: #002e7c;
+    font-weight: 600;
 }
 
 .request {
@@ -364,7 +373,15 @@ nav {
     margin-top:20px;
 }
 
-.request input[type="reset"] {
+.request input[type="email"] {
+    height: 40px;
+    width: 25%;
+    font-size: 20px;
+    padding: 10px;
+    margin-top:20px;
+}
+
+.request input[type="submit"] {
     height: 55px;
     width: 50%;
     font-size: 22px;
