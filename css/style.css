@@ -1,66 +1,61 @@
-body{
+body {
     font-family: Arial,sans-serif
-    
 }
 
-nav{
+nav {
     width: 100%;
     height: 60px;
     background: #13123c;
-    
-} 
-.logo{
-    color: #e0e0e7;
-    font-size: 28px;
-    line-height: 60px;
-    padding-left: 280px;
-    float: left;
-    
 }
 
-
-.menu{
-    float: left;
-    padding-left: 400px;
+.name {
     color: #e0e0e7;
-    font-size: 26px
-    
-}
-ul li{
-    float: left;
+    font-size: 25px;
     line-height: 60px;
+    padding-left: 10%;
+    float: left;
+}
+
+.menu {
+    float: left;
+    margin-left: 16%;
+    color: #e0e0e7;
+    font-size: 22px;
+    line-height: 60px;
+}
+
+.menu ul li {
+    float: left;
     margin-right: 40px;
     text-transform: uppercase;
 }
 
 .main{
     width: 100%;
-    height: calc(100% - 60px);
+    height: 80%;
     background:url(../img/man.png)86% 100%/auto 100%no-repeat ,url(../img/bg.jpg) center/cover no-repeat;
     
 }
 
-.title__container{
+.title_container{
     float: left;
-    margin: 300px 0px 0px 330px;
+    margin: 300px 0 0 330px;
     color: #13123c;
     text-align: center;
 }
 
-.title__container h1{
+.title_container h1{
     font-size: 60px;
     font-weight: bold;
-    
 }
 
-.title__container h3{
+.title_container h3{
     font-size: 30px;
     margin-top: 3px;
     color: #002e7c;
-    
 }
 
-.title__container input{
+.title_container input{
     height: 40px;
     text-align: center;
     border: 2px solid #002e7c;
@@ -68,7 +63,97 @@ ul li{
     border-radius: 5px;
     color: #002e7c;
     font-size: 14px;
-    padding: 0px 13px;
-    margin-top: 15px;
-    margin: 10px 2px 0px 2px;
+    padding: 0 13px;
+    margin: 10px 2px 0 2px;
+}
+
+.about {
+    text-align: center;
+    font-family: Arial,sans-serif;
+    display: inline-block;
+}
+
+.about h2 {
+    margin-top: 20px;
+    color: #13123c;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.about p {
+    margin-top: 8px;
+    font-size: 22px;
+}
+
+.about button {
+    height: 40px;
+    text-align: center;
+    border: 2px solid #002e7c;
+    background: none;
+    border-radius: 5px;
+    color: #13123c;
+    font-size: 14px;
+    padding: 0 13px;
+    margin: 10px 2px 0 2px;
+}
+
+.about_container {
+    height: 300px;
+    width: 40%;
+    padding: 10px;
+    margin-top: 2%;
+    margin-left: 10%;
+    border: 5px solid #002e7c;
+    border-radius: 10px;
+    float: left;
+}
+
+.resume_container {
+    height: 300px;
+    width: 40%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 8%;
+    border: 5px solid #002e7c;
+    border-radius: 10px;
+    float: left;
+}
+
+.resume_container h2 {
+    color: #002e7c;
+}
+
+.my_skills {
+    float: left;
+    margin-left: 10%;
+    max-width: 80%;
+}
+
+.my_skills ul li {
+    max-width: 50%;
+}
+
+.my_works{
+    float: left;
+    margin-top: 5%;
+}
+
+.find_cost{
+    float: left;
+    margin-top: 5%;
+}
+
+.statistics{
+    float: left;
+    margin-top: 5%;
+}
+
+.reviews{
+    float: left;
+    margin-top: 5%;
+}
+
+.contacts{
+    float: left;
+    margin-top: 5%;
 }
