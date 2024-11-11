@@ -1,5 +1,5 @@
 body {
-    font-family: Arial,sans-serif
+    font-family: Arial,sans-serif;
 }
 
 nav {
@@ -18,9 +18,9 @@ nav {
 
 .menu {
     float: left;
-    margin-left: 16%;
+    margin-left: 20%;
     color: #e0e0e7;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 60px;
 }
 
@@ -39,7 +39,7 @@ nav {
 
 .title_container{
     float: left;
-    margin: 300px 0 0 330px;
+    margin: 200px 0 0 330px;
     color: #13123c;
     text-align: center;
 }
@@ -80,8 +80,13 @@ nav {
     font-weight: bold;
 }
 
+.about h3 {
+    color: #002e7c;
+    font-size: 25px;
+}
+
 .about p {
-    margin-top: 8px;
+    margin-top: 2%;
     font-size: 22px;
 }
 
@@ -99,55 +104,208 @@ nav {
 
 .about_container {
     height: 300px;
-    width: 40%;
+    width: 48%;
     padding: 10px;
     margin-top: 2%;
     margin-left: 10%;
-    border: 5px solid #002e7c;
+    border: 3px solid #002e7c;
     border-radius: 10px;
     float: left;
+}
+.about_container p {
+    padding: 2.5%;
 }
 
 .resume_container {
     height: 300px;
-    width: 40%;
+    width: 30%;
     margin-top: 2%;
     margin-left: 2%;
     margin-right: 8%;
-    border: 5px solid #002e7c;
+    border: 3px solid #002e7c;
     border-radius: 10px;
     float: left;
 }
 
 .resume_container h2 {
+    margin-top: 40px;
     color: #002e7c;
+}
+
+.resume_container button {
+    margin-top: 20px;
+    height: 80px;
+    width: 200px;
+    font-size: 20px;
 }
 
 .my_skills {
     float: left;
+    height: 700px;
+    width: 80%;
+    margin-top: 2%;
+    margin-right: 8%;
+    border: 3px solid #002e7c;
+    border-radius: 10px;
     margin-left: 10%;
-    max-width: 80%;
+    text-align: center;
 }
 
-.my_skills ul li {
-    max-width: 50%;
+.my_skills h2 {
+    margin-top: 30px;
+}
+
+.my_skills ul li h3 {
+    margin-top: 30px;
+    margin-bottom: -10px;
+}
+
+.my_skills ul p {
+    max-width: 60%;
+    margin-left: 20%;
 }
 
 .my_works{
     float: left;
-    margin-top: 5%;
+    height: 700px;
+    width: 80%;
+    margin-top: 2%;
+    margin-right: 8%;
+    border: 3px solid #002e7c;
+    border-radius: 10px;
+    margin-left: 10%;
+    text-align: center;
+}
+.my_works p {
+    margin-left: 20%;
+    max-width: 60%;
 }
 
-.find_cost{
+.my_works img {
+    padding: 2%;
+    height: 60%;
+    width: 54%;
+}
+.my_works table {
+    margin-top: 20px;
+    max-width: 70%;
+    margin-left: 25%;
+
+}
+
+.my_works th h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.my_works td {
+    font-size: 15px;
+    text-align: center;
+    padding: 2%;
+}
+
+.plugins {
+    text-align: center;
+    font-family: Arial,sans-serif;
+    display: inline-block;
+}
+
+.plugins h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #13123c;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.plugins h3 {
+    color: #002e7c;
+    font-size: 25px;
+}
+
+.plugins p {
+    margin-top: 2%;
+    font-size: 22px;
+}
+
+.plugins button {
+    height: 40px;
+    text-align: center;
+    border: 2px solid #002e7c;
+    background: none;
+    border-radius: 5px;
+    color: #13123c;
+    font-size: 14px;
+    padding: 0 13px;
+    margin: 10px 2px 0 2px;
+}
+
+.find_cost {
     float: left;
-    margin-top: 5%;
+    margin-top: 2%;
+    height: 400px;
+    width: 40%;
+    padding: 10px;
+    margin-left: 10%;
+    border: 3px solid #002e7c;
+    border-radius: 10px;
+}
+.find_cost h3 {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 2%;
+}
+.find_cost select {
+    border: 2px solid #002e7c;
+    border-radius: 5px;
+    background: none;
+    height: 40px;
+    width: 80px;
+    text-align: center;
+    font-size: 12px;
+}
+.find_cost select option {
+    font-size: 15px;
+}
+.notebook_photo {
+    max-width: 40%;
+    float: right;
+    margin-top: 2%;
+    margin-right: 10%;
+
+}
+.notebook_photo img{
+    height: 400px;
 }
 
-.statistics{
+.statistics {
     float: left;
-    margin-top: 5%;
+    height: 250px;
+    width: 80%;
+    margin-top: 2%;
+    margin-right: 8%;
+    border: 3px solid #002e7c;
+    border-radius: 10px;
+    margin-left: 10%;
+    text-align: center;
 }
 
+.statistics ul {
+    color: #002e7c;
+    font-size: 21px;
+    line-height: 100px;
+    margin-top: 0.8%;
+    margin-left: 5%;
+    float: left;
+}
+.statistics ul li {
+    float: left;
+    line-height: 100px;
+    margin-left: 40px;
+}
 .reviews{
     float: left;
     margin-top: 5%;
