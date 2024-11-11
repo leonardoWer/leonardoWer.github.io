@@ -12,34 +12,34 @@ nav {
     color: #e0e0e7;
     font-size: 25px;
     line-height: 60px;
-    padding-left: 10%;
+    padding-left: 200px;
     float: left;
 }
 
 .menu {
     float: left;
-    margin-left: 20%;
-    color: #e0e0e7;
-    font-size: 20px;
-    line-height: 60px;
+    padding-left: 500px;
 }
 
-.menu ul li {
+.menu li {
+    line-height: 60px;
     float: left;
     margin-right: 40px;
     text-transform: uppercase;
+    color: #e0e0e7;
+    font-size: 18px;
+    letter-spacing: -0.5px;
 }
 
 .main{
     width: 100%;
-    height: 80%;
-    background:url(../img/man.png)86% 100%/auto 100%no-repeat ,url(../img/bg.jpg) center/cover no-repeat;
-    
+    height: calc(100% - 60px);
+    background: url(../img/man.png) 90% 100% / auto 100% no-repeat , url(../img/bg.jpg) center/cover no-repeat;
 }
 
-.title_container{
+.title_container {
     float: left;
-    margin: 200px 0 0 330px;
+    margin: 280px 0 0 330px;
     color: #13123c;
     text-align: center;
 }
@@ -49,27 +49,27 @@ nav {
     font-weight: bold;
 }
 
-.title_container h3{
-    font-size: 30px;
-    margin-top: 3px;
+.title_container h3 {
+    font-size: 18px;
+    margin-top: 5px;
     color: #002e7c;
 }
 
-.title_container input{
+.title_container input {
     height: 40px;
+    width: 120px;
     text-align: center;
     border: 2px solid #002e7c;
     background: none;
     border-radius: 5px;
     color: #002e7c;
-    font-size: 14px;
-    padding: 0 13px;
-    margin: 10px 2px 0 2px;
+    font-size: 15px;
+    padding: 0 15px;
+    margin: 15px 2px 0 5px;
 }
 
 .about {
     text-align: center;
-    font-family: Arial,sans-serif;
     display: inline-block;
 }
 
@@ -133,7 +133,7 @@ nav {
 }
 
 .resume_container button {
-    margin-top: 20px;
+    margin-top: 30px;
     height: 80px;
     width: 200px;
     font-size: 20px;
@@ -156,8 +156,8 @@ nav {
 }
 
 .my_skills ul li h3 {
-    margin-top: 30px;
-    margin-bottom: -10px;
+    margin-top: 40px;
+    padding-bottom: 10px;
 }
 
 .my_skills ul p {
@@ -190,7 +190,6 @@ nav {
     margin-top: 20px;
     max-width: 70%;
     margin-left: 25%;
-
 }
 
 .my_works th h3{
@@ -227,6 +226,7 @@ nav {
 
 .plugins p {
     margin-top: 2%;
+    padding: 2%;
     font-size: 22px;
 }
 
@@ -258,6 +258,7 @@ nav {
     font-weight: bold;
     padding: 2%;
 }
+
 .find_cost select {
     border: 2px solid #002e7c;
     border-radius: 5px;
@@ -267,18 +268,21 @@ nav {
     text-align: center;
     font-size: 12px;
 }
+
 .find_cost select option {
     font-size: 15px;
 }
+
 .notebook_photo {
     max-width: 40%;
     float: right;
     margin-top: 2%;
     margin-right: 10%;
-
 }
+
 .notebook_photo img{
     height: 400px;
+    border-radius: 5px;
 }
 
 .statistics {
@@ -301,17 +305,81 @@ nav {
     margin-left: 5%;
     float: left;
 }
+
 .statistics ul li {
     float: left;
     line-height: 100px;
     margin-left: 40px;
 }
+
 .reviews{
     float: left;
-    margin-top: 5%;
+    height: 300px;
+    width: 80%;
+    margin-top: 2%;
+    margin-right: 8%;
+    border: 3px solid #002e7c;
+    border-radius: 10px;
+    margin-left: 10%;
+    text-align: center;
 }
 
 .contacts{
     float: left;
-    margin-top: 5%;
+    height: 800px;
+    width: 80%;
+    margin: 2% 40px 8% 10%;
+    border: 3px solid #002e7c;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contacts ul {
+    color: #002e7c;
+    font-size: 25px;
+    margin-top: 0.8%;
+    margin-left: 30%;
+    float: left;
+}
+
+.contacts ul li {
+    text-align: center;
+    line-height: 50px;
+}
+
+.request {
+    float: left;
+    margin: 4% 20px 8% 10%;
+    border: 3px solid #002e7c;
+    border-radius: 10px;
+    height: 370px;
+    width: 80%;
+}
+
+.request input[type="text"] {
+    height: 40px;
+    width: 25%;
+    font-size: 20px;
+    padding: 10px;
+    margin-top:20px;
+}
+
+.request input[type="reset"] {
+    height: 55px;
+    width: 50%;
+    font-size: 22px;
+    padding: 10px;
+    color: #13123c;
+    font-weight: bold;
+    border: #002e7c solid 3px;
+    border-radius: 10px;
+    background: none;
+}
+
+.request textarea {
+    height: 130px;
+    width: 50%;
+    font-size: 20px;
+    padding: 10px;
+    text-align: left;
 }
