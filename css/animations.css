@@ -164,7 +164,7 @@ h2:hover {
     60 % { letter-spacing: 6px; }
     80% { letter-spacing: 7px; }
     90% { letter-spacing: 8px; }
-    100% { letter-spacing: 9px; transform: scale(1.09)}
+    100% { letter-spacing: 9px; transform: scale(1.09); font-weight: bold}
 }
 
 .find_cost h3:hover {
@@ -173,10 +173,15 @@ h2:hover {
     animation: letter_spacing_effect 0.2s ease forwards;
 }
 
+.my_skills li h3:hover {
+    -webkit-animation: letter_spacing_effect 0.2s ease forwards;
+    -o-animation: letter_spacing_effect 0.2s ease forwards;
+    animation: letter_spacing_effect 0.2s ease forwards;
+}
+
 @keyframes photo_left_cross {
     0% { transform: scale(1) }
     100% {transform: scale(1.1)}
-
 }
 
 .notebook_photo:hover {
@@ -189,4 +194,6 @@ h2:hover {
     -webkit-animation: logo_hover 2s ease;
     -o-animation: logo_hover 2s ease;
     animation: logo_hover 2s ease;
+
 }
+
