@@ -154,3 +154,39 @@ h2:hover {
     -o-animation: text_shadow_effect 3s ease-in-out;
     animation: text_shadow_effect 3s ease-in-out;
 }
+
+@keyframes letter_spacing_effect {
+    0% { letter-spacing: 1px; }
+    20% { letter-spacing: 2px; }
+    30% { letter-spacing: 3px; }
+    40% { letter-spacing: 4px; }
+    50% { letter-spacing: 5px; }
+    60 % { letter-spacing: 6px; }
+    80% { letter-spacing: 7px; }
+    90% { letter-spacing: 8px; }
+    100% { letter-spacing: 9px; transform: scale(1.09)}
+}
+
+.find_cost h3:hover {
+    -webkit-animation: letter_spacing_effect 0.2s ease forwards;
+    -o-animation: letter_spacing_effect 0.2s ease forwards;
+    animation: letter_spacing_effect 0.2s ease forwards;
+}
+
+@keyframes photo_left_cross {
+    0% { transform: scale(1) }
+    100% {transform: scale(1.1)}
+
+}
+
+.notebook_photo:hover {
+    -webkit-animation: photo_left_cross 2s ease forwards;
+    -o-animation: photo_left_cross 2s ease forwards;
+    animation: photo_left_cross 2s ease forwards;
+}
+
+.statistics ul li:active{
+    -webkit-animation: logo_hover 2s ease;
+    -o-animation: logo_hover 2s ease;
+    animation: logo_hover 2s ease;
+}

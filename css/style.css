@@ -29,6 +29,7 @@ nav {
     background: #13123c;
     position: fixed;
     z-index: 1;
+
 }
 
 .name {
@@ -41,9 +42,9 @@ nav {
     text-align: center;
 }
 
-.menu {
-    float: left;
-    padding-left: 500px;
+.menu ul{
+    display: table;
+    margin: 0 auto;
 }
 
 .menu li {
@@ -75,7 +76,7 @@ nav {
 
 .title_container {
     float: left;
-    margin: 280px 0 0 330px;
+    margin: 300px 0 0 330px;
     color: #13123c;
     text-align: center;
 }
@@ -112,35 +113,40 @@ nav {
     color: #e0e0e7;
 }
 
+/* Наполнение сайта*/
+
 .about {
     text-align: center;
-    display: inline-block;
 }
 
 .about h3 {
     color: #002e7c;
     font-size: 25px;
+    line-height: 50px;
+    width: max-content;
+    text-align: center;
 }
 
 .about p {
     font-size: 22px;
+    padding: 10px;
 }
 
 .about button {
-    height: 40px;
-    text-align: center;
     border: 2px solid #002e7c;
     background: none;
     border-radius: 5px;
     color: #13123c;
     font-size: 14px;
-    padding: 0 13px;
-    margin: 10px 2px 0 2px;
 }
 
-.about_container {
+.about_me {
+    display: flex;
     height: max-content;
-    width: 48%;
+}
+.about_container {
+    align-items: stretch;
+    width: 55%;
     padding-bottom: 100px;
     margin-top: 2%;
     margin-left: 10%;
@@ -149,35 +155,34 @@ nav {
     float: left;
 }
 .about_container p {
-    padding: 2.5%;
+    margin: 0 auto;
+    width: 70%;
 }
-
 .resume_container {
-    height: max-content;
-    width: 30%;
+    align-items: stretch;
+    width: 35%;
     margin-top: 2%;
     margin-left: 2%;
-    margin-right: 8%;
+    margin-right: 10%;
     border: 3px solid #002e7c;
     border-radius: 10px;
     float: left;
-    padding-bottom: 100px;
 }
-
 .resume_container h2 {
     color: #002e7c;
+    margin: 0 auto;
+    width: 90%;
 }
-
 .resume_container button {
     margin-top: 30px;
-    height: 80px;
-    width: 200px;
     font-size: 20px;
+    padding: 30px;
 }
+
 
 .my_skills {
     float: left;
-    height: 700px;
+    height: max-content;
     width: 80%;
     margin-top: 2%;
     margin-right: 8%;
@@ -185,25 +190,22 @@ nav {
     border-radius: 10px;
     margin-left: 10%;
     text-align: center;
+    padding-bottom: 60px;
 }
 
-.my_skills h2 {
-    margin-top: 30px;
-}
-
-.my_skills ul li h3 {
-    margin-top: 40px;
+.my_skills li h3 {
+    margin: 10px auto;
     padding-bottom: 10px;
 }
 
-.my_skills ul p {
+.my_skills ul li p {
     max-width: 60%;
-    margin-left: 20%;
+    margin: 0 auto;
 }
 
 .my_works{
     float: left;
-    height: 700px;
+    height: max-content;
     width: 80%;
     margin-top: 2%;
     margin-right: 8%;
@@ -211,21 +213,18 @@ nav {
     border-radius: 10px;
     margin-left: 10%;
     text-align: center;
-}
-.my_works p {
-    margin-left: 20%;
-    max-width: 60%;
+    padding-bottom: 100px;
 }
 
 .my_works img {
-    padding: 2%;
-    height: 60%;
+    margin: 10px auto 10px auto;
+    height: max-content;
     width: 54%;
 }
 .my_works table {
-    margin-top: 20px;
-    max-width: 70%;
-    margin-left: 25%;
+    width: 40%;
+    height: 20%;
+    margin: 0 auto;
 }
 
 .my_works th h3{
@@ -237,54 +236,43 @@ nav {
 
 .my_works td {
     font-size: 15px;
-    text-align: center;
-    padding: 2%;
+    text-align: left;
+    padding: 10px;
 }
 
 .plugins {
     text-align: center;
-    font-family: Arial,sans-serif;
     display: inline-block;
 }
 
 .plugins h3 {
     color: #002e7c;
     font-size: 25px;
-}
-
-.plugins p {
-    margin-top: 2%;
-    padding: 2%;
-    font-size: 22px;
-}
-
-.plugins button {
-    height: 40px;
+    line-height: 50px;
+    width: max-content;
     text-align: center;
-    border: 2px solid #002e7c;
-    background: none;
-    border-radius: 5px;
-    color: #13123c;
-    font-size: 14px;
-    padding: 0 13px;
-    margin: 10px 2px 0 2px;
+}
+.plugins p {
+    font-size: 22px;
+    padding: 10px;
 }
 
 .find_cost {
     float: left;
     margin-top: 2%;
-    height: 400px;
+    height: max-content;
     width: 40%;
-    padding: 10px;
     margin-left: 10%;
     border: 3px solid #002e7c;
     border-radius: 10px;
+    padding-bottom: 60px;
 }
 .find_cost h3 {
     text-transform: uppercase;
     font-size: 20px;
     font-weight: bold;
-    padding: 2%;
+    margin: 0 auto;
+    letter-spacing: 1px;
 }
 
 .find_cost select {
@@ -302,78 +290,89 @@ nav {
 }
 
 .notebook_photo {
-    max-width: 40%;
-    float: right;
     margin-top: 2%;
-    margin-right: 10%;
+    margin-left: 5%;
+    width: 600px;
+    height: 400px;
+    float: left;
+    background: url(../img/notebook.jpg) 100% 100% / auto 100% no-repeat;
 }
 
-.notebook_photo img{
-    height: 400px;
-    border-radius: 5px;
+.notebook_photo img {
+    margin-top: 4%;
+    width: 30%;
+    float: left;
+    margin-left: 2%;
 }
 
 .statistics {
     float: left;
-    height: 250px;
+    height: max-content;
     width: 80%;
     margin-top: 2%;
     margin-right: 8%;
     border: 3px solid #002e7c;
     border-radius: 10px;
     margin-left: 10%;
-    text-align: center;
+    padding-bottom: 40px;
 }
 
 .statistics ul {
     color: #002e7c;
     font-size: 21px;
-    line-height: 100px;
-    margin-top: 0.8%;
-    margin-left: 5%;
-    float: left;
+    line-height: 60px;
+    display: table;
+    margin: 0 auto;
+
 }
 
 .statistics ul li {
     float: left;
-    line-height: 100px;
-    margin-left: 40px;
+    padding-left: 50px;
 }
 
-.reviews{
+.statistics ul li:hover{
+    letter-spacing: 2px;
+    transform: scale(1.04) skew(1deg, 1deg);
+    font-weight: bold;
+    color: #008aeb;
+}
+
+.reviews {
     float: left;
-    height: 300px;
+    height: max-content;
     width: 80%;
     margin-top: 2%;
     margin-right: 8%;
     border: 3px solid #002e7c;
     border-radius: 10px;
     margin-left: 10%;
-    text-align: center;
+    padding-bottom: 50px;
 }
 
 .contacts{
     float: left;
-    height: 800px;
+    height: max-content;
     width: 80%;
     margin: 2% 40px 8% 10%;
     border: 3px solid #002e7c;
     border-radius: 10px;
     text-align: center;
+    padding-bottom: 50px;
 }
 
 .contacts ul {
+    display: table;
     color: #13123c;
     font-size: 25px;
     font-weight: 700;
-    margin-top: 0.8%;
-    margin-left: 30%;
-    float: left;
+    margin: 20px auto;
 }
 
 .contacts ul li {
     text-align: left;
     line-height: 50px;
+    margin:0 auto ;
 }
 
 .contacts ul li a{
@@ -395,11 +394,12 @@ nav {
 
 .request {
     float: left;
-    margin: 4% 20px 8% 10%;
+    margin: 40px 20px 8% 10%;
     border: 3px solid #002e7c;
     border-radius: 10px;
-    height: 370px;
+    height: max-content;
     width: 80%;
+    padding-bottom: 60px;
 }
 
 .request input[type="text"] {
