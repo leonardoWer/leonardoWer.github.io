@@ -1,0 +1,156 @@
+/* Анимация меню*/
+@keyframes logo_fadein {
+    0% { opacity: 0}
+    100% { opacity: 1}
+}
+
+@keyframes logo_hover {
+    0% { transform: rotate3d(1,0,0, 0deg)}
+    100% { transform: rotate3d(1,0,0,360deg)}
+}
+
+.name {
+    -webkit-animation: logo_fadein 2s ease;
+    -o-animation: logo_fadein 2s ease;
+    animation: logo_fadein 2s ease;
+}
+
+/* Анимация лого при наведении */
+.name:hover {
+    -webkit-animation: logo_hover 1s;
+    -o-animation: logo_hover 1s;
+    animation: logo_hover 1s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
+.name:hover::after {
+    -webkit-animation: logo_fadein 1.5s;
+    -o-animation: logo_fadein 1.5s;
+    animation: logo_fadein 1.5s;
+    content: " ]";
+    transform: none;
+}
+.name:hover::before {
+    -webkit-animation: logo_fadein 1.5s;
+    -o-animation: logo_fadein 1.5s;
+    animation: logo_fadein 1.5s;
+    content: "[ ";
+}
+
+/* Анимация элементов меню*/
+@keyframes menu_open {
+    0% {
+        opacity: 0;
+        margin-top: -100px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+.menu li {
+    -webkit-animation: menu_open 0.4s forwards ease;
+    -o-animation: menu_open 0.4s forwards ease;
+    animation: menu_open 0.4s forwards ease;
+}
+
+.menu li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.menu li:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.menu li:nth-child(4) {
+    animation-delay: 0.6s;
+}
+.menu li:nth-child(5) {
+    animation-delay: 0.8s;
+}
+.menu li:nth-child(6) {
+    animation-delay: 1s;
+}
+
+/* Анимация главного блока*/
+
+.title_container {
+    -webkit-animation: block_slide_left 1s ease forwards;
+    -o-animation: block_slide_left 1s ease forwards;
+    animation: block_slide_left 1s ease forwards;
+    -webkit-animation-delay: 1.2s;
+    -moz-animation-delay: 1.2s;
+    -o-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+    opacity: 0;
+}
+
+@keyframes block_slide_left {
+    0% { margin-left: -50%; }
+    100% { opacity: 1 }
+}
+
+.title_container h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto;
+    border-right: 2px solid #002e7c;
+    -webkit-animation: typing 3s steps(29, end), blink_cursor .75s step-end infinite;
+    -o-animation: typing 3s steps(29, end), blink_cursor .75s step-end infinite;
+    animation: typing 3s steps(29, end), blink_cursor .75s step-end infinite;
+    animation-delay: 2.7s;
+}
+
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 85%; }
+}
+
+@keyframes blink_cursor {
+    from, to { border-color: transparent }
+    50% { border-color: #002e7c; }
+}
+
+/* Оформление текста */
+@keyframes text_shadow_effect {
+    0% {transform: translateY(0);
+        text-shadow:
+                0 0 0 #0c2ffb,
+                0 0 0 #2cfcfd,
+                0 0 0 #fb203b,
+                0 0 0 #fefc4b;
+    }
+    20% {transform: translateY(-0.7em);
+        text-shadow:
+                0 0.125em 0 #0c2ffb,
+                0 0.25em 0 #2cfcfd,
+                0 -0.125em 0 #fb203b,
+                0 -0.25em 0 #fefc4b;
+    }
+    40% {transform: translateY(0.4em);
+        text-shadow:
+                0 -0.0625em 0 #0c2ffb,
+                0 -0.125em 0 #2cfcfd,
+                0 0.0625em 0 #fb203b,
+                0 0.125em 0 #fefc4b;
+    }
+    60% {transform: translateY(-0.25em);
+        text-shadow:
+                0 0.03125em 0 #0c2ffb,
+                0 0.0625em 0 #2cfcfd,
+                0 -0.03125em 0 #fb203b,
+                0 -0.0625em 0 #fefc4b;
+    }
+    80% {transform: translateY(0);
+        text-shadow:
+                0 0 0 #0c2ffb,
+                0 0 0 #2cfcfd,
+                0 0 0 #fb203b,
+                0 0 0 #fefc4b;
+    }
+}
+
+h2:hover {
+    -webkit-animation: text_shadow_effect 3s ease-in-out;
+    -o-animation: text_shadow_effect 3s ease-in-out;
+    animation: text_shadow_effect 3s ease-in-out;
+}
