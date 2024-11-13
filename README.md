@@ -21,3 +21,5 @@
 ### Полезные материалы для Web - разработки
 - [Справочник синтаксиса](https://webref.ru/css)
 - [75 анимаций текста](https://frontendresource.com/css-text-animations/)
+- [Шрифты](https://fonts.google.com)
+- [Обычный шрифт в Web](https://www.font2web.com/)
