@@ -3,14 +3,18 @@
         background: none;
         height: 700px;
     }
-    .statistics_background {background: none}
+    .statistics_background {
+        background: none;
+        height: 600px;
+        margin-top: -100px;
+    }
     .notebook_photo {display: none}
     .my_works img {
         width: 500px;
         height: 300px;
         margin: 30px 30px 20px 0;
     }
-    .find_cost, .my_skills, .my_works{
+    .find_cost, .my_skills, .my_works, .statistics, .contacts, .reviews {
         width: 90%;
     }
     .resume_container {
