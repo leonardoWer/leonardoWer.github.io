@@ -21,3 +21,7 @@
     }
     .statistics_background {background: none}
 }
+
+@media (max-width: 1200px) {
+    background: none;
+}
