@@ -4,6 +4,7 @@
     100% { opacity: 1}
 }
 
+/* Вращение текста на 360 вокруг себя */
 @keyframes logo_hover {
     0% { transform: rotate3d(1,0,0, 0deg)}
     100% { transform: rotate3d(1,0,0,360deg)}
@@ -111,6 +112,7 @@
 }
 
 /* Оформление текста */
+
 @keyframes text_shadow_effect {
     0% {transform: translateY(0);
         text-shadow:
@@ -149,11 +151,14 @@
     }
 }
 
+/* Заголовки */
 h2:hover {
     -webkit-animation: text_shadow_effect 3s ease-in-out;
     -o-animation: text_shadow_effect 3s ease-in-out;
     animation: text_shadow_effect 3s ease-in-out;
 }
+
+/* Второстепенные заголовки */
 
 @keyframes letter_spacing_effect {
     0% { letter-spacing: 1px; }
@@ -179,6 +184,8 @@ h2:hover {
     animation: letter_spacing_effect 0.2s ease forwards;
 }
 
+/* Вылет фото */
+
 @keyframes photo_left_cross {
     0% { transform: scale(1) }
     100% {transform: scale(1.1)}
@@ -190,10 +197,9 @@ h2:hover {
     animation: photo_left_cross 2s ease forwards;
 }
 
-.statistics ul li:active{
+.statistic_item h3:active{
     -webkit-animation: logo_hover 2s ease;
     -o-animation: logo_hover 2s ease;
     animation: logo_hover 2s ease;
-
 }
 
