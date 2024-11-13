@@ -1,0 +1,23 @@
+@media (max-width: 900px) {
+    h3, p {
+        font-size: 12px;
+    }
+    nav, .menu li {
+        height: max-content;
+        font-size: 10px;
+    }
+
+    .main {
+        background: none;
+    }
+    .title_container {
+        margin-left: 15%;
+    }
+    .title_container h1{
+        font-size: 20px;
+    }
+    .title_container h3 {
+        font-size: 16px;
+    }
+    .statistics_background {background: none}
+}
