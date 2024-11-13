@@ -172,6 +172,18 @@ h2:hover {
     100% { letter-spacing: 9px; transform: scale(1.09); font-weight: bold}
 }
 
+@keyframes letter_spacing_effect_light {
+    0% { letter-spacing: 1px; }
+    20% { letter-spacing: 1px; }
+    30% { letter-spacing: 1px; }
+    40% { letter-spacing: 2px; }
+    50% { letter-spacing: 2px; }
+    60 % { letter-spacing: 2px; }
+    80% { letter-spacing: 3px; }
+    90% { letter-spacing: 3px; }
+    100% { letter-spacing: 3px; font-weight: bold}
+}
+
 .find_cost h3:hover {
     -webkit-animation: letter_spacing_effect 0.2s ease forwards;
     -o-animation: letter_spacing_effect 0.2s ease forwards;
@@ -202,4 +214,22 @@ h2:hover {
     -o-animation: logo_hover 2s ease;
     animation: logo_hover 2s ease;
 }
+.request input[type="submit"]:active {
+    transform: scale(1.08);
+    font-size: 18px;
+    -webkit-animation: letter_spacing_effect 0.2s ease forwards;
+    -o-animation: letter_spacing_effect 0.2s ease forwards;
+    animation: letter_spacing_effect 0.2s ease forwards;
+}
 
+.my_works th h3:hover {
+    -webkit-animation: letter_spacing_effect 0.2s ease forwards;
+    -o-animation: letter_spacing_effect 0.2s ease forwards;
+    animation: letter_spacing_effect 0.2s ease forwards;
+}
+.resume_container button:active {
+    transform: scale(1.02);
+    -webkit-animation: letter_spacing_effect_light 0.02s ease forwards;
+    -o-animation: letter_spacing_effect_light 0.02s ease forwards;
+    animation: letter_spacing_effect_light 0.02s ease forwards;
+}
