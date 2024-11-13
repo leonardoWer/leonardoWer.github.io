@@ -1,3 +1,26 @@
+@media (max-width: 1300px) {
+    .main {
+        background: none;
+        height: 700px;
+    }
+    .statistics_background {background: none}
+    .notebook_photo {display: none}
+    .my_works img {
+        width: 500px;
+        height: 300px;
+        margin: 30px 30px 20px 0;
+    }
+    .find_cost, .my_skills, .my_works{
+        width: 90%;
+    }
+    .resume_container {
+        display: none;
+    }
+    .about_container {
+        width: 90%;
+    }
+}
+
 @media (max-width: 900px) {
     h3, p {
         font-size: 12px;
@@ -6,7 +29,6 @@
         height: max-content;
         font-size: 10px;
     }
-
     .main {
         background: none;
     }
@@ -19,9 +41,13 @@
     .title_container h3 {
         font-size: 16px;
     }
-    .statistics_background {background: none}
-}
-
-@media (max-width: 1200px) {
-    background: none;
+    .statistics_background {
+        background: none
+    }
+    .notebook_photo {display: none}
+    .my_works img {
+        width: 200px;
+        height: 100px;
+        margin: 30px 30px 20px 0;
+    }
 }
