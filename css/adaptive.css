@@ -1,57 +1,91 @@
-@media (max-width: 1300px) {
+@media (max-width: 1600px) {
     .main {
-        background: none;
         height: 700px;
+        position: relative;
     }
+    .main::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    .title_container,.title_container h3,.title_container h1, .title_container input  {
+        position: relative;
+        z-index: 2;
+        color: #e0e0e7;
+        right: 100px;
+    }
+    .title_container h3 {
+        color:#e3e9ff;
+    }
+    .notebook_photo {
+        display: none;
+    }
+    .find_cost {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1300px) {
     .statistics_background {
-        background: none;
-        height: 600px;
-        margin-top: -100px;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
     }
-    .notebook_photo {display: none}
+    .statistics_background::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+    }
+    .statistics, .statistics_item, .statistics_item p, .statistics_item h3 {
+        position: relative;
+        z-index: 2;
+    }
+
+    .notebook_photo {
+        display: none;
+    }
+
     .my_works img {
         width: 500px;
         height: 300px;
         margin: 30px 30px 20px 0;
     }
+    .my_works table {
+        display: none;
+    }
     .find_cost, .my_skills, .my_works, .statistics, .contacts, .reviews {
         width: 90%;
     }
+    .about_me {display: block}
     .resume_container {
-        display: none;
+        width: 90%;
+        margin-left: 10%;
+        margin-top: 3%;
+        padding-bottom: 100px;
     }
     .about_container {
         width: 90%;
     }
 }
 
-@media (max-width: 900px) {
-    h3, p {
-        font-size: 12px;
+@media (max-width: 1100px) {
+    .name {
+        margin-left: 10px;
     }
-    nav, .menu li {
-        height: max-content;
-        font-size: 10px;
+    .menu ul li{
+        font-size: 14px;
     }
-    .main {
-        background: none;
-    }
-    .title_container {
-        margin-left: 15%;
-    }
-    .title_container h1{
-        font-size: 20px;
-    }
-    .title_container h3 {
-        font-size: 16px;
-    }
-    .statistics_background {
-        background: none
-    }
-    .notebook_photo {display: none}
-    .my_works img {
-        width: 200px;
-        height: 100px;
-        margin: 30px 30px 20px 0;
+}
+@media (max-width: 870px) {
+    .menu {
+        display: none;
     }
 }

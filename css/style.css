@@ -35,7 +35,7 @@ nav {
     height: 60px;
     background: #13123c;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
 }
 
 .name {
@@ -311,13 +311,6 @@ nav {
     height: 500px;
     float: left;
     background: url(../img/notebook.jpg) 100% 100% / auto 100% no-repeat;
-}
-
-.notebook_photo img {
-    margin-top: 4%;
-    width: 30%;
-    float: left;
-    margin-left: 2%;
 }
 
 .statistics_background {
