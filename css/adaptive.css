@@ -1,4 +1,7 @@
 @media (max-width: 1300px) {
+    .menu {
+        margin: 0 10% 0 30%;
+    }
     .main {
         height: 100%;
         position: relative;
