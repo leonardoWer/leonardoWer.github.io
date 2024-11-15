@@ -79,6 +79,7 @@
     }
 }
 
+
 @media (max-width: 880px) {
     .menu {
         display: none;
@@ -96,7 +97,7 @@
         display: block;
         background: url("../img/im_small.jpg") center /cover no-repeat;
         width: 340px;
-        height: 40%;
+        height: 340px;
         border: 5px solid #002e7c;
         border-radius: 100%;
         position: relative;
@@ -104,6 +105,7 @@
         margin: -20% 0 20px 5%;
     }
 }
+
 
 @media (max-width: 480px) {
     .title_container h1 {
@@ -115,7 +117,7 @@
     }
     .small_photo {
         width: 240px;
-        height: 27%;
+        height: 240px;
     }
     .name {
         margin-left: 10px;
