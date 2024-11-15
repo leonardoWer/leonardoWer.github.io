@@ -19,6 +19,7 @@
 - [В папке src\img находятся все изображения](img)
 
 ### Полезные материалы для Web - разработки
+- [Колесо подбора цветов](https://get-color.ru/color-wheel/)
 - [Справочник синтаксиса](https://webref.ru/css)
 - [75 анимаций текста](https://frontendresource.com/css-text-animations/)
 - [Шрифты](https://fonts.google.com)
