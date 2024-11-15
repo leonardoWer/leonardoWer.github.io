@@ -196,6 +196,9 @@ h2:hover {
     -o-animation: letter_spacing_effect 0.2s ease forwards;
     animation: letter_spacing_effect 0.2s ease forwards;
 }
+.my_skills_item img:hover {
+    transform: scale(1.05);
+}
 
 /* Вылет фото */
 
