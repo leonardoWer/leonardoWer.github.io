@@ -122,7 +122,9 @@ nav {
     background: #002e7c;
     color: #e0e0e7;
 }
-
+.small_photo {
+    display: none;
+}
 /* Наполнение сайта*/
 
 .about {
