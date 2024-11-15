@@ -7,6 +7,7 @@
     <meta name="author" content="leonardo_Wer">
     <meta name="robots" content="all">
     <meta property="og:title" content="Я создал свою первую..">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лев Левахин - Web-разработчик</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
@@ -15,7 +16,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
    <body>
@@ -53,31 +53,43 @@
 
                 <div class="about_container">
                     <h2>Обо мне</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore illum, voluptate maxime aut est aliquid, earum ab dolore aperiam quisquam quasi facere repellat eveniet pariatur illo molestiae laudantium.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore illum, voluptate maxime aut est aliquid, earum ab dolore aperiam quisquam quasi facere repellat eveniet pariatur illo molestiae laudantium.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore illum, voluptate maxime aut est aliquid, earum ab dolore aperiam quisquam quasi facere repellat eveniet pariatur illo molestiae laudantium.</p>
                 </div>
 
                 <div class="resume_container">
                     <h2>Моё резюме</h2>
                     <button type="button">Скачать резюме</button>
                 </div>
+        </section>
 
-            </section>
+        <div class="my_skills_background">
             <section class="my_skills">
                 <h2>Что я умею</h2>
-                <ul>
-                    <li> <h3>Веб дизайн</h3></li>
-                    <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem architecto ducimus, nisi quis maxime, quae mollitia tenetur quasi odio ullam.</p></li>
+                <div class="my_skills_item">
+                    <img src="img/icons/web.png" alt="web">
+                    <h3>Веб дизайн</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem architecto ducimus, nisi quis maxime, quae mollitia tenetur quasi odio ullam.</p>
+                </div>
 
-                    <li> <h3>Разработка</h3></li>
-                    <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem architecto ducimus, nisi quis maxime, quae mollitia tenetur quasi odio ullam.</p></li>
+                <div class="my_skills_item">
+                    <img src="img/icons/prog.png" alt="prog">
+                     <h3>Разработка</h3></li>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem architecto ducimus, nisi quis maxime, quae mollitia tenetur quasi odio ullam.</p>
+                </div>
 
-                    <li> <h3>Оптимизация</h3></li>
-                    <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem architecto ducimus, nisi quis maxime, quae mollitia tenetur quasi odio ullam.</p></li>
+                <div class="my_skills_item">
+                    <img src="img/icons/ceo.png" alt="ceo">
+                    <h3>Оптимизация</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem architecto ducimus, nisi quis maxime, quae mollitia tenetur quasi odio ullam.</p>
+                </div>
 
-                    <li> <h3>Маркетинг</h3></li>
-                    <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem architecto ducimus, nisi quis maxime, quae mollitia tenetur quasi odio ullam.</p></li>
-                </ul>
+                <div class="my_skills_item">
+                    <img src="img/icons/marketing.png" alt="marketing">
+                    <h3>Маркетинг</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem architecto ducimus, nisi quis maxime, quae mollitia tenetur quasi odio ullam.</p>
+                </div>
             </section>
+        </div>
 
             <section class="my_works">
                 <h2>Мои работы</h2>
@@ -105,7 +117,8 @@
 
             <section class="find_cost">
                  <h2> Расчёт стоимости</h2>
-                 <h3> Тип сайта</h3>
+
+                <h3> Тип сайта</h3>
                 <label for="list1"></label>
                 <select name="list1" id="list1">
                    <option value="OPT1">1 Вид</option>

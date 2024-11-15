@@ -23,7 +23,7 @@ a:active, a:visited {
     color: #002e7c;
 }
 input:focus, textarea:focus{
-    border: thin dotted #002e7c;
+    box-shadow: #0c2ffb 0 0 6px 0;;
 }
 
 button:active {
@@ -112,15 +112,20 @@ nav {
     border-radius: 5px;
     color: #13123c;
     font-size: 15px;
+    font-weight: 500;
     margin-top: 3%;
     margin-left: 6px;
 }
 
 .title_container input:hover {
-    transform: scale(1.04);
+    transform: scale(1.03);
     transition-duration: 0s;
     background: #002e7c;
     color: #e0e0e7;
+}
+.title_container input:active {
+    transform: scale(1.06);
+    font-weight: 600;
 }
 .small_photo {
     display: none;
@@ -152,31 +157,34 @@ nav {
     font-size: 14px;
 }
 
+/* Обо мне */
+
 .about_me {
     display: flex;
     height: max-content;
 }
 .about_container {
     align-items: stretch;
-    width: 55%;
+    width: 60%;
     padding-bottom: 100px;
-    margin-top: 4%;
+    margin-top: 5%;
     margin-left: 10%;
-    border: 3px solid #002e7c;
+    border: 2px solid #002e7c;
     border-radius: 10px;
     float: left;
 }
 .about_container p {
     margin: 0 auto;
-    width: 70%;
+    width: 80%;
 }
+
 .resume_container {
     align-items: stretch;
-    width: 35%;
-    margin-top: 4%;
+    width: 30%;
+    margin-top: 5%;
     margin-left: 2%;
     margin-right: 10%;
-    border: 3px solid #002e7c;
+    border: 2px solid #002e7c;
     border-radius: 10px;
     float: left;
 }
@@ -189,6 +197,7 @@ nav {
     margin-top: 30px;
     font-size: 20px;
     padding: 30px;
+    font-weight: 500;
 }
 .resume_container button:hover {
     transform: scale(1.04);
@@ -196,35 +205,54 @@ nav {
     background: #002e7c;
     color: #e0e0e7;
 }
+.resume_container button:active {
+    transform: scale(1.06);
+    font-weight: 600;
+}
 
-.my_skills {
+/* Мои навыки */
+
+.my_skills_background {
+    background: url(../img/im_on_scene.png) center/cover fixed no-repeat;
+    width: 100%;
+    background-size: auto;
+    margin-top: 8%;
     float: left;
-    height: max-content;
-    width: 80%;
-    margin-top: 2%;
-    margin-right: 8%;
-    border: 3px solid #002e7c;
-    border-radius: 10px;
-    margin-left: 10%;
+    padding-top: 3%;
+    padding-bottom: 6%;
+}
+.my_skills {
+    width: 90%;
+    margin: 0 auto;
     text-align: center;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
 }
-
-.my_skills li h3 {
-    margin: 10px auto;
-    padding-bottom: 10px;
+.my_skills_item {
+    text-align: center;
+    display: inline-block;
+    width: 20%;
+    margin-top: 4%;
 }
-
-.my_skills ul li p {
-    max-width: 60%;
+.my_skills_item img{
+    height: 70px;
+}
+.my_skills_item h3 {
+    margin: 0 auto;
+    font-weight: bold;
+}
+.my_skills_item p {
+    width: 85%;
+    font-size: 18px;
     margin: 0 auto;
 }
+
+/* Мои работы */
 
 .my_works{
     float: left;
     height: max-content;
     width: 80%;
-    margin-top: 2%;
+    margin-top: 4%;
     margin-right: 8%;
     border: 3px solid #002e7c;
     border-radius: 10px;
@@ -261,6 +289,8 @@ nav {
     padding: 10px 30px 0 50px;
 }
 
+/* Функции сайта */
+
 .plugins {
     text-align: center;
     display: inline-block;
@@ -277,6 +307,8 @@ nav {
     font-size: 22px;
     padding: 10px;
 }
+
+/* Расчёт цены сайта */
 
 .find_cost {
     float: left;
@@ -320,23 +352,23 @@ nav {
     background: url(../img/notebook.jpg) 100% 100% / auto 100% no-repeat;
 }
 
+/* Статистика */
+
 .statistics_background {
     background: url(../img/man_working.png) center/cover fixed no-repeat;
     width: 100%;
     background-size: auto;
     margin-top: 6%;
     float: left;
-    padding-top: 120px;
-    padding-bottom: 150px;
+    padding-top: 5%;
+    padding-bottom: 7%;
 }
-
 .statistics {
     padding-top: 50px;
     margin: 0 auto;
     padding-bottom: 80px;
     width: 80%;
 }
-
 .statistic_item {
     display: inline-block;
     text-align: center;
@@ -360,6 +392,7 @@ nav {
     font-weight: bold;
 }
 
+/* Отзывы */
 
 .reviews {
     float: left;
@@ -373,38 +406,42 @@ nav {
     padding-bottom: 80px;
     padding-top: 10px;
 }
-.reviews p{
+.reviews p {
     width: 60%;
-    margin: 10px auto;
+    margin: 10% auto 10px;
 }
 .reviews h2{
     margin-top: 20px;
 }
+
+/* Контакты */
+
+footer {
+    background: url(../img/contacts.png) center/cover no-repeat;
+    width: 100%;
+    margin-top: 6%;
+    float: left;
+}
+
 .contacts {
     float: left;
     height: max-content;
     width: 80%;
     margin: 5% 40px 8% 10%;
-    border: 3px solid #002e7c;
-    border-radius: 10px;
     text-align: center;
-    padding-bottom: 50px;
 }
-
 .contacts ul {
     display: table;
     color: #13123c;
     font-weight: 700;
     margin: 20px auto;
 }
-
 .contacts ul li {
     text-align: left;
     line-height: 50px;
     margin:0 auto;
     font-size: 25px;
 }
-
 .contacts ul li a{
     line-height: 50px;
     font-size: 20px;
@@ -414,7 +451,6 @@ nav {
     transition: all 0.2s;
     display: inline-block;
 }
-
 .contacts li a:hover {
     color: #008aeb;
 }
@@ -422,42 +458,46 @@ nav {
     transform: scale(1.05) skew(-5deg);
 }
 
+/* Связь со мной */
+
 .request {
     float: left;
-    margin: 40px 20px 8% 10%;
-    border: 3px solid #002e7c;
-    border-radius: 10px;
+    margin: 40px 20px 0 10%;
     height: max-content;
     width: 80%;
-    padding-bottom: 60px;
+    padding-bottom: 8%;
 }
 
 .request input[type="text"] {
     height: 40px;
     width: 25%;
     font-size: 20px;
-    padding: 10px;
-    margin-top:20px;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #13123c;
 }
 .request input[type="email"] {
     height: 40px;
     width: 25%;
     font-size: 20px;
-    padding: 10px;
     margin-top:20px;
+    margin-left: 2.8%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #13123c;
 }
 .request textarea {
     height: 130px;
-    width: 50%;
+    width: 53%;
     font-size: 20px;
-    padding: 10px;
-    text-align: left;
+    background: rgba(255, 255, 255, 0.2);
+    color: #13123c;
+    margin-top: 10px;
 }
 .request input[type="submit"] {
     height: 55px;
     width: 50%;
     font-size: 22px;
-    padding: 10px;
+    margin-top: 2%;
     color: #13123c;
     font-weight: bold;
     border: #002e7c solid 3px;
@@ -469,4 +509,9 @@ nav {
     transition-duration: 0.1s;
     background: #002e7c;
     color: #e0e0e7;
+}
+.request input::placeholder, .request textarea::placeholder {
+    color: #13123c;
+    font-size: 16px;
+    padding-left: 10px;
 }

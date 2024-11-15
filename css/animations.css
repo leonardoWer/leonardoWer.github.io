@@ -152,6 +152,7 @@
 }
 
 /* Заголовки */
+
 h2:hover {
     -webkit-animation: text_shadow_effect 3s ease-in-out;
     -o-animation: text_shadow_effect 3s ease-in-out;
@@ -181,7 +182,7 @@ h2:hover {
     60 % { letter-spacing: 2px; }
     80% { letter-spacing: 3px; }
     90% { letter-spacing: 3px; }
-    100% { letter-spacing: 3px; font-weight: bold}
+    100% { letter-spacing: 3px;}
 }
 
 .find_cost h3:hover {
@@ -190,7 +191,7 @@ h2:hover {
     animation: letter_spacing_effect 0.2s ease forwards;
 }
 
-.my_skills li h3:hover {
+.my_skills_item h3:hover {
     -webkit-animation: letter_spacing_effect 0.2s ease forwards;
     -o-animation: letter_spacing_effect 0.2s ease forwards;
     animation: letter_spacing_effect 0.2s ease forwards;
@@ -226,10 +227,4 @@ h2:hover {
     -webkit-animation: letter_spacing_effect 0.2s ease forwards;
     -o-animation: letter_spacing_effect 0.2s ease forwards;
     animation: letter_spacing_effect 0.2s ease forwards;
-}
-.resume_container button:active {
-    transform: scale(1.02);
-    -webkit-animation: letter_spacing_effect_light 0.02s ease forwards;
-    -o-animation: letter_spacing_effect_light 0.02s ease forwards;
-    animation: letter_spacing_effect_light 0.02s ease forwards;
 }
