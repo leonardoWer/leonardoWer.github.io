@@ -167,7 +167,6 @@ nav {
 .about_me {
     width: 80%;
     padding-top:2% ;
-    margin-top: 2%;
     margin-left: 10%;
 }
 .about_me img {
@@ -202,7 +201,7 @@ nav {
     background: url(../img/im_on_scene.png) center/cover fixed no-repeat;
     width: 100%;
     background-size: auto;
-    margin-top: 8%;
+    margin-top: 6%;
     float: left;
     padding-top: 3%;
     padding-bottom: 6%;
@@ -241,8 +240,6 @@ nav {
     width: 80%;
     margin-top: 4%;
     margin-right: 8%;
-    border: 3px solid #002e7c;
-    border-radius: 10px;
     margin-left: 10%;
     text-align: center;
     padding-bottom: 100px;
@@ -299,7 +296,7 @@ nav {
 
 .find_cost {
     width: 65%;
-    margin: 4% auto;
+    margin: 2% auto;
     box-shadow: rgba(0,0,0,0.4) 0 0 10px 0;
     border-radius: 10px;
     padding: 2% 5% 6% 7%;
@@ -313,7 +310,7 @@ nav {
     margin-top: 3%;
 }
 .calculator_select select {
-    background: rgba(237,237,237,1);
+    background: url(../img/icons/arrow_down.png) 98% 50%/ 2% no-repeat, rgba(237,237,237,0.5);
     appearance: none;
     height: 60px;
     width: 100%;
@@ -330,11 +327,11 @@ nav {
     margin: 4% auto 24px;
 }
 .find_cost_footer {
-    padding-bottom: 8%;
+    padding-bottom: 6%;
 }
 .days, .price {
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .days p, .price p{
     width: max-content;
@@ -352,8 +349,7 @@ nav {
     height: 50px;
     width: 25%;
     font-size: 18px;
-    margin-top: 2%;
-    margin-bottom: 3%;
+    margin-top: 6px;
     color: #13123c;
     font-weight: bold;
     border: #002e7c solid 3px;
@@ -438,7 +434,7 @@ nav {
 footer {
     background: url(../img/contacts.png) center/cover no-repeat;
     width: 100%;
-    margin-top: 6%;
+    margin-top: 5%;
     float: left;
 }
 
@@ -484,7 +480,7 @@ footer {
     margin: 40px 20px 0 10%;
     height: max-content;
     width: 80%;
-    padding-bottom: 8%;
+    padding-bottom: 6%;
 }
 
 .request input[type="text"] {
