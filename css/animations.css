@@ -225,6 +225,9 @@ h2:hover {
     -o-animation: letter_spacing_effect 0.2s ease forwards;
     animation: letter_spacing_effect 0.2s ease forwards;
 }
+.find_cost_footer input[type="submit"]:active {
+    transform: scale(1.08);
+}
 
 .my_works th h3:hover {
     -webkit-animation: letter_spacing_effect 0.2s ease forwards;

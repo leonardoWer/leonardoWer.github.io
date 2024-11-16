@@ -37,8 +37,8 @@
         </header>
 
         <section class="main">
-            <div class="small_photo"></div>
             <div class="title_container">
+                <div class="small_photo"></div>
                 <h1>Привет <br>Я Левахин Лев</h1>
                 <h3>Web - разработчик и Android - разработчик</h3>
                 <input type="button" value="Обо мне">
@@ -49,20 +49,16 @@
 
     
         <section class="about">
+
             <section class="about_me">
+                <h2>Обо мне</h2>
+                <img src="img/im_small.jpg" alt="im_small">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore illum, voluptate maxime aut est aliquid, earum ab dolore aperiam quisquam quasi facere repellat eveniet pariatur illo molestiae laudantium.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore illum, voluptate maxime aut est aliquid, earum ab dolore aperiam quisquam quasi facere repellat eveniet pariatur illo molestiae laudantium.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consequatur expedita fugit maiores natus odit quae repudiandae sint unde voluptatem?</p>
+                <button type="button">Скачать резюме</button>
+            </section>
 
-                <div class="about_container">
-                    <h2>Обо мне</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore illum, voluptate maxime aut est aliquid, earum ab dolore aperiam quisquam quasi facere repellat eveniet pariatur illo molestiae laudantium.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore illum, voluptate maxime aut est aliquid, earum ab dolore aperiam quisquam quasi facere repellat eveniet pariatur illo molestiae laudantium.</p>
-                </div>
-
-                <div class="resume_container">
-                    <h2>Моё резюме</h2>
-                    <button type="button">Скачать резюме</button>
-                </div>
-        </section>
-
-        <div class="my_skills_background">
+            <div class="my_skills_background">
             <section class="my_skills">
                 <h2>Что я умею</h2>
                 <div class="my_skills_item">
@@ -73,7 +69,7 @@
 
                 <div class="my_skills_item">
                     <img src="img/icons/prog.png" alt="prog">
-                     <h3>Разработка</h3></li>
+                     <h3>Разработка</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem architecto ducimus, nisi quis maxime, quae mollitia tenetur quasi odio ullam.</p>
                 </div>
 
@@ -89,7 +85,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem architecto ducimus, nisi quis maxime, quae mollitia tenetur quasi odio ullam.</p>
                 </div>
             </section>
-        </div>
+            </div>
 
             <section class="my_works">
                 <h2>Мои работы</h2>
@@ -116,33 +112,57 @@
         <section class="plugins">
 
             <section class="find_cost">
-                 <h2> Расчёт стоимости</h2>
 
-                <h3> Тип сайта</h3>
-                <label for="list1"></label>
-                <select name="list1" id="list1">
-                   <option value="OPT1">1 Вид</option>
-                   <option value="OPT2">2 Вид</option>
-                   <option value="OPT3">3 Вид</option>
-                 </select>
+                <h2> Расчёт стоимости</h2>
 
-                <h3>Дизайн</h3>
-                <label for="list2"></label>
-                <select name="list2" id="list2">
-                   <option value="OPT11">1 вариант</option>
-                   <option value="OPT22">2 вариант</option>
-                </select>
+                <div class="calculator_select">
+                    <h3> Тип сайта</h3>
+                    <label for="type_site"></label>
+                    <select class="my_select" name="type" id="type_site">
+                       <option value="1" selected disabled>Выберите пункт</option>
+                       <option value="2">Сайт-визитка</option>
+                       <option value="3">Корпоративный сайт</option>
+                       <option value="4">Интернет-магазин</option>
+                     </select>
 
-               <h3>Адаптивность</h3>
-                <label for="list3"></label>
-                <select name="list3" id="list3">
-                   <option value="OPT111">1</option>
-                   <option value="OPT222">2</option>
-                   <option value="OPT333">3</option>
-               </select>
+                    <h3>Дизайн</h3>
+                    <label for="type_design"></label>
+                    <select class="my_select" name="type" id="type_design">
+                       <option value="1" selected disabled>Выберите пункт</option>
+                       <option value="2">Шаблонный</option>
+                       <option value="3">Уникальный</option>
+                       <option value="4">Очень специализированный</option>
+                    </select>
+
+                   <h3>Адаптивность</h3>
+                    <label for="type_device"></label>
+                    <select class="my_select" name="type" id="type_device">
+                       <option value="1" selected disabled>Выберите пункт</option>
+                       <option value="2">Только ПК</option>
+                       <option value="3">Только мобильный сайт</option>
+                       <option value="4">ПК + Мобильный</option>
+                   </select>
+                </div>
+
+                <hr>
+
+                <div class="find_cost_footer">
+                    <div class="days">
+                        <p class="text">Сроки</p>
+                        <p class="digit">0</p>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="price">
+                        <p class="text">Стоимость</p>
+                        <p class="digit">0</p>
+                        <div class="clear"></div>
+                    </div>
+
+                    <input type="submit" value="Перейти к покупке">
+                </div>
+
             </section>
-
-            <div class="notebook_photo"></div>
 
             <div class="statistics_background">
                 <section class="statistics">

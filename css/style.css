@@ -31,6 +31,11 @@ button:active {
     transition: transform .1s;
 }
 
+/*Перенос на новую строку*/
+.clear{
+    clear:both;
+}
+
 /* Навигация */
 
 nav {
@@ -160,52 +165,33 @@ nav {
 /* Обо мне */
 
 .about_me {
-    display: flex;
-    height: max-content;
-}
-.about_container {
-    align-items: stretch;
-    width: 60%;
-    padding-bottom: 100px;
-    margin-top: 5%;
-    margin-left: 10%;
-    border: 2px solid #002e7c;
-    border-radius: 10px;
-    float: left;
-}
-.about_container p {
-    margin: 0 auto;
     width: 80%;
+    padding-top:2% ;
+    margin-top: 2%;
+    margin-left: 10%;
 }
-
-.resume_container {
-    align-items: stretch;
-    width: 30%;
-    margin-top: 5%;
-    margin-left: 2%;
-    margin-right: 10%;
-    border: 2px solid #002e7c;
-    border-radius: 10px;
-    float: left;
+.about_me img {
+    border-radius: 100%;
+    width: 15%;
+    margin-top: 1%;
 }
-.resume_container h2 {
-    color: #002e7c;
-    margin: 0 auto;
-    width: 90%;
+.about_me p {
+    margin: 2% auto;
+    width: 70%;
 }
-.resume_container button {
-    margin-top: 30px;
+.about_me button {
+    margin-top: 20px;
     font-size: 20px;
-    padding: 30px;
+    padding: 10px;
     font-weight: 500;
 }
-.resume_container button:hover {
+.about_me button:hover {
     transform: scale(1.04);
     transition-duration: 0.1s;
     background: #002e7c;
     color: #e0e0e7;
 }
-.resume_container button:active {
+.about_me button:active {
     transform: scale(1.06);
     font-weight: 600;
 }
@@ -239,6 +225,7 @@ nav {
 .my_skills_item h3 {
     margin: 0 auto;
     font-weight: bold;
+    color: #13123c;
 }
 .my_skills_item p {
     width: 85%;
@@ -311,54 +298,86 @@ nav {
 /* Расчёт цены сайта */
 
 .find_cost {
-    float: left;
-    margin-top: 4%;
-    height: max-content;
-    width: 40%;
-    margin-left: 10%;
-    border: 3px solid #002e7c;
+    width: 65%;
+    margin: 4% auto;
+    box-shadow: rgba(0,0,0,0.4) 0 0 10px 0;
     border-radius: 10px;
-    padding-bottom: 60px;
-    padding-top: 20px;
+    padding: 2% 5% 6% 7%;
+
 }
-.find_cost h3 {
+.calculator_select h3 {
     text-transform: uppercase;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: bold;
-    margin: 10px auto 10px auto;
     letter-spacing: 1px;
+    margin-top: 3%;
 }
-.find_cost select {
-    border: 2px solid #002e7c;
-    border-radius: 5px;
-    background: none;
+.calculator_select select {
+    background: rgba(237,237,237,1);
+    appearance: none;
     height: 60px;
-    width: 120px;
-    text-align: center;
+    width: 100%;
     font-size: 18px;
     font-weight: 500;
+    margin-top: 1%;
+    padding-left: 2%;
 }
 
-.find_cost select option {
-    font-size: 15px;
+.find_cost hr{
+    height: 2px;
+    background: rgba(237,237,237,1);
+    width: 100%;
+    margin: 4% auto 24px;
 }
-
-.notebook_photo {
-    margin-top: 5%;
-    margin-left: 5%;
-    width: 700px;
-    height: 500px;
+.find_cost_footer {
+    padding-bottom: 8%;
+}
+.days, .price {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.days p, .price p{
+    width: max-content;
+}
+.find_cost_footer .text {
     float: left;
-    background: url(../img/notebook.jpg) 100% 100% / auto 100% no-repeat;
+    font-size: 23px;
 }
-
+.find_cost_footer .digit {
+    font-size: 28px;
+    float: right;
+}
+.find_cost_footer input[type="submit"] {
+    float: right;
+    height: 50px;
+    width: 25%;
+    font-size: 18px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    color: #13123c;
+    font-weight: bold;
+    border: #002e7c solid 3px;
+    border-radius: 10px;
+    background: none;
+}
+.find_cost_footer input[type="submit"]:hover {
+    transform: scale(1.02);
+    transition-duration: 0.1s;
+    background: #002e7c;
+    color: #e0e0e7;
+}
+.find_cost_footer input::placeholder {
+    color: #13123c;
+    font-size: 16px;
+    padding-left: 10px;
+}
 /* Статистика */
 
 .statistics_background {
     background: url(../img/man_working.png) center/cover fixed no-repeat;
     width: 100%;
     background-size: auto;
-    margin-top: 6%;
+    margin-top: 2%;
     float: left;
     padding-top: 5%;
     padding-bottom: 7%;
@@ -382,7 +401,7 @@ nav {
 }
 .statistic_item h3 {
     font-size: 37px;
-    color: #e0e0e7;
+    color: #FFFAFA;
     font-weight: bold;
     margin: 0 auto;
 }
