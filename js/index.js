@@ -42,15 +42,18 @@ function findCost() {
     }
 
     function getResult() {
-        getUserInfo()
-
-        let again = confirm(`По нашим расчётам, на создание сайта потребуется до ${deadline} дней, а цена составит ${price} рублей`)
-        if (!again) {
-            let answer = confirm("Хотите произвести подсчёт ещё раз?")
-            if (answer) {
-               getResult()
+        let doFind = confirm("Хотите произвести расчёт стоимости сайта?")
+        if (doFind) {
+            getUserInfo()
+            let again = confirm(`По нашим расчётам, на создание сайта потребуется до ${deadline} дней, а цена составит ${price} рублей`)
+            if (!again) {
+                let answer = confirm("Хотите произвести подсчёт ещё раз?")
+                if (answer) {
+                    getResult()
+                }
             }
         }
+
     }
 
     getResult();
