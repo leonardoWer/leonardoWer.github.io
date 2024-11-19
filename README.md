@@ -10,7 +10,10 @@
 1. Вёрстку сайта на html
 2. Верстку на css
 3. Создание анимаций в css
-4. Разработку на js
+4. Bootstrap
+5. Разработку на js
+6. Разработку на jq
+
 
 ## Навигация
 - [В текущей папке находятся все файлы для сайта]()
@@ -24,3 +27,7 @@
 - [75 анимаций текста](https://frontendresource.com/css-text-animations/)
 - [Шрифты](https://fonts.google.com)
 - [Обычный шрифт в Web](https://www.font2web.com/)
+
+### Библиотеки для Web - разработки
+ - [Bootstrap - тут есть всё](https://getbootstrap.com/docs/5.3/customize/overview/)
+- [Fotorama - лёгкая и удобная карусель фото](https://fotorama.ucoz.org)
