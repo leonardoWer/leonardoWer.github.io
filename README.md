@@ -29,5 +29,5 @@
 - [Обычный шрифт в Web](https://www.font2web.com/)
 
 ### Библиотеки для Web - разработки
- - [Bootstrap - тут есть всё](https://getbootstrap.com/docs/5.3/customize/overview/)
+- [Bootstrap - тут есть всё](https://getbootstrap.com/docs/5.3/customize/overview/)
 - [Fotorama - лёгкая и удобная карусель фото](https://fotorama.ucoz.org)
