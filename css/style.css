@@ -22,9 +22,6 @@ h2 {
 a:active, a:visited {
     color: #002e7c;
 }
-input:focus, textarea:focus{
-    box-shadow: #0c2ffb 0 0 6px 0;;
-}
 
 button:active {
     transform:scale(0.96);
@@ -172,11 +169,11 @@ nav {
 .about_me img {
     border-radius: 100%;
     width: 15%;
-    margin-top: 1%;
+    margin-top: 2%;
 }
 .about_me p {
-    margin: 2% auto;
-    width: 70%;
+    margin: 3% auto;
+    width: 65%;
 }
 .about_me button {
     margin-top: 20px;
@@ -250,9 +247,9 @@ nav {
 }
 
 .my_works img {
-    margin: 30px auto 20px auto;
-    height: 40%;
-    width: 60%;
+    margin: 3% auto 2% auto;
+    height: 50%;
+    width: 55%;
 }
 .my_works table {
     width: max-content;
@@ -295,16 +292,16 @@ nav {
 /* Расчёт цены сайта */
 
 .find_cost {
-    width: 65%;
+    width: 55%;
     margin: 2% auto;
     box-shadow: rgba(0,0,0,0.4) 0 0 10px 0;
     border-radius: 10px;
-    padding: 2% 5% 6% 7%;
+    padding: 1% 5% 4% 5%;
 
 }
 .calculator_select h3 {
     text-transform: uppercase;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: bold;
     letter-spacing: 1px;
     margin-top: 3%;
@@ -341,7 +338,7 @@ nav {
     font-size: 23px;
 }
 .find_cost_footer .digit {
-    font-size: 28px;
+    font-size: 26px;
     float: right;
 }
 .find_cost_footer input[type="submit"] {
@@ -421,9 +418,14 @@ nav {
     padding-bottom: 80px;
     padding-top: 10px;
 }
+.reviews img {
+    border-radius: 100%;
+    width: 13%;
+    margin: 1% auto 0 auto;
+}
 .reviews p {
     width: 60%;
-    margin: 10% auto 10px;
+    margin: 2% auto 10px;
 }
 .reviews h2{
     margin-top: 20px;
@@ -480,13 +482,13 @@ footer {
     margin: 40px 20px 0 10%;
     height: max-content;
     width: 80%;
-    padding-bottom: 6%;
+    padding-bottom: 4%;
 }
 
 .request input[type="text"] {
     height: 40px;
     width: 25%;
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 20px;
     background: rgba(255, 255, 255, 0.2);
     color: #13123c;
@@ -494,7 +496,7 @@ footer {
 .request input[type="email"] {
     height: 40px;
     width: 25%;
-    font-size: 20px;
+    font-size: 18px;
     margin-top:20px;
     margin-left: 2.8%;
     background: rgba(255, 255, 255, 0.2);
@@ -503,7 +505,7 @@ footer {
 .request textarea {
     height: 130px;
     width: 53%;
-    font-size: 20px;
+    font-size: 18px;
     background: rgba(255, 255, 255, 0.2);
     color: #13123c;
     margin-top: 10px;
@@ -529,4 +531,8 @@ footer {
     color: #13123c;
     font-size: 16px;
     padding-left: 10px;
+}
+
+.request input:focus, .request textarea:focus{
+    box-shadow: #0c2ffb 0 0 6px 0;
 }
