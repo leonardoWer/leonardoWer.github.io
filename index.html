@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лев Левахин - Web-разработчик</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fotorama.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/adaptive.css">
@@ -88,22 +89,11 @@
 
             <section class="my_works" id="my_works">
                 <h2>Мои работы</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit impedit optio voluptatibus pariatur ad eaque est quasi amet. Rem, sapiente.</p>
-                <img src="https://sun9-38.userapi.com/impg/imCPLtZPP7XTjG1BVyYMssv5HFOGdZYKyEzCRQ/iz7t-H9U3z4.jpg?size=1920x1080&quality=96&sign=f695176432c77a7c2a66ddc127b0a111&type=album" alt="Похоже плохое соединение с интернетом" width="300">
-
-                <table>
-                    <tr>
-                        <th> <h3>Клиент</h3></th>
-                        <th> <h3>Вебсайт</h3></th>
-                        <th> <h3>Описание проекта</h3></th>
-                    </tr>
-
-                    <tr>
-                        <td> Спасибо, Лёва </td>
-                        <td><a href="https://vk.com/thanksleva">Ссылка на сайт</a></td>
-                        <td>Расчёт площади головного мозга математическими методами </td>
-                    </tr>
-                 </table>
+                <div class="fotorama">
+                    <img src="img/my_works/my_site_visitka.png" alt="my_site">
+                    <img src="img/my_works/my_site_price.png" alt="my_site_price">
+                    <img src="img/my_works/my_site_on_django.png" alt="my_site_django">
+                </div>
             </section>
 
         </section>
@@ -221,6 +211,7 @@
         </section>
 
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/fotorama.js"></script>
     <script src="js/index.js"></script>
     </body>
     </html>
