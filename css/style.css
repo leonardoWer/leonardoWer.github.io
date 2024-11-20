@@ -77,6 +77,10 @@ nav {
 .menu li a:active {
     transform: scale(1.03);
 }
+.menu li a.active {
+    color: #008aeb;
+    transform: translateY(-1px); scale(1.03);
+}
 
 /* Шапка */
 
@@ -239,7 +243,6 @@ nav {
     margin-right: 8%;
     margin-left: 10%;
     text-align: center;
-    padding-bottom: 100px;
 }
 
 .fotorama {
@@ -270,10 +273,10 @@ nav {
 
 .find_cost {
     width: 55%;
-    margin: 1% auto;
+    margin: 4% auto;
     box-shadow: rgba(0,0,0,0.4) 0 0 10px 0;
     border-radius: 10px;
-    padding: 1% 5% 4% 5%;
+    padding: 2% 5% 4% 5%;
 
 }
 .calculator_select h3 {
@@ -349,19 +352,17 @@ nav {
     background-size: auto;
     margin-top: 3%;
     float: left;
-    padding-top: 5%;
-    padding-bottom: 7%;
+    padding-top: 6%;
+    padding-bottom: 10%;
 }
 .statistics {
-    padding-top: 50px;
     margin: 0 auto;
-    padding-bottom: 80px;
     width: 80%;
 }
 .statistic_item {
     display: inline-block;
     text-align: center;
-    margin: 30px 40px;
+    margin: 50px 40px;
     width: max-content;
 }
 .statistic_item p {
@@ -387,13 +388,10 @@ nav {
     float: left;
     height: max-content;
     width: 80%;
-    margin-top: 5%;
-    margin-right: 8%;
+    margin: 4% 8% 0 10%;
     border: 3px solid #002e7c;
     border-radius: 10px;
-    margin-left: 10%;
-    padding-bottom: 80px;
-    padding-top: 10px;
+    padding: 1.5% 0 4% 0;
 }
 .reviews img {
     border-radius: 100%;
@@ -413,15 +411,16 @@ nav {
 footer {
     background: url(../img/contacts.png) center/cover no-repeat;
     width: 100%;
-    margin-top: 5%;
+    margin-top: 4%;
     float: left;
+    padding-top: 5%;
 }
 
 .contacts {
     float: left;
     height: max-content;
     width: 80%;
-    margin: 5% 40px 8% 10%;
+    margin: 0 0 6% 10%;
     text-align: center;
 }
 .contacts ul {

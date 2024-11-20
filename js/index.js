@@ -3,10 +3,25 @@ $(document).ready(function(){
     // Загрузчик страницы исчезает после загрузки
     $(".loader_area").css("display", "none");
 
+    // Подсвечивание элемента меню
+    $(window).scroll(() => {
+        let scrollDistance = $(window).scrollTop();
+        $(".section").each((index, element) => {
+            if($(element).offset().top - $("nav").outerHeight() - 90 <= scrollDistance ) {
+                $(".menu ul li a").each((index, element) => {
+                    if ($(element).hasClass("active")) {
+                        $(element).removeClass("active");
+                    }
+                });
+                $('.menu ul li:eq('+ index +')').find('a').addClass('active');
+            }
+        });
+    });
+
     // Калькулятор
     function find_cost() {
-        let price = parseInt( $("#type_site option:selected").val() ) + parseInt( $("#type_design option:selected").val() ) + parseInt( $("#type_device option:selected").val() );
-        let deadline = parseInt( $("#type_site option:selected").attr("days") ) + parseInt( $("#type_design option:selected").attr("days") ) + parseInt( $("#type_device option:selected").attr("days") );
+        let price = parseInt( $("#type_site option:selected").val() ) + parseInt( $("#type_design option:selected").val() ) + parseInt( $('#type_device option:selected').val() );
+        let deadline = parseInt( $('#type_site option:selected').attr("days") ) + parseInt( $('#type_design option:selected').attr("days") ) + parseInt( $("#type_device option:selected").attr("days") );
         $(".days .digit").text(deadline);
         $(".price .digit").text(price);
     }
