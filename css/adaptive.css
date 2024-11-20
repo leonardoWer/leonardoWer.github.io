@@ -145,6 +145,9 @@
     .find_cost_footer {
         padding-bottom: 12%;
     }
+    .fotorama {
+        width: 95%;
+    }
 }
 
 @media (max-width: 480px) {
