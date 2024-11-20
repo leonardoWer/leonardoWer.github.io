@@ -1,3 +1,11 @@
+$(document).ready(function(){
+
+$(".loader_area").css("display", "none");
+
+})
+
+
+// Подсчёт цены
 function findCost() {
     let price = 0, deadline = 0;
     let cost = [
@@ -58,7 +66,6 @@ function findCost() {
 
     getResult();
 }
-
 // findCost();
 
 // Плавный скрол страницы
