@@ -35,22 +35,7 @@
         position: relative;
         z-index: 1;
     }
-    .statistics_background::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.4);
-    }
-    .statistics, .statistics_item, .statistics_item p, .statistics_item h3 {
-        position: relative;
-        z-index: 2;
-    }
-    .my_works table {
-        display: none;
-    }
+
     .find_cost, .my_skills, .my_works, .statistics, .contacts, .reviews {
         width: 80%;
     }

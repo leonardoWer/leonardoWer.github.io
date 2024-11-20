@@ -78,11 +78,6 @@ nav {
     transform: scale(1.03);
 }
 
-.menu ul li a.active {
-    color:#008aeb;
-    transform: scale(1.05);
-}
-
 /* Шапка */
 
 .main {

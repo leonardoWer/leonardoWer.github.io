@@ -66,18 +66,3 @@ $('a[href^="#"]').click(function() {
     let valHref = $(this).attr("href");
     $('html, body').animate({scrollTop: $(valHref).offset().top - 60 + "px"});
 });
-
-// Подсвечивание элемента меню
-$(window).scroll(() => {
-    let scrollDistance = $(window).scrollTop();
-    $(".section").each((index, element) => {
-        if($(element).offset().top - $("nav").outerHeight() <= scrollDistance ) {
-            $(".menu ul li a").each((index, element) => {
-                if ($(element).hasClass("active")) {
-                    $(element).removeClass("active");
-                }
-            });
-            $('.menu ul li:eq('+ index +')').find('a').addClass('active');
-        }
-    });
-});
