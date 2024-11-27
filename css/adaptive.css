@@ -133,6 +133,19 @@
     .fotorama {
         width: 95%;
     }
+    .contacts {
+        flex-direction: column;
+        margin: 30% auto 0 auto;
+    }
+    .request {
+        width: 90%;
+    }
+    .request input[type="submit"] {
+        width: 40%;
+    }
+    .my_contacts {
+        margin-left: 10%;
+    }
 }
 
 @media (max-width: 480px) {
