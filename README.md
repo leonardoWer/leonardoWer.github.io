@@ -24,6 +24,7 @@
 ### Полезные материалы для Web - разработки
 - [Колесо подбора цветов](https://get-color.ru/color-wheel/)
 - [Справочник синтаксиса](https://webref.ru/css)
+- [Все конструкции flexbox](https://habr.com/ru/articles/467049/)
 - [75 анимаций текста](https://frontendresource.com/css-text-animations/)
 - [Шрифты](https://fonts.google.com)
 - [Обычный шрифт в Web](https://www.font2web.com/)
