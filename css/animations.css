@@ -174,7 +174,7 @@ h2:hover {
 }
 
 @keyframes letter_spacing_effect_light {
-    0% { letter-spacing: 1px; }
+    0% { letter-spacing: 1px;}
     20% { letter-spacing: 1px; }
     30% { letter-spacing: 1px; }
     40% { letter-spacing: 2px; }
@@ -185,19 +185,19 @@ h2:hover {
     100% { letter-spacing: 3px;}
 }
 
-.find_cost h3:hover {
-    -webkit-animation: letter_spacing_effect 0.2s ease forwards;
-    -o-animation: letter_spacing_effect 0.2s ease forwards;
-    animation: letter_spacing_effect 0.2s ease forwards;
+.find_cost h3:hover, .my_skills_item h3:hover, .contacts_link_item h3:hover  {
+    -webkit-animation: letter_spacing_effect_light 0.2s ease forwards;
+    -o-animation: letter_spacing_effect_light 0.2s ease forwards;
+    animation: letter_spacing_effect_light 0.2s ease forwards;
+    transition: 0.2s;
 }
 
-.my_skills_item h3:hover {
-    -webkit-animation: letter_spacing_effect 0.2s ease forwards;
-    -o-animation: letter_spacing_effect 0.2s ease forwards;
-    animation: letter_spacing_effect 0.2s ease forwards;
-}
 .my_skills_item img:hover {
     transform: scale(1.05);
+    transition: 0.5s;
+}
+.my_skills_item img {
+    transition: 0.5s;
 }
 
 .statistic_item h3:hover{
@@ -205,9 +205,7 @@ h2:hover {
     -o-animation: logo_hover 2.5s ease;
     animation: logo_hover 2.5s ease;
 }
-.request input[type="submit"]:active {
-    transform: scale(1.08);
-}
+
 .find_cost_footer input[type="submit"]:active {
     transform: scale(1.08);
 }
