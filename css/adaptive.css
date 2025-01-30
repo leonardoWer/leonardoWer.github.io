@@ -52,6 +52,9 @@
     .find_cost_footer input[type="submit"] {
         font-size: 18px;
     }
+    .request input[type="submit"] {
+        width: 55%;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -72,6 +75,9 @@
     }
     .find_cost_footer input[type="submit"] {
         font-size: 15px;
+    }
+    .request h2 {
+        font-size: 30px;
     }
 }
 
@@ -146,6 +152,9 @@
     .my_contacts {
         margin-left: 10%;
     }
+    .contacts_link_item a {
+        font-size: 25px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -191,5 +200,15 @@
     }
     .find_cost_footer {
         padding-bottom: 20%;
+    }
+    .request input[type="submit"] {
+        width: 90%;
+    }
+    .contacts_link_item img {
+        width: 40px;
+    }
+    .contacts_link_item a {
+        font-size: 20px;
+        line-height: 40px;
     }
 }
