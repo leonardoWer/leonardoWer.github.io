@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "inter_tight__black";
+    src: url("/fonts/Inter_Bold.ttf");
+}
+
+@font-face {
+    font-family: "inter_tight__medium";
+    src: url("/fonts/Inter_Medium.ttf");
+}

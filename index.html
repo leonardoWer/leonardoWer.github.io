@@ -1,246 +1,42 @@
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Это моя первая страница..">
-    <meta name="author" content="leonardo_Wer">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Левахин Лев - Frontend dev | Web дизайнер | Android dev">
     <meta name="robots" content="all">
-    <meta property="og:title" content="Я создал свою первую..">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лев Левахин - Web-разработчик</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/fotorama.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/preloader.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/adaptive.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-    </style>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <body>
-        <div class="loader_area">
-            <div class="loader"></div>
-        </div>
-       <header>
-            <nav>
-                <div class="name"><strong>Лев Левахин</strong></div>
-                <div class="menu">
-                    <ul>
-                        <li><a href="#about_me">Обо мне</a></li>
-                        <li><a href="#my_works">Мои работы</a></li>
-                        <li><a href="#find_cost">Стоимость</a></li>
-                        <li><a href="#reviews">Отзывы</a></li>
-                        <li><a href="#contacts">Контакты</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+    <title>leonardoWer</title>
 
-        <section class="main">
-            <div class="title_container">
-                <div class="small_photo"></div>
-                <h1>Привет <br>Я Левахин Лев</h1>
-                <h3>Web - разработчик и Android - разработчик</h3>
-                <a href="#about_me"><input type="button" value="Обо мне"></a>
-                <a href="#my_works"><input type="button" value="Мои работы"></a>
-            </div>
-            <div class="links_to_me">
-                <a href="https://github.com/leonardoWer/Portfolio_Levakhin_Lev" target="_blank"><img src="img/icons/github.png" alt="github"></a>
-                <a href="https://t.me/leonardo_Wer" target="_blank"><img src="img/icons/tg.png" alt="tg"></a>
-                <a href="https://vk.com/leonardo_Wer" target="_blank"><img src="img/icons/vk.png" alt="vk"></a>
-            </div>
-        </section>
+    <!--  favicon  -->
+    <link rel="icon" href="/img/logo/logo.png" type="image/svg+xml" sizes="120x120">
+    <link rel="apple-touch-icon" href="/img/logo/logo.png" sizes="120x120">
 
-    
-        <section class="about">
+    <!--  styles  -->
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-            <section class="about_me section" id="about_me">
-                <h2>Обо мне</h2>
-                <img src="img/im_small.jpg" alt="im_small">
-                <p>Я учусь в университете ИТМО в городе Санкт-Петербург на направлении Мобильные и сетевые технологии. Интересуюсь Веб разработкой и дизайном с давних пор. Активно работаю над своими навыками в разных сферах: от веба и андроид разработки до бэкенда.
-                Активно развиваюсь как специалист, живу по графику и становлюсь лучше каждый день</p>
-                <p>Занимаюсь спортом, музыкой. Веду активный образ жизни. Учусь в лучшем айти вузе страны</p>
-                <button type="button">Скачать резюме</button>
-            </section>
+  </head>
 
-            <section class="my_skills" id="my_skills">
-                <h2>Что я умею</h2>
-                <p>Мои основные навыки в области Веб разработки</p>
-                <div class="my_skills_items">
-                    <div class="my_skills_item">
-                        <img src="img/icons/html.png" alt="html">
-                        <h3>HTML</h3>
-                    </div>
-                    <div class="my_skills_item">
-                        <img src="img/icons/css.png" alt="css">
-                        <h3>CSS</h3>
-                    </div>
-                    <div class="my_skills_item">
-                        <img src="img/icons/js.png" alt="js">
-                        <h3>JS</h3>
-                    </div>
-                    <div class="my_skills_item">
-                        <img src="img/icons/ps.png" alt="ps">
-                        <h3>PS</h3>
-                    </div>
-                    <div class="my_skills_item">
-                        <img src="img/icons/as.png" alt="as">
-                        <h3>AS</h3>
-                    </div>
-                </div>
-            </section>
+  <body>
 
-            <section class="my_works section" id="my_works">
-                <h2>Мои работы</h2>
-                <p>Несколько фото созданных мной сайтов</p>
-                <div class="fotorama">
-                    <img src="img/my_works/my_site_visitka.png" alt="my_site" data-caption="Сайт-визитка">
-                    <img src="img/my_works/my_site_price.png" alt="my_site_price" data-caption="Расчёт стоимости">
-                    <img src="img/my_works/my_site_on_django.png" alt="my_site_django" data-caption="Приложение на джанго">
-                </div>
-            </section>
+    <header>
 
-        </section>
+    </header>
 
-        <section class="plugins">
 
-            <section class="find_cost_background section" id="find_cost">
-                <div class="find_cost">
-                    <h2> Расчёт стоимости</h2>
-                    <div class="calculator_select">
-                        <h3> Тип сайта</h3>
-                        <label for="type_site"></label>
-                        <select class="my_select" name="type" id="type_site">
-                           <option value="0" days="0" selected disabled>Выберите пункт</option>
-                           <option value="1000" days="2">Сайт-визитка</option>
-                           <option value="4000" days="5">Корпоративный сайт</option>
-                           <option value="7000" days="10">Интернет-магазин</option>
-                         </select>
+    <main>
+      <div id="app"></div>
+    </main>
 
-                        <h3>Дизайн</h3>
-                        <label for="type_design"></label>
-                        <select class="my_select" name="type" id="type_design">
-                           <option value="0" days="0" selected disabled>Выберите пункт</option>
-                           <option value="1000" days="0">Шаблонный</option>
-                           <option value="3000" days="2">Уникальный</option>
-                           <option value="6000" days="5">Очень специализированный</option>
-                        </select>
 
-                       <h3>Адаптивность</h3>
-                        <label for="type_device"></label>
-                        <select class="my_select" name="type" id="type_device">
-                           <option value="0" days="0" selected disabled>Выберите пункт</option>
-                           <option value="1000" days="1">Только ПК</option>
-                           <option value="2000" days="2">Только мобильный сайт</option>
-                           <option value="4000" days="3">ПК + Мобильный</option>
-                       </select>
-                    </div>
-                    <hr>
-                    <div class="find_cost_footer">
-                        <div class="days">
-                            <p class="text">Сроки</p>
-                            <p class="digit">0</p>
-                            <div class="clear"></div>
-                        </div>
+    <footer>
 
-                        <div class="price">
-                            <p class="text">Стоимость</p>
-                            <p class="digit">0</p>
-                            <div class="clear"></div>
-                        </div>
+    </footer>
 
-                        <input type="submit" value="Перейти к покупке">
-                    </div>
 
-                </div>
-            </section>
+    <script type="module" src="src/js/main.js"></script>
 
-            <section class="statistics_background section">
-                <div class="statistics" id="statistics">
-                   <h2>Статистика</h2>
-                   <div class="statistic_item">
-                       <h3>5</h3>
-                       <p>Счастливых клиентов</p>
-                   </div>
-                    <div class="statistic_item">
-                        <h3>10000</h3>
-                        <p>Часов работы</p>
-                    </div>
-                    <div class="statistic_item">
-                        <h3>5</h3>
-                        <p>Завершённых работ</p>
-                    </div>
-                    <div class="statistic_item">
-                        <h3>1</h3>
-                        <p>Наград получено</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="reviews_background section" id="reviews">
-                <div class="reviews">
-                    <h2>Отзывы</h2>
-                    <img src="img/thanks_leva_logo.png" alt="thanks_leva_logo">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus sunt, similique aut consequuntur praesentium quos at porro nesciunt deleniti doloremque fugit molestias ipsam amet tempora molestiae, reprehenderit asperiores vel modi! Ipsa tenetur doloremque explicabo voluptatibus rerum nobis doloribus perferendis quasi harum quam? Facilis deleniti nobis modi eveniet cum consectetur atque. Placeat fugit atque deserunt fuga itaque. Animi ullam fugiat, non!</p>
-                </div>
-            </section>
-
-            <footer>
-                <section class="contacts_background section" id="contacts">
-
-                    <div class="contacts">
-
-                        <div class="request">
-                            <h2>Оставить заявку</h2>
-                            <form id="request_form" action="#">
-                                <label>
-                                    <input type="text" value="" placeholder="Имя">
-                                </label>
-                                <label>
-                                    <input type="email" value="" placeholder="Ваша почта">
-                                </label>
-                                <label for="type_design">
-                                    <textarea name="description" cols="30" rows="10" placeholder="Дополнительная информация"></textarea>
-                                </label>
-                                <label>
-                                    <input type="submit" value="Отправить">
-                                </label>
-                            </form>
-                        </div>
-
-                        <div class="my_contacts">
-                            <div class="contacts_links">
-                                <div class="contacts_links_items">
-                                    <div class="contacts_link_item">
-                                        <h3>Вконтакте</h3>
-                                        <img src="img/icons/vk.png" alt="vk">
-                                        <a href="https://vk.com/leonardo_Wer" target="_blank">Левахин Лев</a>
-                                    </div>
-                                    <div class="contacts_link_item">
-                                        <h3>Телеграм</h3>
-                                        <img src="img/icons/tg.png" alt="tg">
-                                        <a href="https://t.me/leonardo_Wer" target="_blank">leonardo_Wer</a>
-                                    </div>
-                                    <div class="contacts_link_item">
-                                        <h3>Почта</h3>
-                                        <img src="img/icons/gmail.png" alt="mail">
-                                        <a href="mailto:leonardo_Wer16@gmail.com" target="_blank">leonardo_Wer16@gmail.com</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-            </footer>
-        </section>
-
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/fotorama.js"></script>
-    <script src="js/index.js"></script>
-    </body>
-    </html>
+  </body>
+</html>
