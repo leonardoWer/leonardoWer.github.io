@@ -22,4 +22,8 @@
     --section-padding: 10vh 6vw;
     --max-width: 3440px;
 
+    /*  Шрифты  */
+    --black-text: "inter_tight__black", "Inter", "Helvetica", sans-serif;
+    --medium-text: "inter_tight__medium", "Inter", "Helvetica", sans-serif;
+
 }
