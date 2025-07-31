@@ -64,7 +64,7 @@ export function createAboutSection() {
 
 function initGsapAnimations(aboutContainer, aboutTextContainer, aboutTiles) {
 
-    const animationDuration = 1500; // Продолжительность анимации
+    const animationDuration = 3000; // Продолжительность анимации
     const tileDelay = 0.1; // Промежуток между появлением плиток
 
     // 2. Анимация плиток (с использованием Timeline)

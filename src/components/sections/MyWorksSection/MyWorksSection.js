@@ -154,7 +154,6 @@ function initGsapAnimations(topContainer, topBg, titleText, myWorksTopPreviewCon
         pin: topContainer,
         scrub: true,
         animation: gsap.timeline().add(fadeInTl).add(previewContainerFadeInTl).add(tilesRotateAndSpacingTl).add(tilesFadeOutTl),
-        markers: true
     });
 
 }
