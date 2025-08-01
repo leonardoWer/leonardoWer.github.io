@@ -30,7 +30,7 @@
     font-family: var(--black-text);
 }
 
-
+/*  Контейнер с работами */
 .myWorksTop__previewContainer {
     width: 100%;
     height: 80%;
@@ -52,7 +52,37 @@
     height: 100%;
 }
 
+
+/*  Нижняя часть */
 .myWorks__bottom {
     background: var(--light-gray-bg);
     height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.myWorksBottom__textContainer {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 0 2rem 0 3rem;
+    min-width: 30%;
+}
+.myWorksBottomTextContainer__title {
+    font-family: var(--medium-text);
+    font-size: clamp(1.2rem, 0.633rem + 2.84vw, 4rem);
+    color: var(--dark-gray);
+}
+.myWorksBottomTextContainer__uniq {
+    font-family: var(--black-text);
+    font-size: clamp(1.25rem, 0.592rem + 3.29vw, 4.5rem);
+    color: var(--dark-gray);
+}
+
+.myWorksBottom__workTilesContainer {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    flex-shrink: 1;
 }
