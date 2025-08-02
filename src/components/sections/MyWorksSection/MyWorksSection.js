@@ -44,7 +44,7 @@ export function createMyWorksSection() {
     // Элементы нижней части
     const bottomContainer = section.querySelector(`.${styles.myWorks__bottom}`);
     const workTilesContainer = section.querySelector(`.${styles.myWorksBottom__workTilesContainer}`);
-    const bottomTextContainer = section.querySelector(`.${styles.myWorksBottom__textContainer}`);
+    const bottomContainerTextElements = section.querySelector(`.${styles.myWorksBottom__textContainer}`).querySelectorAll('span');
 
     const viewAllWorksContainer = section.querySelector(`.${styles.viewAllWorksContainer}`)
 
@@ -91,7 +91,7 @@ export function createMyWorksSection() {
     })
 
     initWorksTopGsapAnimations(topContainer, topContentContainer, titleText, worksTopPreviewContainer, myWorksPreviewTilesData);
-    initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, bottomTextContainer);
+    initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, bottomContainerTextElements);
 
     // Посмотреть все работы
     createViewAllWorksContent(viewAllWorksContainer);
@@ -189,18 +189,30 @@ function initWorksTopGsapAnimations(topContainer, topBg, titleText, myWorksTopPr
 
 }
 
-function initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, textContainer) {
+function initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, bottomContainerTextElements) {
+    // Разбиваем текст
+    const splitText1 = new SplitText(bottomContainerTextElements[0], {type: "words"})
+    const splitText2 = new SplitText(bottomContainerTextElements[1], {type: "words"})
+
     const tl = gsap.timeline();
     tl.to(workTilesContainer, {
         xPercent: -70,
         ease: "power1.inOut",
         duration: 2
     }, 0)
-        .to(textContainer, {
+        .to(splitText2.words, {
             opacity: 0,
+            stagger: 0.1,
             ease: "power3.in",
-            duration: 0.4
+            duration: 0.2
         }, 0)
+        .to(splitText1.words.reverse(), {
+            opacity: 0,
+            stagger: 0.1,
+            ease: "power3.in",
+            duration: 0.2
+        }, 0.1)
+
 
     ScrollTrigger.create({
         trigger: bottomContainer,
