@@ -16,7 +16,10 @@ export function createAboutSection() {
           <div class="${styles.aboutTextContainer}">
             <h2 class="title-text">Обо мне</h2>
             <p class="${styles.aboutText}">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet minima quae quam quasi soluta sunt vitae. Animi aut doloribus harum laudantium magnam nam officia possimus provident recusandae reiciendis. A ipsa modi ullam! Expedita libero, odit! Aperiam eaque ipsum officia!
+              Я студент университета ИТМО. Моя цель – создавать впечатляющие и удобные веб-решения.
+              Учеба на направлении "Мобильные и сетевые технологии" дает мне прочную техническую базу,
+              а мои хобби – спорт и музыка – развивают креативность и организованность.
+              Творческий подход и разносторонность позволяют мне находить нестандартные решения и создавать действительно уникальные продукты.
             </p>
           </div>
           
@@ -28,7 +31,7 @@ export function createAboutSection() {
     `
 
     // Получаем ссылки на внутренние элементы, которые будем использовать
-    const aboutContainer = section.querySelector(`.${styles.aboutContainer}`); // Используем CSS-модульный класс
+    const aboutContainer = section.querySelector(`.${styles.aboutContainer}`);
     const aboutTextContainer = section.querySelector(`.${styles.aboutTextContainer}`);
     const tilesWrapper = section.querySelector(`.${styles.aboutTilesWrapper}`);
 
@@ -53,16 +56,12 @@ export function createAboutSection() {
     });
 
     // Анимации
-    initGsapAnimations(
-        aboutContainer,
-        aboutTextContainer,
-        tileElements  // Передаем массив DOM-элементов плиток
-    );
+    initGsapAnimations(aboutContainer, tileElements);
 
     return section;
 }
 
-function initGsapAnimations(aboutContainer, aboutTextContainer, aboutTiles) {
+function initGsapAnimations(aboutContainer, aboutTiles) {
 
     const animationDuration = 3000; // Продолжительность анимации
     const tileDelay = 0.1; // Промежуток между появлением плиток
@@ -73,7 +72,7 @@ function initGsapAnimations(aboutContainer, aboutTextContainer, aboutTiles) {
         tl.fromTo(tile, {
             yPercent: 100 //  Начальное положение (вне экрана снизу)
         }, {
-            yPercent: -180, //  Сверху экрана
+            yPercent: -165, //  Сверху экрана
             autoAlpha: 1,   //  Появление плитки
             ease: "power2.out",
             delay: index * tileDelay, // Задержка для появления по очереди
