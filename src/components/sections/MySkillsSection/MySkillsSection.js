@@ -15,7 +15,7 @@ export function createMySkillsSection() {
             </p>
             
             <div class="${styles.mySkillsSectionContentContainer__imgContainer}">
-                <<img src="/img/me-with-micro-no-bg.png" alt="me with micro">
+                <img src="/img/me-with-micro-no-bg.png" alt="me with micro">
             </div>
             
             <p class="${styles.mySkillsSectionContentContainer__text}">
