@@ -27,9 +27,21 @@
     font-family: var(--black-text);
     text-wrap: nowrap;
     font-size: clamp(3.8rem, 1.532rem + 11.34vw, 15rem);
+    transition: all 0.3s ease-in;
 }
-.letsChatContainer__arrowIcon {
-    margin-left: 2rem;
+.letsChatContainer__arrowWrapper {
+    height: fit-content;
+    transition: all 0.3s ease-out;
+}
+.footerTextContainer__letsChatContainer:hover {
+    cursor: grab;
+
+    .letsChatContainer__text {
+        transform: translateX(0.5rem);
+    }
+    .letsChatContainer__arrowWrapper {
+        transform: rotateZ(-45deg);
+    }
 }
 
 .footerTextContainer__descriptionText {

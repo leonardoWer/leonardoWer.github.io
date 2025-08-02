@@ -19,7 +19,10 @@ export function createFooter() {
             <div class="${styles.footerContentContainerTop__textContainer}">
                 <div class="${styles.footerTextContainer__letsChatContainer}">
                     <h2 class="${styles.letsChatContainer__text}">Let’s chat</h2>
-                    <i class="fa fa-arrow-right ${styles.letsChatContainer__arrowIcon}"></i>
+                    <div class="${styles.letsChatContainer__arrowWrapper}">
+                        <i class="fa fa-arrow-right ${styles.letsChatContainer__arrowIcon}"></i>
+                    </div>
+                    
                 </div>
                 <span class="${styles.footerTextContainer__descriptionText}">i’ll help you to chose best</span>
             </div>
