@@ -86,3 +86,29 @@
     flex-wrap: nowrap;
     flex-shrink: 1;
 }
+
+/* Все работы */
+.viewAllWorksContainer {
+    width: 100%;
+    background: var(--light-gray-bg);
+    display: flex;
+    justify-content: center;
+    padding: 2vh 0 18vh 0;
+}
+.viewAllWorksContainer__contentWrapper {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.viewAllWorksContainer__leftText {
+    font-family: var(--black-text);
+    color: var(--black-bg);
+}
+.viewAllWorksContainer__rightText {
+    color: var(--dark-gray);
+}
+.viewAllWorksContainer__leftText, .viewAllWorksContainer__rightText {
+    font-size: 6rem;
+}

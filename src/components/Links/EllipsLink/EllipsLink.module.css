@@ -1,0 +1,16 @@
+.ellipsLink {
+    padding: 4.5rem 6rem;
+    font-family: var(--black-text);
+    font-size: clamp(1rem, 0.494rem + 2.53vw, 3.5rem);
+    border-radius: 100px;
+}
+
+.ellipsLink__dark {
+    background: var(--black-bg);
+    color: var(--light-text);
+}
+
+.ellipsLink__light {
+    background: var(--light-text);
+    color: var(--dark-gray);
+}

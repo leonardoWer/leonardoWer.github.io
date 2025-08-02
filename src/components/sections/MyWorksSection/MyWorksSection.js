@@ -1,10 +1,13 @@
 import styles from './MyWorksSection.module.css'
 import {createWorkTile} from "s/components/WorkTile/WorkTile.js";
+import {createEllipsLink} from "s/components/Links/EllipsLink/EllipsLink.js";
+import {contactLinks} from "s/js/utils/linksData.js";
 
 import gsap from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {SplitText} from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const photoPath = "/img/works/"
 
@@ -28,6 +31,8 @@ export function createMyWorksSection() {
           </div>
           <div class="${styles.myWorksBottom__workTilesContainer}"></div>
         </div>
+        
+        <div class="${styles.viewAllWorksContainer}"></div>
     `
 
     // Элементы верхней части
@@ -40,6 +45,8 @@ export function createMyWorksSection() {
     const bottomContainer = section.querySelector(`.${styles.myWorks__bottom}`);
     const workTilesContainer = section.querySelector(`.${styles.myWorksBottom__workTilesContainer}`);
     const bottomTextContainer = section.querySelector(`.${styles.myWorksBottom__textContainer}`);
+
+    const viewAllWorksContainer = section.querySelector(`.${styles.viewAllWorksContainer}`)
 
     // Мои работы
     const myWorksData = [
@@ -63,6 +70,9 @@ export function createMyWorksSection() {
         },
     ];
 
+    // Заполняем контентом
+
+    // Мои работы
     const myWorksPreviewTilesData = []
 
     myWorksData.forEach(work => {
@@ -82,6 +92,9 @@ export function createMyWorksSection() {
 
     initWorksTopGsapAnimations(topContainer, topContentContainer, titleText, worksTopPreviewContainer, myWorksPreviewTilesData);
     initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, bottomTextContainer);
+
+    // Посмотреть все работы
+    createViewAllWorksContent(viewAllWorksContainer);
 
     return section;
 }
@@ -197,4 +210,67 @@ function initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, text
         scrub: true,
         animation: gsap.timeline().add(tl),
     });
+}
+
+function createViewAllWorksContent(parent) {
+    // Данные
+    const leftText = "Я умею"
+    const linkData = {
+        title: "see all works",
+        onClick: {
+            link: contactLinks.portfolio,
+            hoverTitle: "Visit my portfolio",
+        },
+        style: "dark"
+    }
+    const rightText = "не только это"
+
+    // Создаём элемент
+    const contentWrapper = document.createElement("div");
+    contentWrapper.className = styles.viewAllWorksContainer__contentWrapper;
+
+    // Текст слева
+    const textLeftSpan = document.createElement("span");
+    textLeftSpan.textContent = leftText;
+    textLeftSpan.className = styles.viewAllWorksContainer__leftText;
+
+    // Ссылка на портфолио
+    const linkEl = createEllipsLink(linkData);
+
+    // Текст справа
+    const textRightSpan = document.createElement("span");
+    textRightSpan.textContent = rightText;
+    textRightSpan.className = styles.viewAllWorksContainer__rightText;
+
+    // Добавляем элементы
+    contentWrapper.appendChild(textLeftSpan);
+    contentWrapper.appendChild(linkEl);
+    contentWrapper.appendChild(textRightSpan);
+
+    // Добавляем в родителя
+    parent.appendChild(contentWrapper);
+
+    // Анимации
+    const splitText1 = new SplitText(textLeftSpan, { type: "chars" });
+    const splitText2 = new SplitText(textRightSpan, { type: "chars" });
+    const wordDelay = 0.05;
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: parent,
+            start: "center bottom",
+            end: "bottom bottom",
+            scrub: true,
+        }
+    });
+    tl.from(splitText1.chars, {
+        opacity: 0,
+        stagger: wordDelay,
+        ease: "power3.in",
+    })
+        .from(splitText2.chars, {
+            opacity: 0,
+            stagger: wordDelay,
+            ease: "power3.in",
+    }, "<")
 }
