@@ -1,25 +1,17 @@
+## [Ссылка на сайт | Link to Website](https://leonardower.github.io "Visit my website")
+
+> [for english please here](#LevakhinLev)
+
+<img width="1920" height="540" alt="git-header" src="https://github.com/user-attachments/assets/85f01f6d-ce16-4e3f-b4a3-6c28ac5095ce" />
+
 # Левахин Лев
-`Web - разработчик и Android - разработчик`
+`Фронтенд-разработчик | Веб-дизайнер | Андроид разработчик`
 
-## Ссылка на сайт https://leonardower.github.io
+### Описание
+Этот сайт - визитка меня как разработчика. На находится вся информация обо мне: мои навыки, которыми я обладаю как разработчик(на текущий момент), работы, компетенции, стек.
 
-## Описание
-Этот сайт - визитка меня как разработчика. В нём представлены мои навыки, которыми я обладаю как разработчик(на текущий момент).
-- Разработка сайта производилась на основе курсов Web-разработки от Андрея Брауна
-- В ходе данного курса *по истории коммитов можно заметить*, мы проходили:
-1. Вёрстку сайта на html
-2. Верстку на css
-3. Создание анимаций в css
-4. Bootstrap
-5. Разработку на js
-6. Разработку на jq
-
-
-## Навигация
-- [В текущей папке находятся все файлы для сайта]()
-- [В папке src\css находятся все css файлы](css)
-- [В папке src\js находятся все js файлы](js)
-- [В папке src\img находятся все изображения](img)
+### Портфолио
+Посмотреть все мои работы вы сможете [здесь](https://github.com/leonardoWer/Portfolio_Levakhin_Lev "Visit my portfolio")
 
 ### Полезные материалы для Web - разработки
 - [Колесо подбора цветов](https://get-color.ru/color-wheel/)
@@ -27,8 +19,12 @@
 - [Все конструкции flexbox](https://habr.com/ru/articles/467049/)
 - [75 анимаций текста](https://frontendresource.com/css-text-animations/)
 - [Шрифты](https://fonts.google.com)
-- [Обычный шрифт в Web](https://www.font2web.com/)
 
-### Библиотеки для Web - разработки
-- [Bootstrap - тут есть всё](https://getbootstrap.com/docs/5.3/customize/overview/)
-- [Fotorama - лёгкая и удобная карусель фото](https://fotorama.ucoz.org)
+# Levakhin Lev
+`Frontend dev | Web-designer | Android dev`
+
+### Description
+This site is my business card as a developer. It contains all the information about me: my skills that I possess as a developer (at the moment), work, competencies, stack.
+
+### Portfolio
+You can view all my works [here](https://github.com/leonardoWer/Portfolio_Levakhin_Lev "Visit my portfolio")
