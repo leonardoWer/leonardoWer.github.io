@@ -1,0 +1,114 @@
+.myWorks__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-text);
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
+.myWorksTop__bg {
+    position: absolute;
+    background: var(--green);
+    width: 30vw;
+    height: 30vw;
+    clip-path: circle();
+}
+.myWorksTop__contentContainer {
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 4rem 0 4rem;
+}
+.myWorksTitle {
+    color: var(--dark-gray);
+    font-size: clamp(3rem, 1.177rem + 9.11vw, 12rem);
+    font-family: var(--black-text);
+}
+
+/*  Контейнер с работами */
+.myWorksTop__previewContainer {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.myWorksTopPreviewContainer__itemWrapper {
+    position: absolute;
+    height: 80%;
+    transform: perspective(1000px);
+}
+.myWorksTopPreviewContainer__item {
+    border-radius: var(--border-radius);
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*  Нижняя часть */
+.myWorks__bottom {
+    background: var(--light-gray-bg);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.myWorksBottom__textContainer {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 0 2rem 0 3rem;
+    min-width: 30%;
+}
+.myWorksBottomTextContainer__title {
+    font-family: var(--medium-text);
+    font-size: clamp(1.2rem, 0.633rem + 2.84vw, 4rem);
+    color: var(--dark-gray);
+}
+.myWorksBottomTextContainer__uniq {
+    font-family: var(--black-text);
+    font-size: clamp(1.25rem, 0.592rem + 3.29vw, 4.5rem);
+    color: var(--dark-gray);
+}
+
+.myWorksBottom__workTilesContainer {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    flex-shrink: 1;
+}
+
+/* Все работы */
+.viewAllWorksContainer {
+    width: 100%;
+    background: var(--light-gray-bg);
+    display: flex;
+    justify-content: center;
+    padding: 2vh 0 18vh 0;
+}
+.viewAllWorksContainer__contentWrapper {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.viewAllWorksContainer__leftText {
+    font-family: var(--black-text);
+    color: var(--black-bg);
+}
+.viewAllWorksContainer__rightText {
+    color: var(--dark-gray);
+}
+.viewAllWorksContainer__leftText, .viewAllWorksContainer__rightText {
+    font-size: 6rem;
+}

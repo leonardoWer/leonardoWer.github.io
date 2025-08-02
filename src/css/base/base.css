@@ -1,10 +1,11 @@
 /* Общие параметры */
 body {
     font-family: "inter_tight__medium", "Inter", "Helvetica", sans-serif;
+    font-size: 2rem;
 }
 
 /* Выделение мыши */
 ::selection {
-    background-color: var(--light-orange);
-    color: var(--dark-gray-text);
+    background-color: var(--dark-gray);
+    color: var(--light-text);
 }

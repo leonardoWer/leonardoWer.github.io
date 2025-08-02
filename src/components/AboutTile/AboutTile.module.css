@@ -1,0 +1,32 @@
+.aboutTile {
+    position: absolute;
+    bottom: 0;
+    width: 30vw;
+    height: 60vh;
+    background: var(--light-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 2rem;
+}
+.left {
+    left: 5%;
+}
+.right {
+    right: 5%;
+}
+
+.contentContainer {
+    width: 80%;
+    height: 80%;
+    background: var(--black-bg);
+    color: var(--light-text);
+}
+
+.titleText {
+    font-family: var(--black-text);
+    font-size: clamp(1rem, 0.392rem + 3.04vw, 4rem);
+    color: var(--black-text);
+}

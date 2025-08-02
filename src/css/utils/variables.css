@@ -1,6 +1,10 @@
 :root {
     /* Цвета */
-
+    --black-bg: #070d0d;
+    --light-text: #f6f9f5;
+    --light-gray-bg: #eff1ee;
+    --dark-gray: #262626;
+    --green: #abfa54;
 
     /* Градиенты */
 
@@ -17,5 +21,9 @@
     /*  Отступы  */
     --section-padding: 10vh 6vw;
     --max-width: 3440px;
+
+    /*  Шрифты  */
+    --black-text: "inter_tight__black", "Inter", "Helvetica", sans-serif;
+    --medium-text: "inter_tight__medium", "Inter", "Helvetica", sans-serif;
 
 }
