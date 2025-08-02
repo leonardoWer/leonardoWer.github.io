@@ -1,13 +1,11 @@
-/* Хедер */
-
-.header-content {
+.headerContainer {
     position: relative;
     background: var(--black-bg);
     height: 100vh;
     width: 100%;
     overflow: hidden;
 }
-.header-title-text {
+.headerContainer__title {
     font-family: var(--black-text);
     --font-size: clamp(8rem, 5.57rem + 12.15vw, 20rem);
     font-size: var(--font-size);
@@ -18,7 +16,7 @@
     top: 1rem;
 }
 
-.header-description-text {
+.headerContainer__description {
     font-family: var(--medium-text);
     --font-size: clamp(0.8rem, 0.557rem + 1.22vw, 2rem);
     font-size: var(--font-size);
@@ -31,11 +29,9 @@
     z-index: 2;
 }
 
-.header-img {
+.headerContainer__img {
     height: 82%;
     position: absolute;
     bottom: 0;
     left: 34vw;
 }
-
-/* my works */
