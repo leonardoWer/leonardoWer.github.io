@@ -9,6 +9,9 @@
     background: var(--light-text);
     border-radius: var(--border-radius);
 }
+.workTile:hover {
+    cursor: pointer;
+}
 
 .textContainer {
     width: 100%;

@@ -1,0 +1,29 @@
+.mySkillsSectionContentContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--black-bg);
+    padding: 0 4rem;
+}
+
+.mySkillsSectionContentContainer__text {
+    color: var(--light-text);
+    text-wrap: balance;
+    font-family: var(--black-text);
+    font-size: clamp(0.8rem, 0.557rem + 1.22vw, 2rem);
+    width: 30%;
+}
+
+.mySkillsSectionContentContainer__imgContainer {
+    height: 80%;
+    width: 30%;
+    align-self: flex-end;
+    overflow: hidden;
+    transform: perspective(1000px);
+}
+.mySkillsSectionContentContainer__imgContainer img {
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
