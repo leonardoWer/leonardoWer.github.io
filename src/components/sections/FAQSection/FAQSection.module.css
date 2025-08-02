@@ -76,4 +76,5 @@
 .faqContainerItemAnswerContainer__text {
     color: var(--black-bg);
     margin-top: 1.2rem;
+    line-height: 1.05;
 }
