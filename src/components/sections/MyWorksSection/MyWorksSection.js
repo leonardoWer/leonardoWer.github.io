@@ -1,7 +1,7 @@
 import styles from './MyWorksSection.module.css'
 import {createWorkTile} from "s/components/WorkTile/WorkTile.js";
 import {createEllipsLink} from "s/components/Links/EllipsLink/EllipsLink.js";
-import {contactLinks} from "s/js/utils/linksData.js";
+import {linksData} from "s/js/utils/linksData.js";
 
 import gsap from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
@@ -218,7 +218,7 @@ function createViewAllWorksContent(parent) {
     const linkData = {
         title: "see all works",
         onClick: {
-            link: contactLinks.portfolio,
+            link: linksData.portfolio,
             hoverTitle: "Visit my portfolio",
         },
         style: "dark"

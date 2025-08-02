@@ -1,4 +1,9 @@
 import styles from "./Footer.module.css"
+import {createLink} from "s/components/Links/link.js";
+import {createEllipsLink} from "s/components/Links/EllipsLink/EllipsLink.js";
+
+import {linksData, contactLinkElementsData, menuLinkElementsData} from "s/js/utils/linksData.js";
+
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 
@@ -19,14 +24,16 @@ export function createFooter() {
                 <span class="${styles.footerTextContainer__descriptionText}">i’ll help you to chose best</span>
             </div>
             
-            <div class="${styles.footerContentContainerTop__contactsContainer}">123</div>
+            <div class="${styles.footerContentContainerTop__contactsContainer}">
+                <!--  contacts link  -->
+            </div>
             
             <div class="${styles.footerContentContainerTop__emailContainer}">
                 <p class="${styles.emailContainer__title}">
                     Don’t like forms and would rather just email me, that’s ok.
                 </p>
                 <span class="${styles.emailContainer__email}">
-                    name89213126414@gmail.com
+                    <!--  email link  -->
                 </span>
             </div>
         </div>
@@ -36,11 +43,7 @@ export function createFooter() {
                 <h2 class="${styles.footerContentContainerBottom__titleText}">Левахин<br>Лев</h2>
                 
                 <ul class="${styles.footerContentContainerBottom__menuList}">
-                    <li class="${styles.menuList__item}">home</li>
-                    <li class="${styles.menuList__item}">about</li>
-                    <li class="${styles.menuList__item}">works</li>
-                    <li class="${styles.menuList__item}">why?</li>
-                    <li class="${styles.menuList__item}">contact</li>
+                    <!--  page navigation link  -->
                 </ul>
             </div>
         </div>
@@ -48,12 +51,55 @@ export function createFooter() {
     `
 
     // Элементы
-    const bottomContainer = footerContainer.querySelector(`.${styles.footerContentContainer__bottom}`)
-    const bottomContentContainer = bottomContainer.querySelector(`.${styles.footerContentContainerBottom__contentContainer}`)
+    const contactsTopContainer = footerContainer.querySelector(`.${styles.footerContentContainerTop__contactsContainer}`);
 
+    const emailTextEl = footerContainer.querySelector(`.${styles.emailContainer__email}`);
+
+    const bottomContainer = footerContainer.querySelector(`.${styles.footerContentContainer__bottom}`);
+    const bottomContentContainer = bottomContainer.querySelector(`.${styles.footerContentContainerBottom__contentContainer}`);
+    const bottomMenuList = footerContainer.querySelector(`.${styles.footerContentContainerBottom__menuList}`);
+
+    // Ссылки
+    initLinks(contactsTopContainer, emailTextEl, bottomMenuList);
+
+    // Анимации
     initGsapAnimations(bottomContainer, bottomContentContainer);
 
     return footerContainer;
+}
+
+
+function initLinks(contactsTopContainer, emailTextEl, bottomMenuList) {
+    // Контакты
+    contactLinkElementsData.forEach(contactData => {
+        const contactLink = createEllipsLink({
+            title: contactData.title,
+            onClick: contactData.onClick,
+            style: "dark"
+        });
+        contactsTopContainer.appendChild(contactLink);
+    })
+
+    emailTextEl.appendChild(createLink({
+        title: linksData.email,
+        onClick: {
+            link: "mailto:" + linksData.email
+        }
+    }));
+
+    // Ссылки по странице
+    menuLinkElementsData.forEach(menuElData => {
+        const menuLink = document.createElement("li");
+        menuLink.className = styles.menuList__item;
+
+        const a = createLink({
+            title: menuElData.title,
+            onClick: menuElData.onClick,
+        })
+        menuLink.appendChild(a);
+
+        bottomMenuList.appendChild(menuLink);
+    })
 }
 
 function initGsapAnimations(bottomContainer, contentContainer) {

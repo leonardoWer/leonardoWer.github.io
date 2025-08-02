@@ -1,10 +1,17 @@
+import gsap from 'gsap';
+import {ScrollToPlugin} from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
+
 export function createLink({ title, onClick }) {
     const link = document.createElement("a");
+
+    // Устанавливаем текст ссылки
     link.textContent = title;
 
+    // Настраиваем клик
     if (onClick && typeof onClick === 'object') {
 
-        // Это внешняя или внутренняя ссылка (открывается в браузере)
+        // Это внешняя ссылка (открывается в браузере)
         if (onClick.link) {
 
             link.href = onClick.link;
@@ -20,7 +27,7 @@ export function createLink({ title, onClick }) {
 
         } else if (onClick.href) {
             // Якорь (перемещение по странице)
-            link.href = onClick.href;
+            onClick.href ? link.href = onClick.href : link.href = "#";
 
             link.addEventListener("click", (event) => {
                 event.preventDefault(); // Отменяем стандартное поведение ссылки
