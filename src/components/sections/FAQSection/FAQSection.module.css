@@ -1,0 +1,79 @@
+/* Секция */
+.FAQSection__contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    background: var(--black-bg);
+    padding: 4rem 0;
+}
+
+.FAQSectionContentContainer__title {
+    color: var(--light-text);
+    text-align: center;
+    font-family: var(--black-text);
+    font-size: clamp(3rem, 1.987rem + 5.06vw, 8rem);
+
+}
+.FAQSectionContentContainer__faqContainer {
+    width: 100%;
+}
+
+/* Список */
+.faqContainer__list {
+    width: 100%;
+}
+
+/* Элемент */
+.faqContainer__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    transition: all 0.1s;
+    cursor: pointer;
+    pointer-events: all;
+}
+.faqContainer__itemWrapper {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+.faqContainerItem__title , .faqContainerItem__icon {
+    color: var(--light-text);
+    transition: color 0.1s;
+}
+
+/* При наведении */
+.faqContainer__item:hover {
+    background: var(--light-gray-bg);
+}
+.faqContainer__item:hover {
+    .faqContainerItem__title , .faqContainerItem__icon {
+        color: var(--black-bg);
+    }
+}
+
+/* Стиль для раскрытого состояния (чтобы фон оставался) */
+.activeFAQItem {
+    background-color: var(--light-gray-bg) !important;
+}
+.activeFAQItem .faqContainerItem__title,
+.activeFAQItem .faqContainerItem__icon {
+    color: var(--dark-gray) !important;
+}
+
+/* Контейнер с ответом */
+.faqContainerItem__answerContainer {
+    width: 60%;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+.faqContainerItemAnswerContainer__text {
+    color: var(--black-bg);
+    margin-top: 1.2rem;
+}
