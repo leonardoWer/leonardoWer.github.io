@@ -1,9 +1,12 @@
 import {initSmoothScroll} from './gsap/smoothScroll.js';
 import {initTimeline} from "s/js/gsap/timeline.js";
+
 import {createAboutSection} from "s/components/sections/AboutSection/AboutSection.js";
 import {createMyWorksSection} from "s/components/sections/MyWorksSection/MyWorksSection.js";
 import {createMySkillsSection} from "s/components/sections/MySkillsSection/MySkillsSection.js";
 import {createFAQSection} from "s/components/sections/FAQSection/FAQSection.js";
+
+import {createFooter} from "s/components/sections/Footer/Footer.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
@@ -14,4 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     main.appendChild(createMyWorksSection());
     main.appendChild(createMySkillsSection());
     main.appendChild(createFAQSection());
+
+    const footer = document.querySelector('footer');
+    footer.appendChild(createFooter());
 });
