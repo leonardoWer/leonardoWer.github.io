@@ -7,7 +7,7 @@ export function createHeader() {
     headerContainer.innerHTML = `
         <h1 class="${styles.headerContainer__title}">Левахин Лев</h1>
         <p class="${styles.headerContainer__description}">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda blanditiis et in inventore minima, quas quos repellendus saepe similique. Assumenda dolores dolorum ea eligendi enim, est excepturi nesciunt numquam porro repellat? Autem doloribus earum esse hic incidunt quidem unde voluptatibus?
+            Создаю современные веб-приложения: Frontend разработка, UI/UX дизайн, Android разработка. <br>Помогу воплотить ваши идеи в жизнь
         </p>
 
         <img class="${styles.headerContainer__img}" src="/img/me-title.png" alt="Levakhin Lev">

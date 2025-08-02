@@ -7,9 +7,8 @@
 }
 .headerContainer__title {
     font-family: var(--black-text);
-    --font-size: clamp(8rem, 5.57rem + 12.15vw, 20rem);
-    font-size: var(--font-size);
-    line-height: calc(var(--font-size) / 1.2);
+    font-size: clamp(8rem, 5.57rem + 12.15vw, 20rem);
+    line-height: 0.85;
     color: var(--light-text);
     position: absolute;
     left: 1rem;
@@ -18,9 +17,8 @@
 
 .headerContainer__description {
     font-family: var(--medium-text);
-    --font-size: clamp(0.8rem, 0.557rem + 1.22vw, 2rem);
-    font-size: var(--font-size);
-    line-height: calc(var(--font-size) / 1.2);
+    font-size: clamp(0.8rem, 0.557rem + 1.22vw, 2rem);
+    line-height: 1.1;
     color: var(--light-text);
     width: 45%;
     position: absolute;
