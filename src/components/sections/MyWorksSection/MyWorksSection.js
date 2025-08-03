@@ -233,7 +233,8 @@ function createViewAllWorksContent(parent) {
             link: linksData.portfolio,
             hoverTitle: "Visit my portfolio",
         },
-        style: "dark"
+        style: "dark",
+        size: "big"
     }
     const rightText = "не только это"
 

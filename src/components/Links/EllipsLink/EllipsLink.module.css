@@ -1,8 +1,8 @@
 .ellipsLink {
-    padding: 4.5rem 6rem;
     border-radius: 100px;
 }
 
+/* Цвета */
 .ellipsLink__dark {
     background: var(--black-bg);
     color: var(--light-text);
@@ -13,6 +13,17 @@
     color: var(--dark-gray);
 }
 
+/* Размер */
+.ellipsLink__middle {
+    padding: 2rem 4rem;
+}
+
+.ellipsLink__big {
+    padding: 4.5rem 6rem;
+}
+
+
+/* Анимация текста */
 .ellipsLink__textContainer {
     font-family: var(--black-text);
     --font-size: clamp(1rem, 0.494rem + 2.53vw, 3.5rem);
@@ -23,6 +34,4 @@
     flex-direction: column;
 }
 
-.originalText, .newText {
-
-}
+.originalText, .newText {}

@@ -3,7 +3,7 @@ import {createLink} from "s/components/Links/link.js";
 
 import gsap from "gsap";
 
-export function createEllipsLink({title, onClick, style}) {
+export function createEllipsLink({title, onClick, style, size="middle"}) {
     const link = createLink({title: "", onClick: onClick});
     link.classList = styles.ellipsLink;
 
@@ -14,6 +14,16 @@ export function createEllipsLink({title, onClick, style}) {
             break;
         case "light":
             link.classList.add(styles.ellipsLink__light);
+            break;
+    }
+
+    // Размер
+    switch (size) {
+        case "middle":
+            link.classList.add(styles.ellipsLink__middle);
+            break;
+        case "big":
+            link.classList.add(styles.ellipsLink__big);
             break;
     }
 
