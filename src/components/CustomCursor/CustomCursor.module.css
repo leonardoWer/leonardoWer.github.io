@@ -1,0 +1,11 @@
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 1s ease;
+    opacity: 0; /* Изначально скрыт */
+    z-index: 100;
+    width: fit-content;
+    pointer-events: none;
+}

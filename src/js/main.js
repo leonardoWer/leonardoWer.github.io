@@ -1,5 +1,7 @@
 import {initSmoothScroll} from './gsap/smoothScroll.js';
 
+import {initCursor} from 's/components/CustomCursor/CustomCursor.js';
+
 import {createHeader} from "s/components/sections/Header/Header.js";
 import {createAboutSection} from "s/components/sections/AboutSection/AboutSection.js";
 import {createMyWorksSection} from "s/components/sections/MyWorksSection/MyWorksSection.js";
@@ -9,6 +11,7 @@ import {createFAQSection} from "s/components/sections/FAQSection/FAQSection.js";
 import {createFooter} from "s/components/sections/Footer/Footer.js";
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Smooth Scroll
     initSmoothScroll();
 
     // Sections
@@ -23,4 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const footer = document.querySelector('footer');
     footer.appendChild(createFooter());
+
+    // Custom Cursor
+    // initCursor();
 });
