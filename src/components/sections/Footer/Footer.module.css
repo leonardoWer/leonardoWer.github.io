@@ -67,11 +67,11 @@
 
 }
 .emailContainer__title {
-    font-size: clamp(0.4rem, 0.197rem + 1.01vw, 1.4rem);
+    font-size: clamp(0.8rem, 0.678rem + 0.61vw, 1.4rem);
 }
 .emailContainer__email {
     font-family: var(--black-text);
-    font-size: clamp(0.6rem, 0.397rem + 1.01vw, 1.6rem);
+    font-size: clamp(1rem, 0.878rem + 0.61vw, 1.6rem);
 }
 
 
@@ -93,9 +93,9 @@
 .footerContentContainerBottom__titleText {
     color: var(--dark-gray);
     font-family: var(--black-text);
-    --font-size: clamp(2rem, 0.785rem + 6.08vw, 8rem);
+    --font-size: clamp(3rem, 1.582rem + 7.09vw, 10rem);
     font-size: var(--font-size);
-    line-height: calc(var(--font-size) / 1.1);
+    line-height: 1.1;
 }
 .footerContentContainerBottom__menuList {
     height: 100%;
@@ -108,5 +108,5 @@
 .menuList__item {
     color: var(--dark-gray);
     font-family: var(--black-text);
-    font-size: clamp(0.8rem, 0.557rem + 1.22vw, 2rem);
+    font-size: clamp(1rem, 0.757rem + 1.22vw, 2.2rem);
 }
