@@ -24,9 +24,11 @@
     justify-content: space-between;
 }
 .textContainer__title {
-    font-family: var(--medium-text);
     color: var(--dark-gray);
+    font-family: var(--medium-text);
+    font-size: clamp(1rem, 0.635rem + 1.82vw, 2.8rem);
 }
+
 .textContainer__stackContainer {
     display: flex;
     gap: 1rem;
@@ -35,6 +37,8 @@
     padding: 8px 16px;
     border-radius: var(--two-border-radius);
     border: 1px solid var(--dark-gray);
+    font-size: clamp(0.8rem, 0.557rem + 1.22vw, 2rem);
+    text-wrap: nowrap;
 }
 
 
@@ -52,4 +56,23 @@
 }
 .workTitleImg:hover {
     transform: scale(1.012);
+}
+
+@media (max-width: 780px) {
+    .stackItem {
+        padding: 0.8rem 2.2rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .workTile {
+        height: 40vh;
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .stackItem {
+        padding: 0.4rem 1.2rem;
+    }
 }

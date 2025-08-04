@@ -35,3 +35,10 @@
 }
 
 .originalText, .newText {}
+
+/* Адаптация */
+@media (max-width: 520px) {
+    .ellipsLink__big {
+        padding: 2.5rem 4rem;
+    }
+}

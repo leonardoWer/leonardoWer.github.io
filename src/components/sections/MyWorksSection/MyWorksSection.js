@@ -22,7 +22,9 @@ export function createMyWorksSection() {
           <div class="${styles.myWorksTop__bg}"></div>
           <div class="${styles.myWorksTop__contentContainer}">
               <h2 class="${styles.myWorksTitle}">Мои работы</h2>
-              <div class="${styles.myWorksTop__previewContainer}"></div>
+              <div class="${styles.myWorksTop__previewContainer}">
+                <!--  work preview content  -->
+              </div>
           </div>
         </div>
 
@@ -31,7 +33,9 @@ export function createMyWorksSection() {
             <span class="${styles.myWorksBottomTextContainer__title}">Каждый проект</span>
             <span class="${styles.myWorksBottomTextContainer__uniq}">уникален</span>
           </div>
-          <div class="${styles.myWorksBottom__workTilesContainer}"></div>
+          <div class="${styles.myWorksBottom__workTilesContainer}">
+           <!--  work tiles content  -->
+          </div>
         </div>
         
         <div class="${styles.viewAllWorksContainer}"></div>
@@ -113,13 +117,7 @@ function createWorkPreviewTile({img}) {
 function initWorksTopGsapAnimations(topContainer, topBg, titleText, myWorksTopPreviewContainer, myWorksPreviewTilesData) {
 
     // 1. Анимация фона (управляемая ScrollTrigger)
-    gsap.fromTo(topBg, {
-        height: "30vw",
-        width: "30vw",
-    }, {
-        height: "130vw",
-        width: "130vw",
-        ease: "power1.inOut",
+    const bgFadeInTl = gsap.timeline({
         scrollTrigger: {
             trigger: topContainer,
             start: "top 65%",
@@ -127,9 +125,20 @@ function initWorksTopGsapAnimations(topContainer, topBg, titleText, myWorksTopPr
             scrub: true,
             toggleActions: "play none none reverse",
         }
-    });
+    })
+    bgFadeInTl.fromTo(topBg, {
+        height: "30vw",
+        width: "30vw",
+    }, {
+        height: "130vw",
+        width: "130vw",
+        ease: "power1.inOut",
+    }, 0)
+        .to(topContainer, {
+            backgroundColor: "var(--green)",
+        }, 0.5)
 
-    // 2. Анимация текста и контейнера (запускается после анимации фона)
+    // Анимация текста и контейнера c тайлами (запускается после анимации фона)
     initSplitLineText(titleText);
     const fadeInTl = getAnimatedSplitLineTextTl({
         textEl: titleText,
