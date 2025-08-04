@@ -51,8 +51,19 @@
     }
 }
 
+@media (max-width: 780px) {
+    .item {
+        padding: 0.8rem 2.2rem;
+    }
+}
 @media (max-width: 520px) {
     .aboutTile {
         width: 70vw;
+    }
+}
+
+@media (max-width: 420px) {
+    .item {
+        padding: 0.4rem 1.2rem;
     }
 }
