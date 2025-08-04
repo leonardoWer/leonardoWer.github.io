@@ -7,24 +7,37 @@ gsap.registerPlugin(Draggable);
 
 import Matter from "matter-js";
 
-export function createAboutTile({ title, titleElementNumber, location}) {
-
+export function createAboutTile({ title, itemsData, location}) {
+    // Создаём плитку
     const tile = document.createElement("div");
     tile.classList.add(styles.aboutTile);
     if (styles[location]) {
         tile.classList.add(styles[location]);
     }
-
     tile.innerHTML = `
-        <div class="${styles.contentContainer}">
-            <div class="${styles.item}">vite</div>
-            <div class="${styles.item}">js</div>
-        </div>
-
+        <div class="${styles.contentContainer}"></div>
         <h4 class="${styles.titleText}">${title}</h4>
     `;
 
+    // Элементы
     const container = tile.querySelector(`.${styles.contentContainer}`);
+
+    if (itemsData && itemsData.length > 0) {
+        itemsData.forEach((item) => {
+            // Создаём item
+            const itemEl = document.createElement("div");
+            itemEl.className = styles.item;
+            itemEl.textContent = item;
+
+            // Добавляем в контейнер
+            container.appendChild(itemEl);
+        })
+    } else {
+        console.warn("No items found");
+        return;
+    }
+
+    // Список из элементов
     const items = container.querySelectorAll(`.${styles.item}`);
 
     // Айтемы внутри (с помощью matter)
