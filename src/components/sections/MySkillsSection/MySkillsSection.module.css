@@ -27,3 +27,32 @@
     object-fit: contain;
     object-position: center;
 }
+
+@media (max-width: 920px) {
+    .mySkillsSectionContentContainer {
+        flex-direction: column;
+        padding: 1rem 2rem;
+    }
+    .mySkillsSectionContentContainer__imgContainer {
+        align-self: center;
+        height: 60%;
+        width: 40%;
+    }
+    .mySkillsSectionContentContainer__text[data-left] {
+        align-self: flex-start;
+    }
+    .mySkillsSectionContentContainer__text[data-right] {
+        align-self: flex-end;
+    }
+}
+@media (max-width: 780px) {
+    .mySkillsSectionContentContainer__imgContainer {
+        height: 50%;
+    }
+}
+@media (max-width: 420px) {
+    .mySkillsSectionContentContainer__imgContainer {
+        height: 40%;
+        width: 60%;
+    }
+}

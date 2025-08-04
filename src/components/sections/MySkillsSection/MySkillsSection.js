@@ -10,7 +10,7 @@ export function createMySkillsSection() {
     section.id = "mySkillsSection";
     section.innerHTML = `
         <div class="${styles.mySkillsSectionContentContainer}">
-            <p class="${styles.mySkillsSectionContentContainer__text}">
+            <p class="${styles.mySkillsSectionContentContainer__text}" data-left>
                 Я создаю понятные и красивые интерфейсы, которые обеспечивают безупречный пользовательский опыт на любом устройстве
             </p>
             
@@ -18,7 +18,7 @@ export function createMySkillsSection() {
                 <img src="/img/me-with-micro-no-bg.png" alt="me with micro">
             </div>
             
-            <p class="${styles.mySkillsSectionContentContainer__text}">
+            <p class="${styles.mySkillsSectionContentContainer__text}" data-right>
                 Моя цель – превратить ваши идеи в эффективные цифровые продукты, приносящие реальную пользу вашему бизнесу
             </p>
         </div>
