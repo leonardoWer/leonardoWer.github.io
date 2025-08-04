@@ -35,6 +35,7 @@
     transition: all 0.1s;
     cursor: pointer;
     pointer-events: all;
+    font-size: clamp(1.2rem, 0.937rem + 1.32vw, 2.5rem);
 }
 .faqContainer__itemWrapper {
     width: 60%;
@@ -45,6 +46,7 @@
 .faqContainerItem__title , .faqContainerItem__icon {
     color: var(--light-text);
     transition: color 0.1s;
+    max-width: 80%;
 }
 
 /* При наведении */
@@ -77,4 +79,10 @@
     color: var(--black-bg);
     margin-top: 1.2rem;
     line-height: 1.05;
+}
+
+@media (max-width: 520px) {
+    .faqContainer__itemWrapper, .faqContainerItem__answerContainer {
+        width: 80%;
+    }
 }
