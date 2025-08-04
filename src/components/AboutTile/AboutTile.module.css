@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
-    padding: 2rem;
+    padding: 4rem 2rem 2rem 2rem;
 }
 .left {
     left: 5%;
@@ -21,8 +21,21 @@
 .contentContainer {
     width: 80%;
     height: 80%;
-    background: var(--black-bg);
-    color: var(--light-text);
+    border: 8px solid var(--black-bg);
+    justify-self: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.item {
+    cursor: grab;
+    user-select: none;
+    border-radius: var(--two-border-radius);
+    border: 3px solid var(--black-bg);
+    padding: 1rem 4rem;
+    color: var(--black-text);
+    position: absolute;
 }
 
 .titleText {
