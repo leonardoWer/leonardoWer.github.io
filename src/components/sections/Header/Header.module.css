@@ -1,9 +1,9 @@
 .headerContainer {
-    position: relative;
     background: var(--black-bg);
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 .headerContainer__title {
     font-family: var(--black-text);
@@ -20,9 +20,8 @@
     font-size: clamp(0.8rem, 0.557rem + 1.22vw, 2rem);
     line-height: 1.1;
     color: var(--light-text);
-    width: 45%;
     position: absolute;
-    bottom: 2rem;
+    bottom: 1.2rem;
     right: 2rem;
     z-index: 2;
 }
