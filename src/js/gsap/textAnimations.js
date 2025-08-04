@@ -42,6 +42,7 @@ export function initSplitLineText(splitLineTextEl) {
 export function getLineContentData(splittedIntoLinesTextEl) {
     return splittedIntoLinesTextEl.querySelectorAll('.line-content');
 }
+
 // Находит все элементы в родителе и сплитит их
 export function findSplitLineTextAndSplitThem(parentEl) {
     const splitLineTextData = parentEl.querySelectorAll('[data-split-text]');
@@ -64,7 +65,7 @@ export const splittedTextToParams = {
 };
 
 // Просто анимирует
-export function animateSplitLineText({ textEl, duration=0.5, scrollTrigger = null }) {
+export function animateSplitLineText({textEl, duration = 1, scrollTrigger = {trigger: textEl, start: "top 80%"}}) {
     const lines = getLineContentData(textEl);
 
     // Ошибки
@@ -73,23 +74,20 @@ export function animateSplitLineText({ textEl, duration=0.5, scrollTrigger = nul
         return;
     }
 
-    const toParams = { ...splittedTextToParams };
-
-    // Добавляем scrollTrigger, если он передан
-    if (scrollTrigger) {
-        toParams.scrollTrigger = scrollTrigger;
-    }
+    const toParams = {...splittedTextToParams};
 
     // Анимируем
     gsap.fromTo(
         lines,
-        { ...splittedTextFromParams },
-        { ...toParams, duration: duration,}
+        {...splittedTextFromParams},
+        {...toParams, scrollTrigger: scrollTrigger, duration: duration}
     );
+
+    console.log(scrollTrigger);
 }
 
 // Возвращает tl с анимацией
-export function getAnimatedSplitLineTextTl({ textEl, duration=0.5, scrollTrigger = null }) {
+export function getAnimatedSplitLineTextTl({textEl, duration = 0.5, scrollTrigger = null}) {
     const lines = getLineContentData(textEl);
 
     // Ошибки
@@ -98,15 +96,15 @@ export function getAnimatedSplitLineTextTl({ textEl, duration=0.5, scrollTrigger
         return;
     }
 
-    const toParams = { ...splittedTextToParams };
+    const toParams = {...splittedTextToParams};
 
     const tl = gsap.timeline({scrollTrigger: scrollTrigger});
 
     // Анимируем
     tl.fromTo(
         lines,
-        { ...splittedTextFromParams },
-        { ...toParams, duration: duration}
+        {...splittedTextFromParams},
+        {...toParams, duration: duration}
     );
 
     return tl;

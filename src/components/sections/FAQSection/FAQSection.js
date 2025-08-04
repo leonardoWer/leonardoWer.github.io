@@ -2,12 +2,14 @@ import styles from "./FAQSection.module.css"
 
 import gsap from "gsap";
 
+import {initSplitLineText, animateSplitLineText} from "s/js/gsap/textAnimations.js";
+
 export function createFAQSection() {
     const section = document.createElement("section");
     section.id = "fAQSection";
     section.innerHTML = `
         <div class="container ${styles.FAQSection__contentContainer}">
-            <h2 class="${styles.FAQSectionContentContainer__title}">FAQ</h2>
+            <h2 class="${styles.FAQSectionContentContainer__title}" data-split-text>FAQ</h2>
             
             <div class="${styles.FAQSectionContentContainer__faqContainer}">
                 <ul class="${styles.faqContainer__list}">
@@ -33,7 +35,7 @@ export function createFAQSection() {
         },
         {
             question: "Зачем нужен сайт мне или моему бизнесу?",
-            answer: "В современном мире сайт — это цифровая визитная карточка, инструмент продаж и канал коммуникации. Он увеличивает узнаваемость бренда, привлекает новых клиентов 24/7, позволяет демонстрировать товары или услуги, собирать контакты и строить доверительные отношения с вашей аудиторией. Даже простой лендинг может значительно усилить ваше присутствие на рынке"
+            answer: "В современном мире сайт — это цифровая визитная карточка, инструмент продаж и канал коммуникации. Он увеличивает узнаваемость бренда, привлекает новых клиентов 24/7, позволяет демонстрировать товары или услуги, собирать контакты и строить доверительные отношения с вашей аудиторией. Даже простой лендинг может значительно усилить ваше присутствие на рынке "
         },
         {
             question: "Сколько стоит сайт?",
@@ -58,6 +60,13 @@ export function createFAQSection() {
 
         faqList.appendChild(itemEl);
     })
+
+    // Анимация для заголовка
+    const title = section.querySelector(`.${styles.FAQSectionContentContainer__title}`)
+    initSplitLineText(title);
+    animateSplitLineText({
+        textEl: title,
+    });
 
     return section;
 }
