@@ -9,6 +9,8 @@ import {SplitText} from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
+import {initSplitLineText, getAnimatedSplitLineTextTl} from "s/js/gsap/textAnimations.js";
+
 const photoPath = "/img/works/"
 
 export function createMyWorksSection() {
@@ -54,13 +56,13 @@ export function createMyWorksSection() {
             name: "Spider-Man-Movies",
             titleImg: "spider-man-movies.png",
             stack: ["vite", "gsap"],
-            link: "leonardoWer.github.io/Spider-Man-Movie",
+            link: "https://leonardower.github.io/Spider-Man-Movie",
         },
         {
             name: "basketball-courts",
             titleImg: "basketball-courts.png",
             stack: ["vite", "gsap", "ymaps API"],
-            link: "leonardoWer.github.io/basketball-courts",
+            link: "https://leonardoWer.github.io/basketball-courts",
         },
         {
             name: "Петербург Бенуа",
@@ -90,10 +92,9 @@ export function createMyWorksSection() {
         workTilesContainer.appendChild(workTile);
     })
 
+    // Анимации
     initWorksTopGsapAnimations(topContainer, topContentContainer, titleText, worksTopPreviewContainer, myWorksPreviewTilesData);
     initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, bottomContainerTextElements);
-
-    // Посмотреть все работы
     createViewAllWorksContent(viewAllWorksContainer);
 
     return section;
@@ -121,21 +122,19 @@ function initWorksTopGsapAnimations(topContainer, topBg, titleText, myWorksTopPr
         ease: "power1.inOut",
         scrollTrigger: {
             trigger: topContainer,
-            start: "top 55%",
+            start: "top 65%",
             end: "bottom bottom",
             scrub: true,
-            toggleActions: "play none none reverse"
+            toggleActions: "play none none reverse",
         }
     });
 
     // 2. Анимация текста и контейнера (запускается после анимации фона)
-    const fadeInTl = gsap.timeline();
-    fadeInTl.fromTo(titleText, {
-        opacity: 0
-    }, {
-        ease: "power1.inOut",
-        opacity: 1, duration: 1
-    })
+    initSplitLineText(titleText);
+    const fadeInTl = getAnimatedSplitLineTextTl({
+        textEl: titleText,
+        duration: 1
+    });
 
     const previewContainerFadeInTl = gsap.timeline()
     previewContainerFadeInTl.from(myWorksTopPreviewContainer, {
@@ -191,37 +190,39 @@ function initWorksTopGsapAnimations(topContainer, topBg, titleText, myWorksTopPr
 
 function initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, bottomContainerTextElements) {
     // Разбиваем текст
-    const splitText1 = new SplitText(bottomContainerTextElements[0], {type: "words"})
-    const splitText2 = new SplitText(bottomContainerTextElements[1], {type: "words"})
+    document.fonts.ready.then(() => {
+            const splitText1 = new SplitText(bottomContainerTextElements[0], {type: "words"})
+            const splitText2 = new SplitText(bottomContainerTextElements[1], {type: "words"})
 
-    const tl = gsap.timeline();
-    tl.to(workTilesContainer, {
-        xPercent: -70,
-        ease: "power1.inOut",
-        duration: 2
-    }, 0)
-        .to(splitText2.words, {
-            opacity: 0,
-            stagger: 0.1,
-            ease: "power3.in",
-            duration: 0.2
-        }, 0)
-        .to(splitText1.words.reverse(), {
-            opacity: 0,
-            stagger: 0.1,
-            ease: "power3.in",
-            duration: 0.2
-        }, 0.1)
+            const tl = gsap.timeline();
+            tl.to(workTilesContainer, {
+                xPercent: -70,
+                ease: "power1.inOut",
+                duration: 2
+            }, 0)
+                .to(splitText2.words, {
+                    opacity: 0,
+                    stagger: 0.1,
+                    ease: "power3.in",
+                    duration: 0.2
+                }, 0)
+                .to(splitText1.words.reverse(), {
+                    opacity: 0,
+                    stagger: 0.1,
+                    ease: "power3.in",
+                    duration: 0.2
+                }, 0.1)
 
 
-    ScrollTrigger.create({
-        trigger: bottomContainer,
-        start: "top top",
-        end: "+=2000",
-        pin: bottomContainer,
-        scrub: true,
-        animation: gsap.timeline().add(tl),
-    });
+            ScrollTrigger.create({
+                trigger: bottomContainer,
+                start: "top top",
+                end: "+=2000",
+                pin: bottomContainer,
+                scrub: true,
+                animation: gsap.timeline().add(tl),
+            })
+    })
 }
 
 function createViewAllWorksContent(parent) {
@@ -264,26 +265,28 @@ function createViewAllWorksContent(parent) {
     parent.appendChild(contentWrapper);
 
     // Анимации
-    const splitText1 = new SplitText(textLeftSpan, { type: "chars" });
-    const splitText2 = new SplitText(textRightSpan, { type: "chars" });
-    const wordDelay = 0.05;
+    document.fonts.ready.then(() => {
+        const splitText1 = new SplitText(textLeftSpan, { type: "chars" });
+        const splitText2 = new SplitText(textRightSpan, { type: "chars" });
+        const wordDelay = 0.05;
 
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: parent,
-            start: "center bottom",
-            end: "bottom bottom",
-            scrub: true,
-        }
-    });
-    tl.from(splitText1.chars, {
-        opacity: 0,
-        stagger: wordDelay,
-        ease: "power3.in",
-    })
-        .from(splitText2.chars, {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: parent,
+                start: "center bottom",
+                end: "bottom bottom",
+                scrub: true,
+            }
+        });
+        tl.from(splitText1.chars, {
             opacity: 0,
             stagger: wordDelay,
             ease: "power3.in",
-    }, "<")
+        })
+            .from(splitText2.chars, {
+                opacity: 0,
+                stagger: wordDelay,
+                ease: "power3.in",
+            }, "<")
+    })
 }

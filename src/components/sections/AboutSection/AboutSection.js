@@ -95,7 +95,6 @@ function initGsapAnimations(aboutContainer, aboutTiles, aboutTitle, aboutDescrip
             scrollTrigger: {
                 trigger: aboutDescription,
                 start: "center 80%",
-                markers: true,
             },
             duration: 1
         });
