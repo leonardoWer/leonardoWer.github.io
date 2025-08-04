@@ -126,7 +126,6 @@ function initGsapAnimations(headerContainer, headerTitle, headerDescription, hea
             trigger: headerContainer,
             start: "40% 20%",
             scrub: 1,
-            markers: true
         }
     })
 }
