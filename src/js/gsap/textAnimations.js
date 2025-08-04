@@ -5,6 +5,8 @@ import {TextPlugin} from "gsap/TextPlugin";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, TextPlugin);
 
+// Разделённый на строки текст (Анимация появления из под себя)
+
 export function initSplitLineText(splitLineTextEl) {
     // Заменяем <br> на \n и разбиваем текст на строки
     const text = splitLineTextEl.innerHTML.replace(/<br\s*\/?>/gi, '\n'); // Заменяем <br> на \n
@@ -36,31 +38,19 @@ export function initSplitLineText(splitLineTextEl) {
     });
 }
 
+// Все элементы с текстом (для анимации отдельно их)
 export function getLineContentData(splittedIntoLinesTextEl) {
     return splittedIntoLinesTextEl.querySelectorAll('.line-content');
 }
+// Находит все элементы в родителе и сплитит их
+export function findSplitLineTextAndSplitThem(parentEl) {
+    const splitLineTextData = parentEl.querySelectorAll('[data-split-text]');
 
-// TODO: redesign this
-export function initTitleTextAnimation({textEl, duration, stagger, scrollTrigger}) {
-    document.fonts.ready.then(() => {
-        const splitText = new SplitText(textEl, {type: 'chars'});
-
-        gsap.fromTo(splitText.chars, {
-            opacity: 0,
-            yPercent: 50,
-        }, {
-            opacity: 1,
-            yPercent: 0,
-            stagger: stagger,
-            duration: duration,
-            ease: "power2.out",
-            scrollTrigger: scrollTrigger,
-        });
-    })
+    // Делим текст
+    splitLineTextData.forEach(textEl => {
+        initSplitLineText(textEl);
+    });
 }
-
-
-// Разделённый на строки текст (Анимация появления из под себя)
 
 // Параметры
 export const splittedTextFromParams = {
@@ -73,6 +63,7 @@ export const splittedTextToParams = {
     yPercent: 0,
 };
 
+// Просто анимирует
 export function animateSplitLineText({ textEl, duration=0.5, scrollTrigger = null }) {
     const lines = getLineContentData(textEl);
 
@@ -81,19 +72,23 @@ export function animateSplitLineText({ textEl, duration=0.5, scrollTrigger = nul
         console.warn("No lines found in textEl: ", textEl);
         return;
     }
+
+    const toParams = { ...splittedTextToParams };
+
     // Добавляем scrollTrigger, если он передан
     if (scrollTrigger) {
-        splittedTextToParams.scrollTrigger = scrollTrigger;
+        toParams.scrollTrigger = scrollTrigger;
     }
 
     // Анимируем
     gsap.fromTo(
         lines,
         { ...splittedTextFromParams },
-        { ...splittedTextToParams, duration: duration,}
+        { ...toParams, duration: duration,}
     );
 }
 
+// Возвращает tl с анимацией
 export function getAnimatedSplitLineTextTl({ textEl, duration=0.5, scrollTrigger = null }) {
     const lines = getLineContentData(textEl);
 
@@ -103,13 +98,15 @@ export function getAnimatedSplitLineTextTl({ textEl, duration=0.5, scrollTrigger
         return;
     }
 
+    const toParams = { ...splittedTextToParams };
+
     const tl = gsap.timeline({scrollTrigger: scrollTrigger});
 
     // Анимируем
     tl.fromTo(
         lines,
         { ...splittedTextFromParams },
-        { ...splittedTextToParams, duration: duration}
+        { ...toParams, duration: duration}
     );
 
     return tl;

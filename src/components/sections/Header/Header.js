@@ -31,6 +31,7 @@ export function createHeader() {
 }
 
 function initGsapAnimations(headerContainer, headerTitle, headerDescription, headerImg) {
+    // Получаем элементы которые нужно делить
     const splitLineTextData = headerContainer.querySelectorAll('[data-split-text]');
 
     // Делим текст
@@ -38,10 +39,27 @@ function initGsapAnimations(headerContainer, headerTitle, headerDescription, hea
         initSplitLineText(textEl);
     });
 
-    const fadeInTl = gsap.timeline();
+    // Начальные параметры
+    gsap.set(headerTitle, {
+        xPercent: 20,
+        yPercent: 20,
+    })
+    gsap.set(headerImg, {
+            scale: 1.05,
+            opacity: 0,
+            xPercent: -5,
+            yPercent: -8,
+        })
+
+    // Создаём таймлайн
+    const fadeInTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: headerContainer,
+            start: "top 5%",
+        }
+    });
 
     document.fonts.ready.then(() => {
-
         // Получаем имя и фамилию
         const titleLines = getLineContentData(headerTitle);
         const levakhinText = titleLines[0];
@@ -63,17 +81,7 @@ function initGsapAnimations(headerContainer, headerTitle, headerDescription, hea
         const descriptionTextTl = getAnimatedSplitLineTextTl({textEl: headerDescription, duration: 1.5})
 
         // Анимация
-        fadeInTl.set(headerTitle, {
-            xPercent: 20,
-            yPercent: 20,
-        }, 0)
-            .set(headerImg, {
-                scale: 1.05,
-                opacity: 0,
-                xPercent: -5,
-                yPercent: -8,
-            }, 0)
-            .fromTo(levakhinFirstLetter,
+        fadeInTl.fromTo(levakhinFirstLetter,
             { ...splittedTextFromParams },
             { ...splittedTextToParams, duration: 1},
             0

@@ -6,6 +6,8 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+import {findSplitLineTextAndSplitThem, animateSplitLineText} from "s/js/gsap/textAnimations.js";
+
 export function createAboutSection() {
     const section = document.createElement("section");
     section.id = "aboutSection";
@@ -14,12 +16,11 @@ export function createAboutSection() {
         <div class="container ${styles.aboutContainer}">
 
           <div class="${styles.aboutTextContainer}">
-            <h2 class="title-text">Обо мне</h2>
-            <p class="${styles.aboutText}">
-              Я студент университета ИТМО. Моя цель – создавать впечатляющие и удобные веб-решения.
-              Учеба на направлении "Мобильные и сетевые технологии" дает мне прочную техническую базу,
-              а мои хобби – спорт и музыка – развивают креативность и организованность.
-              Творческий подход и разносторонность позволяют мне находить нестандартные решения и создавать действительно уникальные продукты.
+            <h2 class="title-text" data-split-text>Обо мне</h2>
+            <p class="${styles.aboutText}" data-split-text>
+              Я студент университета ИТМО<br>Моя цель – создавать впечатляющие<br>и удобные веб-решения
+              <br>Учеба на направлении<br>"Мобильные и сетевые технологии"<br>дает мне прочную техническую базу,<br>а мои хобби – спорт и музыка<br>развивают креативность и организованность
+              <br>Творческий подход и разносторонность<br>позволяют мне находить<br>нестандартные решения<br>и создавать действительно<br>уникальные продукты.
             </p>
           </div>
           
@@ -30,55 +31,90 @@ export function createAboutSection() {
         </div>
     `
 
-    // Получаем ссылки на внутренние элементы, которые будем использовать
+    // Элементы, которые будем использовать
     const aboutContainer = section.querySelector(`.${styles.aboutContainer}`);
-    const aboutTextContainer = section.querySelector(`.${styles.aboutTextContainer}`);
+
+    const aboutTitle = section.querySelector('.title-text');
+    const aboutDescription = section.querySelector(`.${styles.aboutText}`);
+
     const tilesWrapper = section.querySelector(`.${styles.aboutTilesWrapper}`);
 
-    const tilesData = [
-        { title: "Frontend dev", titleElementNumber: 1, location: "left" },
-        { title: "Web-designer", titleElementNumber: 2, location: "right" },
-        { title: "Android dev", titleElementNumber: 3, location: "left" }
-    ];
+    // Тайлы
+    let tileElements;
 
-    // Создаем DOM-элементы плиток с помощью вашего компонента createAboutTile
-    const tileElements = tilesData.map((tileData) => {
-        return createAboutTile({
-            title: tileData.title,
-            titleElementNumber: tileData.titleElementNumber,
-            location: tileData.location,
+    function initTiles() {
+        const tilesData = [
+            { title: "Frontend dev", titleElementNumber: 1, location: "left" },
+            { title: "Web-designer", titleElementNumber: 2, location: "right" },
+            { title: "Android dev", titleElementNumber: 3, location: "left" }
+        ];
+
+        // Создаем DOM-элементы плиток с помощью вашего компонента createAboutTile
+        tileElements = tilesData.map((tileData) => {
+            return createAboutTile({
+                title: tileData.title,
+                titleElementNumber: tileData.titleElementNumber,
+                location: tileData.location,
+            });
         });
-    });
 
-    // Добавляем созданные плитки в wrapper
-    tileElements.forEach(tileElement => {
-        tilesWrapper.appendChild(tileElement);
-    });
+        // Добавляем созданные плитки в wrapper
+        tileElements.forEach(tileElement => {
+            tilesWrapper.appendChild(tileElement);
+        });
+    }
+    initTiles();
 
     // Анимации
-    initGsapAnimations(aboutContainer, tileElements);
+    initGsapAnimations(aboutContainer, tileElements, aboutTitle, aboutDescription);
 
     return section;
 }
 
-function initGsapAnimations(aboutContainer, aboutTiles) {
+function initGsapAnimations(aboutContainer, aboutTiles, aboutTitle, aboutDescription) {
 
     const animationDuration = 3000; // Продолжительность анимации
     const tileDelay = 0.1; // Промежуток между появлением плиток
 
-    // 2. Анимация плиток (с использованием Timeline)
-    const tl = gsap.timeline();
+    // Анимации текста
+    document.fonts.ready.then(() => {
+        // Анимации текста
+        findSplitLineTextAndSplitThem(aboutContainer);
+
+        animateSplitLineText({
+            textEl: aboutTitle,
+            scrollTrigger: {
+                trigger: aboutTitle,
+                start: "top 80%",
+            },
+            duration: 1
+        });
+
+        animateSplitLineText({
+            textEl: aboutDescription,
+            scrollTrigger: {
+                trigger: aboutDescription,
+                start: "center 80%",
+                markers: true,
+            },
+            duration: 1
+        });
+    })
+
+    // Анимация плиток
+    const tilesTl = gsap.timeline();
     aboutTiles.forEach((tile, index) => {
-        tl.fromTo(tile, {
-            yPercent: 100 //  Начальное положение (вне экрана снизу)
+        tilesTl.fromTo(tile, {
+            yPercent: 100
         }, {
-            yPercent: -165, //  Сверху экрана
-            autoAlpha: 1,   //  Появление плитки
+            yPercent: -165,
+            autoAlpha: 1,
             ease: "power2.out",
             delay: index * tileDelay, // Задержка для появления по очереди
-        }, 0); //  0 означает, что все анимации будут выполняться последовательно
+        }, 0);
     });
 
+    // Тригер для плиток
     ScrollTrigger.create({
         trigger: aboutContainer,
         start: "top top",
@@ -86,7 +122,7 @@ function initGsapAnimations(aboutContainer, aboutTiles) {
         pin: aboutContainer,
         pinSpacing: true,
         scrub: true,
-        animation: tl,
+        animation: tilesTl,
     })
 
 }
