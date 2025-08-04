@@ -12,6 +12,7 @@
 }
 .aboutText {
     margin-top: 5rem;
+    font-size: clamp(1rem, 0.635rem + 1.82vw, 2.8rem);
 }
 
 /* Контейнер плиток */
@@ -25,4 +26,22 @@
     width: 100%;
     height: 100%;
     position: relative;
+}
+
+@media (max-width: 780px) {
+    .aboutTextContainer {
+        width: 60%;
+    }
+}
+
+@media (max-width: 520px) {
+    .aboutTextContainer {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutTextContainer {
+        width: 90%;
+    }
 }

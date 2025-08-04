@@ -36,10 +36,23 @@
     padding: 1rem 4rem;
     color: var(--black-text);
     position: absolute;
+    font-size: clamp(0.8rem, 0.557rem + 1.22vw, 2rem);
 }
 
 .titleText {
     font-family: var(--black-text);
     font-size: clamp(1rem, 0.392rem + 3.04vw, 4rem);
     color: var(--black-text);
+}
+
+@media (max-width: 920px) {
+    .aboutTile {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 520px) {
+    .aboutTile {
+        width: 70vw;
+    }
 }

@@ -15,4 +15,5 @@
     font-size: var(--font-size);
     line-height: calc(var(--font-size) / 1.2);
     font-family: var(--black-text);
+    text-wrap: nowrap;
 }
