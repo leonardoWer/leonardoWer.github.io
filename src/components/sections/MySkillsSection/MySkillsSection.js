@@ -46,34 +46,36 @@ function initGsapAnimations(contentContainer, textElData, imgContainer) {
         }
     })
 
-    const splitText1 = new SplitText(textElData[0], { type: "words" });
-    const splitText2 = new SplitText(textElData[1], { type: "words" });
-    const wordDelay = 0.1; // Задержка между появлением слов
-    const rotationDuration = 2; // Длительность поворота
+    document.fonts.ready.then(() => {
+        const splitText1 = new SplitText(textElData[0], { type: "words" });
+        const splitText2 = new SplitText(textElData[1], { type: "words" });
+        const wordDelay = 0.1; // Задержка между появлением слов
+        const rotationDuration = 1.8; // Длительность поворота
 
-    // 1. Параллельный поворот и появление первого текста:
-    tl.to(imgContainer, {
-        rotateY: "180deg",
-        ease: "sine.in",
-        duration: rotationDuration,
-    }, 0)
-        .from(splitText1.words, {
-            opacity: 0,
-            stagger: wordDelay,
-            duration: rotationDuration / 3,
-            ease: "power2.out",
-        }, 0);
+        // 1. Параллельный поворот и появление первого текста:
+        tl.to(imgContainer, {
+            rotateY: "180deg",
+            ease: "sine.in",
+            duration: rotationDuration,
+        }, 0)
+            .from(splitText1.words, {
+                opacity: 0,
+                stagger: wordDelay,
+                duration: rotationDuration / 3,
+                ease: "power2.out",
+            }, 0);
 
-    // 2.  После завершения первого текста, поворот обратно и появление второго текста:
-    tl.to(imgContainer, {
-        rotateY: "360deg",
-        ease: "sine.in",
-        duration: rotationDuration,
-    }, `+=${rotationDuration / 3}`)
-        .from(splitText2.words, {
-            opacity: 0,
-            stagger: wordDelay,
-            duration: rotationDuration / 3,
-            ease: "power2.out",
-        }, `-=${rotationDuration}`);
+        // 2.  После завершения первого текста, поворот обратно и появление второго текста:
+        tl.to(imgContainer, {
+            rotateY: "360deg",
+            ease: "sine.in",
+            duration: rotationDuration,
+        }, `+=${rotationDuration / 3}`)
+            .from(splitText2.words, {
+                opacity: 0,
+                stagger: wordDelay,
+                duration: rotationDuration / 3,
+                ease: "power2.out",
+            }, `-=${rotationDuration}`);
+    })
 }
