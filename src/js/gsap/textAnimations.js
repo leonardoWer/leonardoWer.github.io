@@ -82,8 +82,6 @@ export function animateSplitLineText({textEl, duration = 1, scrollTrigger = {tri
         {...splittedTextFromParams},
         {...toParams, scrollTrigger: scrollTrigger, duration: duration}
     );
-
-    console.log(scrollTrigger);
 }
 
 // Возвращает tl с анимацией
