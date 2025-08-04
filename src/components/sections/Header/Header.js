@@ -78,7 +78,7 @@ function initGsapAnimations(headerContainer, headerTitle, headerDescription, hea
         const stagger = 0.2;
 
         // Стандартная анимация описания
-        const descriptionTextTl = getAnimatedSplitLineTextTl({textEl: headerDescription, duration: 1.5})
+        const descriptionTextTl = getAnimatedSplitLineTextTl({textEl: headerDescription, duration: 1.8})
 
         // Анимация
         fadeInTl.fromTo(levakhinFirstLetter,
@@ -94,27 +94,39 @@ function initGsapAnimations(headerContainer, headerTitle, headerDescription, hea
             .fromTo(levakhinAnotherLetters,
                 { ...splittedTextFromParams },
                 { ...splittedTextToParams, stagger: stagger, duration: 0.2},
-                1
+                0.5
             )
             .fromTo(levAnotherLetters,
                 { ...splittedTextFromParams },
                 { ...splittedTextToParams, stagger: stagger},
-                1
+                0.5
             )
             .to(headerTitle, {
                 xPercent: 0,
                 yPercent: 0,
                 ease: "power1.inOut",
                 duration: 1.2
-            }, 2.5)
+            }, 1.8)
             .to(headerImg, {
                 scale: 1,
                 opacity: 1,
                 ease: "power1.out",
-                duration: 1.8,
+                duration: 1.6,
                 xPercent: 0,
                 yPercent: 0,
-            }, 2.5)
+            }, 1.8)
             .add(descriptionTextTl);
+    })
+
+    // Параллакс
+    gsap.to(headerContainer, {
+        yPercent: 20,
+        ease: "power1.inOut",
+        scrollTrigger: {
+            trigger: headerContainer,
+            start: "40% 20%",
+            scrub: 1,
+            markers: true
+        }
     })
 }
