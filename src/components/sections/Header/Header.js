@@ -120,7 +120,7 @@ function initGsapAnimations(headerContainer, headerTitle, headerDescription, hea
 
     // Параллакс
     gsap.to(headerContainer, {
-        yPercent: 20,
+        yPercent: 10,
         ease: "power1.inOut",
         scrollTrigger: {
             trigger: headerContainer,
