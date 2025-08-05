@@ -200,28 +200,52 @@ function initWorksTopGsapAnimations(topContainer, topBg, titleText, myWorksTopPr
 function initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, bottomContainerTextElements) {
     // Разбиваем текст
     document.fonts.ready.then(() => {
-            const splitText1 = new SplitText(bottomContainerTextElements[0], {type: "words"})
-            const splitText2 = new SplitText(bottomContainerTextElements[1], {type: "words"})
+        const splitText1 = new SplitText(bottomContainerTextElements[0], {type: "words"})
+        const splitText2 = new SplitText(bottomContainerTextElements[1], {type: "words"})
+
+        // Таймлайн
+        const mm = gsap.matchMedia();
+
+        mm.add({
+            isMobile: "(max-width: 520px)",
+            isTablet: "(min-width: 521px) and (max-width: 780px)",
+            isBigTablet: "(min-width: 781px) and (max-width: 920px)",
+            isDesktop: "(min-width: 921px)",
+        }, (context) => {
+
+            const {isMobile, isTablet, isBigTablet, isDesktop} = context.conditions;
+
+            let workTilesContainerEndXPercent;
+            if (isDesktop) {
+                workTilesContainerEndXPercent = -70;
+            } else if (isBigTablet) {
+                workTilesContainerEndXPercent = -80;
+            } else if (isTablet) {
+                workTilesContainerEndXPercent = -85;
+            } else if (isMobile) {
+                workTilesContainerEndXPercent = -95;
+            }
 
             const tl = gsap.timeline();
+
+            // Анимация workTilesContainer
             tl.to(workTilesContainer, {
-                xPercent: -70,
+                xPercent: workTilesContainerEndXPercent,
                 ease: "power1.inOut",
                 duration: 2
             }, 0)
                 .to(splitText2.words, {
-                    opacity: 0,
-                    stagger: 0.1,
-                    ease: "power3.in",
-                    duration: 0.2
-                }, 0)
+                opacity: 0,
+                stagger: 0.1,
+                ease: "power3.in",
+                duration: 0.2
+            }, 0)
                 .to(splitText1.words.reverse(), {
                     opacity: 0,
                     stagger: 0.1,
                     ease: "power3.in",
                     duration: 0.2
                 }, 0.1)
-
 
             ScrollTrigger.create({
                 trigger: bottomContainer,
@@ -231,6 +255,7 @@ function initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, bott
                 scrub: true,
                 animation: gsap.timeline().add(tl),
             })
+        });
     })
 }
 
