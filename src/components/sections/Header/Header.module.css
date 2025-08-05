@@ -7,7 +7,7 @@
 }
 .headerContainer__title {
     font-family: var(--black-text);
-    font-size: clamp(8rem, 5.57rem + 12.15vw, 20rem);
+    font-size: clamp(4.2rem, 1.889rem + 11.56vw, 25rem);
     line-height: 0.85;
     color: var(--light-text);
     position: absolute;
@@ -31,4 +31,13 @@
     position: absolute;
     bottom: 0;
     left: 34vw;
+}
+
+@media (max-width: 520px) {
+    .headerContainer__img {
+        left: 10%;
+    }
+    .headerContainer__description {
+        right: 1.4rem;
+    }
 }
