@@ -12,7 +12,7 @@
 }
 .aboutText {
     margin-top: 5rem;
-    font-size: clamp(1rem, 0.635rem + 1.82vw, 2.8rem);
+    font-size: clamp(1rem, 0.8rem + 1vw, 2.8rem);
 }
 
 /* Контейнер плиток */
