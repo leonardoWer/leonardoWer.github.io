@@ -24,8 +24,6 @@
     border: 8px solid var(--black-bg);
     justify-self: center;
     position: relative;
-    display: flex;
-    align-items: flex-end;
 }
 
 .item {

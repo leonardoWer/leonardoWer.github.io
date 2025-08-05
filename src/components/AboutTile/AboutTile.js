@@ -43,6 +43,7 @@ export function createAboutTile({ title, itemsData, location}) {
     // Айтемы внутри (с помощью matter)
     let containerWidth;
     let containerHeight;
+    let containerBorderSize;
 
     const engine = Matter.Engine.create();
     const runner = Matter.Runner.create();
@@ -50,8 +51,10 @@ export function createAboutTile({ title, itemsData, location}) {
     Matter.Runner.run(runner, engine);
 
     const initializeMatterPhysics = () => {
+        // Параметры контейнера
         containerWidth = container.offsetWidth;
         containerHeight = container.offsetHeight;
+        containerBorderSize = window.getComputedStyle(container).getPropertyValue("border")[0];
 
         // Строим стенки
         const wallOptions = {
@@ -68,7 +71,7 @@ export function createAboutTile({ title, itemsData, location}) {
         // Стены, привязанные к offsetWidth/Height контейнера
         const walls = [
             Matter.Bodies.rectangle(containerWidth / 2, -wallThickness / 2, containerWidth, wallThickness, wallOptions), // Top
-            Matter.Bodies.rectangle(containerWidth / 2, containerHeight + wallThickness / 2, containerWidth, wallThickness, wallOptions), // Bottom
+            Matter.Bodies.rectangle(containerWidth / 2, containerHeight + wallThickness / 2 - 10, containerWidth, wallThickness, wallOptions), // Bottom
             Matter.Bodies.rectangle(-wallThickness / 2, containerHeight / 2, wallThickness, containerHeight, wallOptions), // Left
             Matter.Bodies.rectangle(containerWidth + wallThickness / 2, containerHeight / 2, wallThickness, containerHeight, wallOptions)  // Right
         ];
@@ -80,7 +83,7 @@ export function createAboutTile({ title, itemsData, location}) {
         items.forEach(item => {
             // Начальное случайное позиционирование внутри контейнера
             const initialX = Math.random() * (containerWidth - item.offsetWidth) + item.offsetWidth / 2; // Случайное X
-            const initialY = -containerHeight + item.offsetHeight * 2;
+            const initialY = item.offsetHeight * 2;
 
             const body = Matter.Bodies.rectangle(
                 initialX,
