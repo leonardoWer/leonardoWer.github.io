@@ -97,8 +97,10 @@ export function createTopMenu() {
     }
 
     function initGsapAnimations() {
-        gsap.from(topMenu, {
+        gsap.fromTo(topMenu, {
             opacity: 0,
+        }, {
+            opacity: 1,
             ease: "power2.inOut",
             duration: 1.2,
             scrollTrigger: {
