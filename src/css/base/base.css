@@ -11,6 +11,9 @@ body {
 }
 
 /* Прокрутка */
+html {
+    scrollbar-gutter: stable;
+}
 &::-webkit-scrollbar {
     background-color: var(--black-bg);
     width: 8px;
