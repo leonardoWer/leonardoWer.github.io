@@ -46,12 +46,12 @@ export function createAboutSection() {
         const tilesData = [
             {
                 title: "Frontend dev",
-                itemsData: ["React", "Vite", "gsap", "ScrollTrigger"],
+                itemsData: ["React", "Vite", "gsap", "ScrollTrigger", "three"],
                 location: "left"
             },
             {
                 title: "Web-designer",
-                itemsData: ["photoshop"],
+                itemsData: ["photoshop", "illustrator"],
                 location: "right"
             },
             {
