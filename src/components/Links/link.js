@@ -2,11 +2,14 @@ import gsap from 'gsap';
 import {ScrollToPlugin} from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollToPlugin);
 
-export function createLink({ title, onClick }) {
+export function createLink({ title, onClick, className }) {
     const link = document.createElement("a");
 
     // Устанавливаем текст ссылки
     link.textContent = title;
+
+    // Класс
+    if (className) {link.classList.add(className)}
 
     // Настраиваем клик
     if (onClick && typeof onClick === 'object') {

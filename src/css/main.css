@@ -17,3 +17,26 @@
     font-family: var(--black-text);
     text-wrap: nowrap;
 }
+
+/* ------------- */
+.underline-text {
+    position: relative;
+}
+.underline-text::after, .underline-text::before {
+    content: "";
+    position: absolute;
+    bottom: -0.2em;
+    background-color: var(--dark-gray);
+    width: 0;
+    height: 2px;
+    transition: all 0.4s ease-in-out;
+}
+.underline-text::after {
+    left: 0;
+}
+.underline-text::before {
+    right: 0;
+}
+.underline-text:hover::after, .underline-text:hover::before {
+    width: 50%;
+}

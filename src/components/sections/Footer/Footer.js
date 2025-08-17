@@ -87,7 +87,8 @@ function initLinks(contactsTopContainer, emailTextEl, bottomMenuList) {
         title: linksData.email,
         onClick: {
             link: "mailto:" + linksData.email
-        }
+        },
+        className: "underline-text"
     }));
 
     // Ссылки по странице
@@ -98,6 +99,7 @@ function initLinks(contactsTopContainer, emailTextEl, bottomMenuList) {
         const a = createLink({
             title: menuElData.title,
             onClick: menuElData.onClick,
+            className: "underline-text"
         })
         menuLink.appendChild(a);
 
@@ -111,8 +113,8 @@ function initGsapAnimations(bottomContainer, contentContainer) {
         scrollTrigger: {
             trigger: bottomContainer,
             start: "top bottom",
-            end: "bottom bottom",
-            scrub: true,
+            end: "95% bottom",
+            scrub: 1,
         }
     })
 
