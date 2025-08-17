@@ -39,8 +39,8 @@ function initGsapAnimations(contentContainer, textElData, imgContainer) {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: contentContainer,
-            start: "bottom bottom",
-            end: "+=3000",
+            start: "top top",
+            end: "+=3000px",
             pin: contentContainer,
             scrub: true,
         }

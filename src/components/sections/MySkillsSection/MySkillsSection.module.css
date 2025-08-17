@@ -31,7 +31,7 @@
 @media (max-width: 920px) {
     .mySkillsSectionContentContainer {
         flex-direction: column;
-        padding: 1rem 2rem;
+        padding: calc(60px + 2%) 5% 5%;
     }
     .mySkillsSectionContentContainer__imgContainer {
         align-self: center;
@@ -49,10 +49,16 @@
     .mySkillsSectionContentContainer__imgContainer {
         height: 50%;
     }
+    .mySkillsSectionContentContainer__text {
+        width: 40%;
+    }
 }
 @media (max-width: 420px) {
     .mySkillsSectionContentContainer__imgContainer {
         height: 40%;
         width: 60%;
+    }
+    .mySkillsSectionContentContainer__text {
+        width: 50%;
     }
 }
