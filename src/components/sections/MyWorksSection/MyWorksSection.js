@@ -59,13 +59,13 @@ export function createMyWorksSection() {
         {
             name: "Spider-Man-Movies",
             titleImg: "spider-man-movies.png",
-            stack: ["vite", "gsap"],
+            stack: ["Vite", "gsap"],
             link: "https://leonardower.github.io/Spider-Man-Movie",
         },
         {
             name: "basketball-courts",
             titleImg: "basketball-courts.png",
-            stack: ["vite", "gsap", "ymaps API"],
+            stack: ["Vite", "gsap", "ymaps API"],
             link: "https://leonardoWer.github.io/basketball-courts",
         },
         {
@@ -74,14 +74,27 @@ export function createMyWorksSection() {
             stack: ["vanilla", "ymaps API"],
             link: "http://benua.hsitmo.ru",
         },
+        {
+            name: "The-Levakhins-cookbook",
+            titleImg: "the-levakhins-cookbook.png",
+            stack: ["React", "Vite", "gsap"],
+            link: "https://leonardower.github.io/The-Levakhins-cookbook",
+        },
+        {
+            name: "Rhythm & Roam",
+            titleImg: "rhythm-roam.png",
+            stack: ["three", "Vite", "gsap"],
+            link: "https://leonardower.github.io/Rhythm-Roam",
+        }
     ];
 
     // Заполняем контентом
 
     // Мои работы
     const myWorksPreviewTilesData = []
+    const scrollAmount = myWorksData.length * 1000;
 
-    myWorksData.forEach(work => {
+        myWorksData.forEach(work => {
         // Верхняя часть
         const previewTile = createWorkPreviewTile({img: work.titleImg})
         myWorksPreviewTilesData.unshift(previewTile);
@@ -93,12 +106,19 @@ export function createMyWorksSection() {
             titleImg: photoPath + work.titleImg,
             stack: work.stack,
             link: work.link});
-        workTilesContainer.appendChild(workTile);
+
+        if (workTilesContainer.firstChild) {
+            // Если в контейнере уже есть элементы, вставляем перед первым
+            workTilesContainer.insertBefore(workTile, workTilesContainer.firstChild);
+        } else {
+            // Если контейнер пуст, просто добавляем элемент (как appendChild)
+            workTilesContainer.appendChild(workTile);
+        }
     })
 
     // Анимации
     initWorksTopGsapAnimations(topContainer, topContentContainer, titleText, worksTopPreviewContainer, myWorksPreviewTilesData);
-    initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, bottomContainerTextElements);
+    initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, bottomContainerTextElements, scrollAmount);
     createViewAllWorksContent(viewAllWorksContainer);
 
     return section;
@@ -197,66 +217,48 @@ function initWorksTopGsapAnimations(topContainer, topBg, titleText, myWorksTopPr
 
 }
 
-function initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, bottomContainerTextElements) {
+function initWorksBottomGsapAnimations(bottomContainer, workTilesContainer, bottomContainerTextElements, scrollAmount) {
     // Разбиваем текст
     document.fonts.ready.then(() => {
         const splitText1 = new SplitText(bottomContainerTextElements[0], {type: "words"})
         const splitText2 = new SplitText(bottomContainerTextElements[1], {type: "words"})
 
         // Таймлайн
-        const mm = gsap.matchMedia();
+        function getXValue() {
+            const left = workTilesContainer.getBoundingClientRect().left;
+            const screen = window.innerWidth;
+            return -(workTilesContainer.offsetWidth - (screen - left) * 0.9);
+        }
 
-        mm.add({
-            isMobile: "(max-width: 520px)",
-            isTablet: "(min-width: 521px) and (max-width: 780px)",
-            isBigTablet: "(min-width: 781px) and (max-width: 920px)",
-            isDesktop: "(min-width: 921px)",
-        }, (context) => {
-
-            const {isMobile, isTablet, isBigTablet, isDesktop} = context.conditions;
-
-            let workTilesContainerEndXPercent;
-            if (isDesktop) {
-                workTilesContainerEndXPercent = -70;
-            } else if (isBigTablet) {
-                workTilesContainerEndXPercent = -80;
-            } else if (isTablet) {
-                workTilesContainerEndXPercent = -85;
-            } else if (isMobile) {
-                workTilesContainerEndXPercent = -95;
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: bottomContainer,
+                start: "top top",
+                end: "+=" + scrollAmount,
+                pin: bottomContainer,
+                scrub: true,
+                invalidateOnRefresh: true,
             }
+        });
 
-            const tl = gsap.timeline();
-
-            // Анимация workTilesContainer
-            tl.to(workTilesContainer, {
-                xPercent: workTilesContainerEndXPercent,
-                ease: "power1.inOut",
-                duration: 2
-            }, 0)
-                .to(splitText2.words, {
+        // Анимация workTilesContainer
+        tl.to(workTilesContainer, {
+            x: () => getXValue(),
+            ease: "power1.inOut",
+            duration: 2,
+        }, 0)
+            .to(splitText2.words, {
+                opacity: 0,
+                ease: "power3.in",
+                duration: 0.2
+        }, 0)
+            .to(splitText1.words.reverse(), {
                 opacity: 0,
                 stagger: 0.1,
                 ease: "power3.in",
                 duration: 0.2
-            }, 0)
-                .to(splitText1.words.reverse(), {
-                    opacity: 0,
-                    stagger: 0.1,
-                    ease: "power3.in",
-                    duration: 0.2
-                }, 0.1)
-
-            ScrollTrigger.create({
-                trigger: bottomContainer,
-                start: "top top",
-                end: "+=2000",
-                pin: bottomContainer,
-                scrub: true,
-                animation: gsap.timeline().add(tl),
-            })
-        });
-    })
+            }, 0.1)
+    });
 }
 
 function createViewAllWorksContent(parent) {
