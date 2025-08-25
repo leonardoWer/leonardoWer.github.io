@@ -1,6 +1,6 @@
 import styles from "./WorkTile.module.css"
 
-export function createWorkTile({title, titleImg, stack, link}) {
+export function createWorkTile({title, titleImg, stack, link, hoverTitle}) {
 
     const tile = document.createElement("div");
     tile.className = styles.workTile;
@@ -26,6 +26,8 @@ export function createWorkTile({title, titleImg, stack, link}) {
     tile.onclick = () => {
         window.open(link, '_blank');
     }
+
+    tile.title = hoverTitle ?? "";
 
     return tile;
 }

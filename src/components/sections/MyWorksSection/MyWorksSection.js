@@ -61,31 +61,43 @@ export function createMyWorksSection() {
             titleImg: "spider-man-movies.png",
             stack: ["Vite", "gsap"],
             link: "https://leonardower.github.io/Spider-Man-Movie",
+            hoverTitle: "Сайт с информацией о фильмах про Человека-Паука"
         },
         {
             name: "basketball-courts",
             titleImg: "basketball-courts.png",
             stack: ["Vite", "gsap", "ymaps API"],
             link: "https://leonardoWer.github.io/basketball-courts",
+            hoverTitle: "Приложение для поиска баскетбольных площадок"
         },
         {
             name: "Петербург Бенуа",
             titleImg: "benua-hsitmo.png",
             stack: ["vanilla", "ymaps API"],
             link: "http://benua.hsitmo.ru",
+            hoverTitle: "Аналог википедии про семью Бенуа"
         },
         {
             name: "The-Levakhins-cookbook",
             titleImg: "the-levakhins-cookbook.png",
             stack: ["React", "Vite", "gsap"],
             link: "https://leonardower.github.io/The-Levakhins-cookbook",
+            hoverTitle: "Онлайн книга рецептов"
         },
         {
             name: "Rhythm & Roam",
             titleImg: "rhythm-roam.png",
             stack: ["three", "Vite", "gsap"],
             link: "https://leonardower.github.io/Rhythm-Roam",
-        }
+            hoverTitle: "Официальный сайт бренда Rhythm-Roam"
+        },
+        {
+            name: "Wou",
+            titleImg: "wou.png",
+            stack: ["React", "Vite", "gsap"],
+            link: "https://leonardower.github.io/Wou",
+            hoverTitle: "Промо-сайт приложения  Wou"
+        },
     ];
 
     // Заполняем контентом
@@ -105,7 +117,9 @@ export function createMyWorksSection() {
             title: work.name,
             titleImg: photoPath + work.titleImg,
             stack: work.stack,
-            link: work.link});
+            link: work.link,
+            hoverTitle: work.hoverTitle,
+        });
 
         if (workTilesContainer.firstChild) {
             // Если в контейнере уже есть элементы, вставляем перед первым
