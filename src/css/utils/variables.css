@@ -4,10 +4,8 @@
     --light-text: #f6f9f5;
     --light-gray-bg: #eff1ee;
     --dark-gray: #262626;
-    --green: #abfa54;
 
     /* Градиенты */
-
 
     /* Тени */
     --top-box-shadow: 0 -20px 20px -20px rgba(0, 0, 0, 0.3);
@@ -25,5 +23,6 @@
     /*  Шрифты  */
     --black-text: "inter_tight__black", "Inter", "Helvetica", sans-serif;
     --medium-text: "inter_tight__medium", "Inter", "Helvetica", sans-serif;
+    --belarus-text: "belarus", "Inter", "Helvetica", sans-serif;
 
 }

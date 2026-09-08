@@ -6,38 +6,25 @@
     position: relative;
 }
 .headerContainer__title {
-    font-family: var(--black-text);
-    font-size: clamp(4.2rem, 1.889rem + 11.56vw, 25rem);
-    line-height: 0.85;
+    font-family: var(--belarus-text);
+    font-size: clamp(5rem, 0.646rem + 21.77vw, 26.5rem);
     color: var(--light-text);
     position: absolute;
     left: 1rem;
-    top: 1rem;
-}
-
-.headerContainer__description {
-    font-family: var(--medium-text);
-    font-size: clamp(0.8rem, 0.557rem + 1.22vw, 2rem);
-    line-height: 1.1;
-    color: var(--light-text);
-    position: absolute;
-    bottom: 1.2rem;
-    right: 2rem;
-    z-index: 2;
+    bottom: 1rem;
+    mix-blend-mode: difference;
 }
 
 .headerContainer__img {
-    height: 82%;
+    height: 100%;
     position: absolute;
     bottom: 0;
     left: 34vw;
+    z-index: -1;
 }
 
 @media (max-width: 520px) {
     .headerContainer__img {
         left: 10%;
-    }
-    .headerContainer__description {
-        right: 1.4rem;
     }
 }

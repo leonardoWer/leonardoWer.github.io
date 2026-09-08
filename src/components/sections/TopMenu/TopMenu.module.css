@@ -1,155 +1,268 @@
-/* Верхнее меню */
+/* Верхнее меню — редизайн с анимацией */
 .top-menu {
-    width: 100%;
+    width: fit-content;
+    max-width: 90vw;
     position: fixed;
+    top: 16px;
+    left: 16px;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    gap: 0.5rem 1.5rem;
+    padding: 0.2rem 1.2rem;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
     z-index: 100;
-    mix-blend-mode: difference;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: border-radius 0.4s ease, padding 0.4s ease;
 }
 
 .top-menu__left {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
+
 .logo {
-    font-family: var(--black-text);
-    font-size: clamp(1.2rem, 0.633rem + 2.84vw, 4rem);
-    color: var(--light-text);
-    z-index: 100;
-    transition: all 0.4s ease-out;
+    font-family: var(--belarus-text);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--black-text);
+    cursor: pointer;
+    user-select: none;
+    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.02em;
+    position: relative;
 }
-.logo--active {
-    color: var(--black-bg);
+.logo span {
+    display: inline-block;
+}
+
+.top-menu__center {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    opacity: 0;
+    width: 0;
+    margin-right: -2rem;
+}
+.nav-list li {
+    display: inline-flex;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 0.7rem 1rem;
+    border-radius: var(--border-radius);
+    color: var(--black-text);
+    text-decoration: none;
+    font-family: var(--medium-text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.25s ease, color 0.2s ease, transform 0.2s ease;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    position: relative;
+}
+.nav-link:hover {
+    background: rgba(0, 0, 0, 0.06);
+    transform: scale(1.02);
+}
+.nav-link:active {
+    transform: scale(0.96);
 }
 
 .top-menu__right {
-    width: 20%;
-    display: flex;
+    display: none;
     align-items: center;
-    justify-content: flex-end;
+    flex-shrink: 0;
+    padding: 0.4rem;
+    border-radius: 50%;
 }
-
-.menu-button {
+.top-menu__right:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+.menu-toggle {
+    display: none;
     background: none;
-    cursor: pointer;
-    width: clamp(1.2rem, 0.633rem + 2.84vw, 4rem);
-    height: clamp(1.2rem, 0.633rem + 2.84vw, 4rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-end;
-    transition: transform 0.3s ease;
-    z-index: 100;
-}
-.menu-button-item {
-    height: 8px;
-    background-color: var(--light-text);
-    transition: background-color 0.5s ease-in-out, opacity 0.3s linear, transform 0.5s ease-in-out;
-}
-.menu-button-item:nth-child(1) {
-    width: 100%;
-}
-.menu-button-item:nth-child(2) {
-    width: 80%;
-}
-.menu-button-item:nth-child(3) {
-    width: 60%;
-}
-
-/* Стили для крестика */
-.menu-button--active .menu-button-item {
-    background-color: var(--black-bg);
-}
-.menu-button--active .menu-button-item:nth-child(1) {
-    opacity: 0;
-}
-.menu-button--active .menu-button-item:nth-child(2) {
-    transform: translateY(90%) rotate(45deg);
-}
-.menu-button--active .menu-button-item:nth-child(3) {
-    transform: translateY(-90%) rotate(-45deg);
-    width: 80%;
-}
-
-/* Панель с фоном */
-.main-menu-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--light-gray-bg);
-    z-index: 10;
-    overflow: hidden;
-    display: flex;
+    border: none;
+    width: 20px;
+    height: 20px;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-}
-
-.main-menu__inner {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 60%;
-    width: 80%;
-}
-
-.menu-link {
-    color: inherit;
-}
-
-.main-menu-inner__pages-list {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-.m-m-i-p-l__item {
-    color: var(--black-text);
-    font-size: clamp(2rem, 1.19rem + 4.05vw, 6rem);
-    font-family: var(--black-text);
     cursor: pointer;
+    padding: 0;
+    position: relative;
+    border-radius: 50%;
+    transition: background 0.2s ease;
 }
-.m-m-i-p-l__item:hover {
-    color: var(--dark-gray);
+.menu-toggle-icon {
+    width: 16px;
+    height: 2px;
+    background: #000000;
+    border-radius: 4px;
+    position: relative;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.main-menu-inner__contacts-list {
-    text-align: left;
+.menu-toggle-icon::before,
+.menu-toggle-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 16px;
+    height: 2px;
+    background: #000000;
+    border-radius: 4px;
+    transition: transform 0.3s ease, top 0.3s ease;
+}
+.menu-toggle-icon::before {
+    top: -6px;
+}
+.menu-toggle-icon::after {
+    top: 6px;
+}
+
+.menu-toggle--active .menu-toggle-icon {
+    background: transparent;
+}
+.menu-toggle--active .menu-toggle-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+.menu-toggle--active .menu-toggle-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Выпадающая часть */
+.dropdown {
+    width: 100%;
+    display: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.dropdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    align-self: flex-end;
-    gap: 2rem;
+    gap: 0.4rem;
+    width: 100%;
 }
-.m-m-i-c-l__item {
+
+.dropdown-link {
+    display: block;
+    padding: 0.6rem 1rem;
+    border-radius: var(--border-radius);
     color: var(--black-text);
-    font-size: 2rem;
+    text-decoration: none;
     font-family: var(--medium-text);
-    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+    background: transparent;
 }
-.m-m-i-c-l__item:hover {
-    color: var(--green);
+.dropdown-link:hover {
+    background: rgba(0, 0, 0, 0.04);
+    transform: translateX(4px);
 }
 
+/* Адаптив */
 @media (max-width: 700px) {
-    .main-menu__inner {
-        flex-direction: column;
-        justify-content: space-between;
+    .top-menu {
+        top: 10px;
+        padding: 0.4rem 1rem;
+        min-height: 42px;
+        gap: 0.5rem;
     }
-    .main-menu-inner__contacts-list {
-        flex-direction: row;
-        align-self: center;
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.8rem;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
+    .dropdown-link {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+    .menu-toggle {
+        width: 28px;
+        height: 28px;
+    }
+    .menu-toggle-icon,
+    .menu-toggle-icon::before,
+    .menu-toggle-icon::after {
+        width: 20px;
+        height: 2px;
+    }
+    .menu-toggle-icon::before {
+        top: -5px;
+    }
+    .menu-toggle-icon::after {
+        top: 5px;
     }
 }
 
 @media (max-width: 520px) {
     .top-menu {
-        padding: 1rem 1.2rem;
+        top: 8px;
+        padding: 0.3rem 0.8rem;
+        border-radius: 24px;
+        min-height: 36px;
+        gap: 0.3rem;
     }
-    .menu-button-item {
-        height: 3px;
+    .nav-link {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+    }
+    .nav-link:hover {
+        padding: 0.2rem 0.8rem;
+    }
+    .logo {
+        font-size: 1rem;
+    }
+    .menu-toggle {
+        width: 24px;
+        height: 24px;
+    }
+    .menu-toggle-icon,
+    .menu-toggle-icon::before,
+    .menu-toggle-icon::after {
+        width: 16px;
+        height: 2px;
+    }
+    .menu-toggle-icon::before {
+        top: -5px;
+    }
+    .menu-toggle-icon::after {
+        top: 5px;
+    }
+    .dropdown-inner {
+        padding: 0.8rem 0 0.3rem 0;
+    }
+    .dropdown-link {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
     }
 }

@@ -39,31 +39,31 @@ export const contactLinkElementsData = [
 
 export const menuLinkElementsData = [
     {
-        title: "home",
+        title: "Главная",
         onClick: {
             href: "homeSection"
         }
     },
     {
-        title: "about",
+        title: "Обо мне",
         onClick: {
             href: "aboutSection"
         }
     },
     {
-        title: "works",
+        title: "Работы",
         onClick: {
             href: "myWorksSection"
         }
     },
     {
-        title: "why?",
+        title: "Цель",
         onClick: {
             href: "mySkillsSection"
         }
     },
     {
-        title: "contacts",
+        title: "Контакты",
         onClick: {
             href: "contactsSection"
         }

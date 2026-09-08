@@ -7,3 +7,8 @@
     font-family: "inter_tight__medium";
     src: url("/fonts/inter_tight__medium.ttf");
 }
+
+@font-face {
+    font-family: "belarus";
+    src: url("/fonts/belarus.ttf");
+}

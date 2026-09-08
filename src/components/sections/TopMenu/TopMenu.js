@@ -1,176 +1,229 @@
 import styles from './TopMenu.module.css';
 
 import gsap from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger)
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
-import {contactLinkElementsData, menuLinkElementsData} from "s/js/utils/linksData.js";
-import {createLink} from "s/components/Links/link.js";
+import { contactLinkElementsData, menuLinkElementsData } from "s/js/utils/linksData.js";
+import { createLink } from "s/components/Links/link.js";
 
 export function createTopMenu() {
-    // Инициализация компонента
     const topMenu = document.createElement('div');
     topMenu.classList.add(styles['top-menu']);
 
     topMenu.innerHTML = `
-        <div class="${styles['top-menu__left']}">
-            <span class="${styles['logo']}">ЛЛ</span>
+        <div class="${styles['top-menu__left']}"></div>
+
+        <div class="${styles['top-menu__center']}">
+            <ul class="${styles['nav-list']}">
+                <!-- наполняется из linksData (кроме главной) -->
+            </ul>
         </div>
 
         <div class="${styles['top-menu__right']}">
-            <!--    Кнопка меню    -->
-            <button class="${styles['menu-button']}">
-                <span class="${styles['menu-button-item']}"></span>
-                <span class="${styles['menu-button-item']}"></span>
-                <span class="${styles['menu-button-item']}"></span>
+            <button class="${styles['menu-toggle']}">
+                <span class="${styles['menu-toggle-icon']}"></span>
             </button>
+        </div>
 
-            <!--    Меню    -->
-            <div class="${styles['main-menu-bg']}">
-                <nav class="${styles['main-menu__inner']}">
-                
-                  <ul class="${styles['main-menu-inner__pages-list']}">
-                       <!--   navigation items   -->
-                  </ul>
-
-                  <ul class="${styles['main-menu-inner__contacts-list']}">
-                    <!--   contact items   -->
-                  </ul>
-
-                </nav>
+        <!-- Выпадающая часть (попап) -->
+        <div class="${styles['dropdown']}">
+            <div class="${styles['dropdown-inner']}">
+                <ul class="${styles['dropdown-list']}">
+                    <!-- наполняется из linksData (кроме главной) -->
+                </ul>
             </div>
         </div>
     `;
 
     // Элементы
-    const logoText = topMenu.querySelector(`.${styles['logo']}`);
-    const menuButton = topMenu.querySelector(`.${styles['menu-button']}`);
-    const mainMenuBg = topMenu.querySelector(`.${styles['main-menu-bg']}`);
+    const left = topMenu.querySelector(`.${styles['top-menu__left']}`);
+    const menuToggleContainer = topMenu.querySelector(`.${styles['top-menu__right']}`);
+    const menuToggle = topMenu.querySelector(`.${styles['menu-toggle']}`);
+    const dropdown = topMenu.querySelector(`.${styles['dropdown']}`);
+    const navList = topMenu.querySelector(`.${styles['nav-list']}`);
+    const dropdownList = topMenu.querySelector(`.${styles['dropdown-list']}`);
 
-    const contactElementsList = topMenu.querySelector(`.${styles['main-menu-inner__contacts-list']}`);
-    const pageElementsList = topMenu.querySelector(`.${styles['main-menu-inner__pages-list']}`);
+    let isDropdownOpen = false;
+    let isNavVisible = true;
 
-    let isMenuOpen = false;
-
-    initLinks();
-    initInteractive();
-    initGsapAnimations();
-
+    // Инициализация пунктов из linksData (пропускаем главную)
     function initLinks() {
-        // Навигация
-        menuLinkElementsData.forEach(linkElementData => {
-            const linkElement = document.createElement("li");
-            linkElement.classList.add(styles['m-m-i-p-l__item']);
-            const link = createLink(linkElementData);
-            link.classList.add(styles['menu-link']);
-            link.dataset.scrollTo = "";
+        // Находим индекс элемента "Главная"
+        const mainPageIndex = menuLinkElementsData.findIndex(item =>
+            item.title === 'Главная' || item.title === 'Home'
+        );
 
-            linkElement.appendChild(link);
-
-            pageElementsList.appendChild(linkElement);
-        })
-
-        // Контакты
-        contactLinkElementsData.forEach(linkElementData => {
-            const linkElement = document.createElement("li");
-            linkElement.classList.add(styles['m-m-i-c-l__item']);
-            const link = createLink(linkElementData);
-            link.classList.add(styles['menu-link']);
-
-            linkElement.appendChild(link);
-
-            contactElementsList.appendChild(linkElement);
-        })
-    }
-
-    // Функция для инициализации обработчиков событий и GSAP
-    function initInteractive() {
-        menuButton.addEventListener('click', toggleMenu);
-        gsap.set(mainMenuBg, {yPercent: -100});
-
-        // Добавляем обработчик для прокрутки
-        const pageSectionItems = topMenu.querySelectorAll("[data-scroll-to]");
-
-        pageSectionItems.forEach(item => {
-            item.addEventListener('click', handleScroll);
-        });
-    }
-
-    function initGsapAnimations() {
-        gsap.fromTo(topMenu, {
-            opacity: 0,
-        }, {
-            opacity: 1,
-            ease: "power2.inOut",
-            duration: 1.2,
-            scrollTrigger: {
-                trigger: "header",
-                start: "30% top",
-                end: "bottom top",
-                scrub: true,
+        // Создаем пункты для навигации (пропускаем главную)
+        menuLinkElementsData.forEach((linkData, index) => {
+            if (index === mainPageIndex) {
+                // Добавляем ссылку на логотип
+                const link = createLink(linkData);
+                link.classList.add(styles['logo']);
+                link.textContent = "ЛЛ";
+                left.appendChild(link);
+                return;
             }
-        })
 
-        // Анимация исчезновения topMenu при достижении футера
-        gsap.fromTo(topMenu, {
-            opacity: 1,
-        },{
-            opacity: 0,
-            ease: "power2.inOut",
-            duration: 1.2,
-            scrollTrigger: {
-                trigger: "footer",
-                start: "top bottom",
-                end: "bottom bottom",
-                scrub: true,
-                toggleActions: "play reverse play reverse",
-            },
+            const li = document.createElement('li');
+            const link = createLink(linkData);
+            link.classList.add(styles['nav-link']);
+            li.appendChild(link);
+            navList.appendChild(li);
+        });
+
+        // Создаем пункты для дропдауна (пропускаем главную)
+        menuLinkElementsData.forEach((linkData, index) => {
+            if (index === mainPageIndex) return;
+
+            const li = document.createElement('li');
+            const link = createLink(linkData);
+            link.classList.add(styles['dropdown-link']);
+            li.appendChild(link);
+            dropdownList.appendChild(li);
         });
     }
 
-    // Функция для переключения состояния меню
-    function toggleMenu() {
-        isMenuOpen = !isMenuOpen;
+    // Обновление видимости навигации при скролле
+    function updateNavVisibility() {
+        const header = document.querySelector('header');
+        const footer = document.querySelector('footer');
+        if (!header || !footer) return;
 
-        if (isMenuOpen) {
-            openMenu();
+        const headerRect = header.getBoundingClientRect();
+        const footerRect = footer.getBoundingClientRect();
+        const isOnHeader = headerRect.bottom > 0 && headerRect.top < window.innerHeight;
+        const isOnFooter = footerRect.bottom > 0 && footerRect.top < window.innerHeight;
+
+        const shouldShow = isOnHeader || isOnFooter;
+
+        if (shouldShow && !isNavVisible) {
+            isNavVisible = true;
+            // Показываем пункты меню
+            gsap.to(navList, {
+                opacity: 1,
+                width: 'auto',
+                marginRight: '0',
+                duration: 0.3,
+                ease: 'power2.out',
+                onComplete: () => {
+                    // Скрываем иконку
+                    gsap.to(menuToggleContainer, {
+                        display: 'none',
+                    });
+                    gsap.to(menuToggle, {
+                        display: 'none',
+                        opacity: 0,
+                    });
+                }
+            });
+        } else if (!shouldShow && isNavVisible) {
+            isNavVisible = false;
+            // Прячем пункты
+            gsap.to(navList, {
+                opacity: 0,
+                width: 0,
+                marginRight: '-2rem',
+                duration: 0.3,
+                ease: 'power2.in',
+                onComplete: () => {
+                    // Показываем иконку
+                    gsap.to(menuToggleContainer, {
+                        display: 'flex',
+                    });
+                    gsap.to(menuToggle, {
+                        display: 'flex',
+                        opacity: 1,
+                    });
+                }
+            });
+        }
+    }
+
+    // Открытие/закрытие попапа
+    function toggleDropdown() {
+        isDropdownOpen = !isDropdownOpen;
+
+        if (isDropdownOpen) {
+            // Показываем дропдаун
+            gsap.to(dropdown, {
+                height: 'auto',
+                opacity: 1,
+                duration: 0.4,
+                ease: 'power3.out',
+                overwrite: 'auto',
+                onStart: () => {
+                    dropdown.style.display = 'block';
+                    dropdown.style.overflow = 'visible';
+                }
+            });
+
+            menuToggle.classList.add(styles['menu-toggle--active']);
+
+            // Анимация элементов внутри попапа
+            const items = dropdown.querySelectorAll('li');
+            gsap.fromTo(items,
+                { opacity: 0, y: -10 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3,
+                    stagger: 0.05,
+                    ease: 'power2.out',
+                    delay: 0.1,
+                    overwrite: 'auto'
+                }
+            );
         } else {
-            closeMenu();
+            // Сворачиваем
+            gsap.to(dropdown, {
+                height: 0,
+                opacity: 0,
+                duration: 0.3,
+                ease: 'power3.in',
+                overwrite: 'auto',
+                onComplete: () => {
+                    dropdown.style.display = 'none';
+                }
+            });
+
+            menuToggle.classList.remove(styles['menu-toggle--active']);
         }
     }
 
-    // Функция для открытия меню
-    function openMenu() {
-        gsap.to(mainMenuBg, {
-            yPercent: 0,
-            duration: 0.5,
-            ease: 'power3.out',
-        });
-        topMenu.style.mixBlendMode = 'normal';
-        logoText.classList.add(styles['logo--active']);
-        menuButton.classList.add(styles['menu-button--active']);
-    }
+    // Инициализация
+    initLinks();
 
-    // Функция для закрытия меню
-    function closeMenu() {
-        gsap.to(mainMenuBg, {
-            yPercent: -100,
-            duration: 0.5,
-            ease: 'power3.in',
-            onComplete: () => {topMenu.style.mixBlendMode = 'difference'}
-        });
-
-        logoText.classList.remove(styles['logo--active']);
-        menuButton.classList.remove(styles['menu-button--active']);
-    }
-
-    function handleScroll(event) {
-        // Закрываем после прокрутки
-        toggleMenu();
-        if (isMenuOpen) {
-            closeMenu();
+    // Обработка кликов по пунктам меню (закрываем попап)
+    function handleLinkClick(e) {
+        if (isDropdownOpen) {
+            toggleDropdown();
         }
     }
+
+    // Навешиваем обработчики на все ссылки
+    topMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', handleLinkClick);
+    });
+
+    // Клик по кнопке меню
+    menuToggle.addEventListener('click', toggleDropdown);
+
+    // Подписываемся на скролл
+    ScrollTrigger.create({
+        trigger: 'body',
+        start: 'top top',
+        end: 'bottom bottom',
+        onUpdate: updateNavVisibility,
+        onRefresh: updateNavVisibility
+    });
+
+    // Начальное состояние - устанавливаем через GSAP
+    gsap.set(navList, { opacity: 0, width: 0, marginRight: '-2rem' });
+    gsap.set(dropdown, { height: 0, opacity: 0, display: 'none' });
+
+    // Задержка для первого обновления
+    setTimeout(updateNavVisibility, 100);
 
     return topMenu;
 }

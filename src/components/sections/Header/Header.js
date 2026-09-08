@@ -12,11 +12,9 @@ export function createHeader() {
     headerContainer.id = "homeSection";
     headerContainer.className = styles.headerContainer;
     headerContainer.innerHTML = `
-        <h1 class="${styles.headerContainer__title}" data-split-text>Левахин<br>Лев</h1>
+        <h1 class="${styles.headerContainer__title}" data-split-text>Левахин Лев</h1>
         
-        <img class="${styles.headerContainer__img}" src="/img/me-title.png" alt="Levakhin Lev">
-        
-        <p class="${styles.headerContainer__description}" data-split-text>Создаю современные веб-приложения<br>Frontend разработка, Web дизайн, Android разработка<br>Помогу воплотить ваши идеи в жизнь</p>
+        <img class="${styles.headerContainer__img}" src="/img/leonardoWer__header.png" alt="Levakhin Lev">
     `;
 
     // Элементы
@@ -25,12 +23,12 @@ export function createHeader() {
     const headerImg = headerContainer.querySelector(`.${styles.headerContainer__img}`);
 
     // Анимации
-    initGsapAnimations(headerContainer, headerTitle, headerDescription, headerImg);
+    initGsapAnimations(headerContainer, headerTitle, headerImg);
 
     return headerContainer;
 }
 
-function initGsapAnimations(headerContainer, headerTitle, headerDescription, headerImg) {
+function initGsapAnimations(headerContainer, headerTitle, headerImg) {
     // Получаем элементы которые нужно делить
     const splitLineTextData = headerContainer.querySelectorAll('[data-split-text]');
 
@@ -41,15 +39,11 @@ function initGsapAnimations(headerContainer, headerTitle, headerDescription, hea
 
     // Начальные параметры
     gsap.set(headerTitle, {
-        xPercent: 20,
         yPercent: 20,
     })
     gsap.set(headerImg, {
-            scale: 1.05,
-            opacity: 0,
-            xPercent: -5,
-            yPercent: -8,
-        })
+        opacity: 0
+    })
 
     // Создаём таймлайн
     const fadeInTl = gsap.timeline({
@@ -77,9 +71,6 @@ function initGsapAnimations(headerContainer, headerTitle, headerDescription, hea
         // Параметры поднимания
         const stagger = 0.2;
 
-        // Стандартная анимация описания
-        const descriptionTextTl = getAnimatedSplitLineTextTl({textEl: headerDescription, duration: 1.8})
-
         // Анимация
         fadeInTl.fromTo(levakhinFirstLetter,
             { ...splittedTextFromParams },
@@ -102,20 +93,15 @@ function initGsapAnimations(headerContainer, headerTitle, headerDescription, hea
                 0.5
             )
             .to(headerTitle, {
-                xPercent: 0,
                 yPercent: 0,
                 ease: "power1.inOut",
                 duration: 1.2
             }, 1.8)
             .to(headerImg, {
-                scale: 1,
                 opacity: 1,
                 ease: "power1.out",
-                duration: 1.6,
-                xPercent: 0,
-                yPercent: 0,
+                duration: 1.2
             }, 1.8)
-            .add(descriptionTextTl);
     })
 
     // Параллакс
