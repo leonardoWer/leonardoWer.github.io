@@ -1,121 +1,119 @@
-import styles from "./Footer.module.css"
-import {createLink} from "s/components/Links/link.js";
-import {createEllipsLink} from "s/components/Links/EllipsLink/EllipsLink.js";
-
-import {linksData, contactLinkElementsData, menuLinkElementsData} from "s/js/utils/linksData.js";
+import styles from "./Footer.module.css";
+import { createCircleButton } from "s/components/Links/CircleButton/CircleButton.js";
+import { createActionButton } from "s/components/Links/ActionButton/ActionButton.js";
+import { linksData } from "s/js/utils/linksData.js";
 
 import gsap from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 export function createFooter() {
-    const footerContainer = document.createElement("div");
+    const footerContainer = document.createElement("footer");
     footerContainer.id = "contactsSection";
-    footerContainer.className = styles.footerContentContainer;
+    footerContainer.className = styles.footer;
 
     footerContainer.innerHTML = `
-        <div class="${styles.footerContentContainer__top}">
-            <div class="${styles.footerContentContainerTop__textContainer}">
-                <div class="${styles.footerTextContainer__letsChatContainer}">
-                    <h2 class="${styles.letsChatContainer__text}">Let’s chat</h2>
-                    <div class="${styles.letsChatContainer__arrowWrapper}">
-                        <i class="fa fa-arrow-right ${styles.letsChatContainer__arrowIcon}"></i>
-                    </div>
-                    
+        <div class="${styles.footer__inner}">
+            <!-- Фото -->
+            <div class="${styles.footer__image_wrapper}">
+                <img 
+                    src="/img/leonardoWer__footer.png" 
+                    alt="Footer image"
+                    class="${styles.footer__image}"
+                    loading="lazy"
+                />
+                <h2 class="${styles.footer__title}">Контакты</h2>
+            </div>
+
+            <!-- Кнопки -->
+            <div class="${styles.footer__buttons}">
+                <!-- Социальные кнопки (слева) -->
+                <div class="${styles.footer__social}">
+                    ${createCircleButton({
+                        icon: 'fa-vk',
+                        link: linksData.vk,
+                        label: 'VK'
+                    }).outerHTML}
+                    ${createCircleButton({
+                        icon: 'fa-telegram-plane',
+                        link: linksData.tg,
+                        label: 'Telegram'
+                    }).outerHTML}
+                    ${createCircleButton({
+                        icon: 'fa-github',
+                        link: linksData.git,
+                        label: 'GitHub'
+                    }).outerHTML}
                 </div>
-                <span class="${styles.footerTextContainer__descriptionText}">i’ll help you to chose best</span>
-            </div>
-            
-            <div class="${styles.footerContentContainerTop__contactsContainer}">
-                <!--  contacts link  -->
-            </div>
-            
-            <div class="${styles.footerContentContainerTop__emailContainer}">
-                <p class="${styles.emailContainer__title}">
-                    Don’t like forms and would rather just email me, that’s ok.
-                </p>
-                <span class="${styles.emailContainer__email}">
-                    <!--  email link  -->
-                </span>
-            </div>
-        </div>
-        
-        <div class="${styles.footerContentContainer__bottom}">
-            <div class="${styles.footerContentContainerBottom__contentContainer}">
-                <h2 class="${styles.footerContentContainerBottom__titleText}">Левахин<br>Лев</h2>
-                
-                <ul class="${styles.footerContentContainerBottom__menuList}">
-                    <!--  page navigation link  -->
-                </ul>
+
+                <!-- Действия (справа) -->
+                <div class="${styles.footer__actions}">
+                    ${createActionButton({
+                        text: 'Портфолио',
+                        link: linksData.portfolio,
+                        fas: false,
+                        icon: 'fab fa-github'
+                    }).outerHTML}
+                    ${createActionButton({
+                        text: 'Резюме',
+                        link: '/resume.pdf',
+                        icon: 'fa-file-pdf'
+                    }).outerHTML}
+                </div>
             </div>
         </div>
-        
-    `
+    `;
 
-    // Элементы
-    const contactsTopContainer = footerContainer.querySelector(`.${styles.footerContentContainerTop__contactsContainer}`);
-
-    const emailTextEl = footerContainer.querySelector(`.${styles.emailContainer__email}`);
-
-    const bottomContainer = footerContainer.querySelector(`.${styles.footerContentContainer__bottom}`);
-    const bottomContentContainer = bottomContainer.querySelector(`.${styles.footerContentContainerBottom__contentContainer}`);
-    const bottomMenuList = footerContainer.querySelector(`.${styles.footerContentContainerBottom__menuList}`);
-
-    // Ссылки
-    initLinks(contactsTopContainer, emailTextEl, bottomMenuList);
-
-    // Анимации
-    initGsapAnimations(bottomContainer, bottomContentContainer);
+    // Инициализация анимаций
+    initFooterAnimations(footerContainer);
 
     return footerContainer;
 }
 
+function initFooterAnimations(footer) {
+    const title = footer.querySelector(`.${styles.footer__title}`);
+    const socialButtons = footer.querySelectorAll(`.${styles.footer__social}`);
+    const actionButtons = footer.querySelectorAll(`.${styles.footer__actions}`);
 
-function initLinks(contactsTopContainer, emailTextEl, bottomMenuList) {
-    // Контакты
-    contactLinkElementsData.forEach(contactData => {
-        const contactLink = createEllipsLink({
-            title: contactData.title,
-            onClick: contactData.onClick,
-            style: "dark"
-        });
-        contactsTopContainer.appendChild(contactLink);
-    })
-
-    emailTextEl.appendChild(createLink({
-        title: linksData.email,
-        onClick: {
-            link: "mailto:" + linksData.email
-        },
-        className: "underline-text"
-    }));
-
-    // Ссылки по странице
-    menuLinkElementsData.forEach(menuElData => {
-        const menuLink = document.createElement("li");
-        menuLink.className = styles.menuList__item;
-
-        const a = createLink({
-            title: menuElData.title,
-            onClick: menuElData.onClick,
-            className: "underline-text"
-        })
-        menuLink.appendChild(a);
-
-        bottomMenuList.appendChild(menuLink);
-    })
-}
-
-function initGsapAnimations(bottomContainer, contentContainer) {
-    gsap.from(contentContainer, {
-        yPercent: -80,
+    // Анимация заголовка
+    gsap.from(title, {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        ease: 'power3.out',
         scrollTrigger: {
-            trigger: bottomContainer,
-            start: "top bottom",
-            end: "95% bottom",
-            scrub: 1,
+            trigger: title,
+            start: 'top bottom',
+            toggleActions: 'play none none reverse'
         }
-    })
+    });
 
+    // Анимация социальных кнопок
+    gsap.from(socialButtons, {
+        opacity: 0,
+        y: 50,
+        stagger: 0.5,
+        duration: 0.3,
+        ease: 'power3.out',
+        scrollTrigger: {
+            trigger: socialButtons,
+            start: 'top center',
+            toggleActions: 'play none none reverse'
+        }
+    });
+
+    // Анимация кнопок действий
+    gsap.from(actionButtons, {
+        opacity: 0,
+        x: 30,
+        duration: 0.6,
+        stagger: 0.3,
+        ease: 'power3.out',
+        scrollTrigger: {
+            trigger: actionButtons,
+            start: 'top center',
+            toggleActions: 'play none none reverse'
+        }
+    });
 }

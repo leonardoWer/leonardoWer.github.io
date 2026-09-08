@@ -97,7 +97,7 @@ function initRevealAnimation(card, textContent, imageWrapper) {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: card,
-            start: 'top 85%',
+            start: 'top 90%',
             end: 'top 60%',
             toggleActions: 'play none none reverse',
         }
@@ -109,7 +109,7 @@ function initRevealAnimation(card, textContent, imageWrapper) {
         x: 0,
         rotationY: 0,
         scale: 1,
-        duration: 0.8,
+        duration: 0.4,
         ease: 'power3.out'
     })
         // Появление изображения с задержкой и эффектом
@@ -118,28 +118,28 @@ function initRevealAnimation(card, textContent, imageWrapper) {
             x: 0,
             rotationY: 0,
             scale: 1,
-            duration: 0.8,
+            duration: 0.5,
             ease: 'power3.out'
         }, '-=0.4')
         // Постепенное появление заголовка
         .to(title, {
             opacity: 1,
             y: 0,
-            duration: 0.6,
+            duration: 0.8,
             ease: 'power2.out'
         }, '-=0.3')
         // Появление описания с задержкой
         .to(description, {
             opacity: 1,
             y: 0,
-            duration: 0.6,
+            duration: 0.4,
             ease: 'power2.out'
         }, '-=0.2')
         // Появление стека технологий
         .to(stack, {
             opacity: 1,
             y: 0,
-            duration: 0.5,
+            duration: 0.3,
             ease: 'power2.out'
         }, '-=0.1');
 
