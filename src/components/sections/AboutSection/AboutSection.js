@@ -45,20 +45,20 @@ export function createAboutSection() {
     function initTiles() {
         const tilesData = [
             {
-                title: "Frontend dev",
-                itemsData: ["React", "Vite", "gsap", "ScrollTrigger", "three"],
+                title: "Web-дизайн",
+                itemsData: ["Figma", "photoshop", "illustrator", "Blender"],
                 location: "left"
             },
             {
-                title: "Web-designer",
-                itemsData: ["photoshop", "illustrator"],
+                title: "Андроид",
+                itemsData: ["Kotlin", "Java", "Android Studio"],
                 location: "right"
             },
             {
-                title: "Android dev",
-                itemsData: ["Android Studio", "Java"],
+                title: "Фронтенд",
+                itemsData: ["React", "Vite", "gsap", "ScrollTrigger", "three"],
                 location: "left"
-            }
+            },
         ];
 
         // Создаем DOM-элементы плиток с помощью вашего компонента createAboutTile
