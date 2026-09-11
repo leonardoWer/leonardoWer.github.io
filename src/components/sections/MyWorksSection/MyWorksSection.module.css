@@ -1,14 +1,18 @@
 .my-works-section {
+    display: flex;
+    flex-direction: column;
     background: var(--light-text);
     min-height: 100vh;
     padding: 4rem 0;
 }
-
+.my-works-section__title {
+    margin: 2rem auto;
+}
 .my-works-section__cards {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 0 2rem;
+    padding: 0 3rem;
 }
 
 .my-works-section__footer {

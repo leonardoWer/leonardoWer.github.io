@@ -19,6 +19,8 @@ export function createMyWorksSection() {
     const latestWorks = getLatestWorks(5);
 
     section.innerHTML = `
+        <h2 class="title-text ${styles['my-works-section__title']}">Последние работы</h2>
+        
         <div class="${styles['my-works-section__cards']}">
             <!-- Карточки работ -->
         </div>
