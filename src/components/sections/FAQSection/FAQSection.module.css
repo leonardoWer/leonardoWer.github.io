@@ -66,6 +66,7 @@
 }
 .activeFAQItem .faqContainerItem__title,
 .activeFAQItem .faqContainerItem__icon {
+    font-family: var(--black-text);
     color: var(--dark-gray) !important;
 }
 
@@ -77,6 +78,7 @@
     overflow: hidden;
 }
 .faqContainerItemAnswerContainer__text {
+    font-family: var(--medium-text);
     color: var(--black-bg);
     margin-top: 1.2rem;
     line-height: 1.05;

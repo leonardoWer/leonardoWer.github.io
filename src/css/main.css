@@ -12,6 +12,7 @@
 
 .title-text {
     --font-size: clamp(2.5rem, 0.981rem + 7.59vw, 10rem);
+    font-weight: 600;
     font-size: var(--font-size);
     font-family: var(--belarus-text);
     text-wrap: nowrap;

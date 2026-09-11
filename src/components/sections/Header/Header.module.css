@@ -7,7 +7,7 @@
 }
 .headerContainer__title {
     font-family: var(--belarus-text);
-    font-size: clamp(5rem, 0.646rem + 21.77vw, 26.5rem);
+    font-size: clamp(4rem, -0.557rem + 22.78vw, 26.5rem);
     color: var(--light-text);
     position: absolute;
     left: 1rem;
@@ -19,12 +19,13 @@
     height: 100%;
     position: absolute;
     bottom: 0;
-    left: 34vw;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: -1;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 620px) {
     .headerContainer__img {
-        left: 10%;
+        height: 90%;
     }
 }

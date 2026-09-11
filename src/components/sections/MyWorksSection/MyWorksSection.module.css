@@ -24,11 +24,11 @@
 /* Адаптив */
 @media (max-width: 768px) {
     .my-works-section {
-        padding: 4rem 1.5rem 5rem 1.5rem;
+        padding: 1rem 0.2rem 3rem 0.2rem;
     }
-
     .my-works-section__cards {
-        gap: 3rem;
+        gap: 2rem;
+        padding: 0;
     }
 
     .my-works-section__footer {
@@ -40,8 +40,10 @@
     .my-works-section {
         padding: 3rem 0.8rem 4rem 0.8rem;
     }
-
     .my-works-section__cards {
-        gap: 2rem;
+        gap: 0;
+    }
+    .my-works-section__footer {
+        margin-top: 1rem;
     }
 }

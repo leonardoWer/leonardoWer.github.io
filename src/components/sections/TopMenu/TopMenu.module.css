@@ -1,16 +1,15 @@
 /* Верхнее меню — редизайн с анимацией */
 .top-menu {
     width: fit-content;
-    max-width: 90vw;
     position: fixed;
-    top: 16px;
-    left: 16px;
+    top: 20px;
+    left: 20px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem 1.5rem;
-    padding: 0.4rem 0.2rem;
+    padding: 0.5rem;
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -20,7 +19,13 @@
     border: 1px solid rgba(255, 255, 255, 0.25);
     transition: border-radius 0.4s ease, padding 0.4s ease;
 }
-
+.top-menu__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    width: 100%;
+}
 .top-menu__left {
     display: flex;
     align-items: center;
@@ -160,7 +165,6 @@
     overflow: hidden;
     position: relative;
 }
-
 .dropdown-list {
     list-style: none;
     padding: 0;
@@ -191,9 +195,10 @@
 @media (max-width: 700px) {
     .top-menu {
         top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
         padding: 0.4rem 1rem;
-        min-height: 42px;
-        gap: 0.5rem;
+        min-height: 48px;
     }
     .nav-link {
         font-size: 0.85rem;
@@ -226,10 +231,10 @@
 
 @media (max-width: 520px) {
     .top-menu {
-        top: 8px;
+        top: 12px;
         padding: 0.3rem 0.8rem;
         border-radius: 24px;
-        min-height: 36px;
+        min-height: 40px;
         gap: 0.3rem;
     }
     .nav-link {
@@ -238,9 +243,6 @@
     }
     .nav-link:hover {
         padding: 0.2rem 0.8rem;
-    }
-    .logo {
-        font-size: 1rem;
     }
     .menu-toggle {
         width: 24px;
@@ -257,9 +259,6 @@
     }
     .menu-toggle-icon::after {
         top: 5px;
-    }
-    .dropdown-inner {
-        padding: 0.8rem 0 0.3rem 0;
     }
     .dropdown-link {
         font-size: 0.8rem;

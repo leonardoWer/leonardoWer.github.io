@@ -19,7 +19,6 @@ export function createHeader() {
 
     // Элементы
     const headerTitle = headerContainer.querySelector(`.${styles.headerContainer__title}`);
-    const headerDescription = headerContainer.querySelector(`.${styles.headerContainer__description}`);
     const headerImg = headerContainer.querySelector(`.${styles.headerContainer__img}`);
 
     // Анимации

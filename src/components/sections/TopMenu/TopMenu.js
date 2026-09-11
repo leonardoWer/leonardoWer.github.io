@@ -12,18 +12,22 @@ export function createTopMenu() {
     topMenu.classList.add(styles['top-menu']);
 
     topMenu.innerHTML = `
-        <div class="${styles['top-menu__left']}"></div>
-
-        <div class="${styles['top-menu__center']}">
-            <ul class="${styles['nav-list']}">
-                <!-- наполняется из linksData (кроме главной) -->
-            </ul>
-        </div>
-
-        <div class="${styles['top-menu__right']}">
-            <button class="${styles['menu-toggle']}">
-                <span class="${styles['menu-toggle-icon']}"></span>
-            </button>
+        <div class="${styles['top-menu__inner']}">
+            <div class="${styles['top-menu__left']}">
+                <!-- лого -->
+            </div>
+    
+            <div class="${styles['top-menu__center']}">
+                <ul class="${styles['nav-list']}">
+                    <!-- linksData (кроме главной) -->
+                </ul>
+            </div>
+    
+            <div class="${styles['top-menu__right']}">
+                <button class="${styles['menu-toggle']}">
+                    <span class="${styles['menu-toggle-icon']}"></span>
+                </button>
+            </div>
         </div>
 
         <!-- Выпадающая часть (попап) -->
@@ -137,6 +141,10 @@ export function createTopMenu() {
                     });
                 }
             });
+        }
+
+        if (shouldShow && isDropdownOpen) {
+            toggleDropdown()
         }
     }
 

@@ -83,8 +83,8 @@ function initFooterAnimations(footer) {
         duration: 1,
         ease: 'power3.out',
         scrollTrigger: {
-            trigger: title,
-            start: 'top bottom',
+            trigger: footer,
+            start: 'top center',
             toggleActions: 'play none none reverse'
         }
     });
@@ -97,8 +97,8 @@ function initFooterAnimations(footer) {
         duration: 0.3,
         ease: 'power3.out',
         scrollTrigger: {
-            trigger: socialButtons,
-            start: 'top center',
+            trigger: footer,
+            start: 'top 60%',
             toggleActions: 'play none none reverse'
         }
     });
@@ -111,8 +111,8 @@ function initFooterAnimations(footer) {
         stagger: 0.3,
         ease: 'power3.out',
         scrollTrigger: {
-            trigger: actionButtons,
-            start: 'top center',
+            trigger: footer,
+            start: 'top 60%',
             toggleActions: 'play none none reverse'
         }
     });

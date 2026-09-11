@@ -5,7 +5,7 @@ export const worksData = [
         title: 'Создал мобильное приложение Wou',
         description: 'Wou - это мобильное андроид приложение для занятий спортом. В нём содержатся все необходимые функции для занятий спортом: создание своих тренировок, календарь, видео тренировки',
         stack: ['Kotlin', 'Android Studio'],
-        image: 'wou.png',
+        image: 'wou_mobile_app.png',
         link: 'https://leonardower.github.io/Wou',
         hoverTitle: 'Несколько экранов приложения Wou'
     },
